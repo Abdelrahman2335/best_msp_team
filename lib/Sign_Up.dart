@@ -25,7 +25,13 @@ class SingUpScreen extends StatelessWidget {
                 height: height,
                 width: width,
                 decoration: BoxDecoration(
-                  boxShadow: [],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.8),
+                      blurRadius: 15,
+                      offset: const Offset(5, 5)
+                    ),
+                  ],
                   gradient: LinearGradient(colors: <Color>[
                     Color(0xFF0078D4),
                     Color(0xFF96CFF2),
@@ -40,7 +46,7 @@ class SingUpScreen extends StatelessWidget {
                 //primary: Colors.white,
                 textStyle: TextStyle(fontSize: 20),
                 elevation: 70,
-                shadowColor: Colors.black54,
+
               ),
               onPressed: () {},
               child: Text("Sign Up"),

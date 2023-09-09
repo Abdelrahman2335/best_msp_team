@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'Login_Screen.dart';
+import 'Sign_Up.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: SingUpScreen(),
     );
   }
 }

@@ -76,6 +76,8 @@ class fildes extends StatelessWidget {
                 side: MaterialStateProperty.all<BorderSide>(
                   BorderSide(color: Colors.black, width: 1.0),
                 ),
+
+
                 padding: MaterialStateProperty.all<EdgeInsets>(
                   EdgeInsets.symmetric(horizontal: 65.0),
                 ),
@@ -85,7 +87,7 @@ class fildes extends StatelessWidget {
             OutlinedButton(
               onPressed: (){} ,
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
+                backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF6CB1E8)),
                 side: MaterialStateProperty.all<BorderSide>(
                   BorderSide(color: Colors.black, width: 1.0),
                 ),

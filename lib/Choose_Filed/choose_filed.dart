@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class fildes extends StatelessWidget {
   const fildes({super.key});
+  static String id = "fildes";
+
 
   @override
   Widget build(BuildContext context) {

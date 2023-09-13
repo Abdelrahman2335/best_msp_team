@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
         SignUpScreen.id: (BuildContext context) => SignUpScreen(),
         StartScreen.id:(BuildContext context) => StartScreen(),
         ProfileScreen.id:(BuildContext context) => ProfileScreen(),
-
       },
     );
   }

@@ -1,60 +1,116 @@
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  const SignUpScreen ({super.key});
   static String id = "SignUpScreen";
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: SafeArea(
+          child:Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 325,top: 10),
+                child: Icon(Icons.arrow_forward,),
+              ),
+              SizedBox(height: 70,),
+              Center(child: Text("Creat Your account.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,),)),
+              SizedBox(height: 10,),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Already have an account? "),
+                  SizedBox(width:1,),
+                  Text("Sign in",style: TextStyle(color: Colors.black54),)
+                ],
+              ),
+              SizedBox(height: 35,),
 
-    return SafeArea(
-        child: Scaffold(
-      appBar: AppBar(
-        title: const Text("First Screen"),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
-      body: Center(
-          child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: Stack(
-          children: <Widget>[
-            Positioned.fill(
-              child: Container(
-                height: height,
-                width: width,
+              Container(child: Text("Full name"),
+                padding: EdgeInsetsDirectional.only( start: 20),
+              ),
+              SizedBox(height:4,),
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
                 decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.8),
-                      blurRadius: 15,
-                      offset: const Offset(5, 5)
-                    ),
-                  ],
-                  gradient: LinearGradient(colors: <Color>[
-                    Color(0xFF0078D4),
-                    Color(0xFF96CFF2),
-                  ]),
+                    color: Colors.white10,
+                    border: Border.all(width: 2,color: Colors.black12),
+                    borderRadius: BorderRadius.circular(20)
                 ),
+                height: 55,
+                width: 500,
               ),
-            ),
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.only(left: 80, right: 80),
-                //primary: Colors.white,
-                textStyle: TextStyle(fontSize: 20),
-                elevation: 70,
+              SizedBox(height: 4,),
+              Container(child: Text("Email address"),
+                padding: EdgeInsetsDirectional.only(start: 20),
+              ),
+              SizedBox(height:4,),
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
+                decoration: BoxDecoration(
+                    color: Colors.white10,
+                    border: Border.all(width: 2,color: Colors.black12),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                height: 55,
+                width: 500,
+                child: Row(
+                  children: [
 
+                    Icon(Icons.mail_outline),
+                    SizedBox(width: 2,),
+                    Text("Example@gmail.com"),
+
+                  ],),
+                padding: EdgeInsetsDirectional.only(start: 7),
               ),
-              onPressed: () {},
-              child: Text("Sign Up"),
-            ),
-          ],
-        ),
-      )),
-    ));
+              SizedBox(height:4,),
+              Container(child: Text("Password"),
+                padding: EdgeInsetsDirectional.only(start: 20),
+              ),
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
+                decoration: BoxDecoration(
+                    color: Colors.white10,
+                    border: Border.all(width: 2,color: Colors.black12),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                height: 55,
+                width: 500,
+                child:Row(children: [
+                  Icon(Icons.remove_red_eye_outlined),
+                  SizedBox(width: 6,),
+                  Text("...............",style: TextStyle(fontSize: 25),)
+                ],),
+                padding: EdgeInsetsDirectional.only(start: 7),
+              ),
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 25,top: 70,end:25),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    border: Border.all(width: 2,color: Colors.black12),
+                    borderRadius: BorderRadius.circular(20)
+                ),
+                height: 35,
+                width: 500,
+
+                child: Center(child: Text("Sign up",style: TextStyle(color: Colors.white,fontSize: 20),)),
+              ),
+              SizedBox(height: 70,),
+              Row(
+                children: [
+                  Container(margin: EdgeInsetsDirectional.only(start: 150),
+                    child: Icon(Icons.g_mobiledata),
+                  ),
+                  SizedBox(width: 10,),
+                  Icon(Icons.apple)
+                ],)
+            ],)
+
+
+      ),
+
+
+    );
   }
 }

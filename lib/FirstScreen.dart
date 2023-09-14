@@ -36,6 +36,8 @@ class _First_Screen extends State<First_Screen>
 
   @override
   Widget build(BuildContext context) {
+    final widget = MediaQuery.of(context).size.width ;
+    final height = MediaQuery.of(context).size.height ;
     return Scaffold(
       body: Center(
         child: AnimatedBuilder(
@@ -53,37 +55,29 @@ class _First_Screen extends State<First_Screen>
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0,right: 5),
-                  child: Align(
+                  Align(
                     alignment: Alignment.bottomRight,
-                    child:
-                    Container(
-                        width: 120,
-                        height: 50,
-                        child: InkWell(
-                          onTap: (){
-                            Navigator.of(context).pushNamed(LoginScreen.id);
-                          },
-                          child: Row(
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.of(context).pushNamed(LoginScreen.id);
+                      },
+                      child: Card(
+                        child:  Row(
                             children: [
 
-                              Container(
 
-                                  child: Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: 20 )),
-                                ),
+                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: 20 )),
 
-                              // SizedBox(width: 5,),
-                              Container(
-                                child: Icon(Icons.arrow_right_alt_rounded,size: 28,color: Color(0xFF0C356A),),
-                              )
+                              // SizedBox(width: 5,)
+                          Icon(Icons.arrow_right_alt_rounded,size: 28,color: Color(0xFF0C356A),),
+
                             ],
                                 ),
                         ),
                       ),
 
                         )
-                      ),
+
               ],
             );
           },

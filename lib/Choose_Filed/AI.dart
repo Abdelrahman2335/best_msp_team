@@ -1,66 +1,72 @@
 import 'choose_filed.dart';
-import 'viewAll_cyber.dart';
 import 'package:flutter/material.dart';
+import 'viewAll_AI.dart';
 
-class cyberSecurity extends StatelessWidget {
-  const cyberSecurity({super.key});
-  static String id='cyberSecurity';
+class AI extends StatelessWidget {
+  const AI({super.key});
+  static String id='AI';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: ListView(
+          controller: ScrollController(),
           children: [
-            Container(
-              width: double.infinity,
-              height: 200,
-              child: Image(image: AssetImage("assets/images/main.png"),),
-            ),
-            ListTile(
-              title: Text('courses on cyber security',style: TextStyle(fontSize: 20),),
-              trailing: Text('view all',style: TextStyle(fontSize: 13),),
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                  return viewAll_cyber();
-                }));
-              },
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
+            Column(
+              children:[
                 Container(
-                  height: 250,
-                  width: 175,
-                  padding: EdgeInsets.only(left: 7,right: 7),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Color(0xffA6A6A6),width: 1)
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:[
-                      Image(image: AssetImage("assets/images/cwap.png"),height: 150,),
-                      Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                      Text('OWASP top10(Web) 2021',style: TextStyle(fontSize: 15),),
-                    ],),
+                  width: double.infinity,
+                  height: 200,
+                  child: Image(image: AssetImage("assets/images/AIMain.png"),),
                 ),
-                Container(
-                  height: 250,
-                  width: 175,
-                  padding: EdgeInsets.only(left: 7,right: 7),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Color(0xffA6A6A6),width: 1)
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:[
-                      Image(image: AssetImage("assets/images/ethical hacking.png"),height: 150,),
-                      Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                      Text('Ethical Hacking',style: TextStyle(fontSize: 15),),
-                    ],),
+                ListTile(
+                  title: Text('courses on artificial intelligence',style: TextStyle(fontSize: 20),),
+                  trailing: Text('view all',style: TextStyle(fontSize: 13),),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                      return viewAll_AI();
+                    }));
+                  },
+                ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 250,
+                      width: 175,
+                      padding: EdgeInsets.only(left: 7,right: 7),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Image(image: AssetImage("assets/images/Advanced Al.png"),height: 150,),
+                          Image(image: AssetImage("assets/images/udemy.png"),height: 50,width: 50,),
+                          Text('Advanced Al:Deep reinforcement learning in python',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w700),),
+                        ],),
+                    ),
+                    Container(
+                      height: 250,
+                      width: 175,
+                      padding: EdgeInsets.only(left: 7,right: 7),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Image(image: AssetImage("assets/images/machineLearning.png"),height: 150,),
+                          Image(image: AssetImage("assets/images/udemy.png"),height: 50,width: 50,),
+                          Text('Machine learning',style: TextStyle(fontSize: 15),),
+                        ],),
+                    ),
+                  ],
                 ),
               ],
             ),

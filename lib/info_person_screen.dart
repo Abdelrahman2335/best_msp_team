@@ -195,7 +195,7 @@ class info_person_screen extends StatelessWidget {
               height: 57,
             ),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> HomeScreen()));
+              Navigator.of(context).pushNamed(HomeScreenBar.id);
             },
           )
       ],

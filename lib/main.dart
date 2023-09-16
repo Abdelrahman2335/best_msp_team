@@ -29,8 +29,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: HomeScreen.id,
-
       initialRoute: ProfileScreen.id,     // for test
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),

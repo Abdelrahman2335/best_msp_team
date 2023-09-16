@@ -36,8 +36,6 @@ class _First_Screen extends State<First_Screen>
 
   @override
   Widget build(BuildContext context) {
-    final widget = MediaQuery.of(context).size.width ;
-    final height = MediaQuery.of(context).size.height ;
     return Scaffold(
       body: Center(
         child: AnimatedBuilder(
@@ -64,7 +62,6 @@ class _First_Screen extends State<First_Screen>
                       child: Card(
                         child:  Row(
                             children: [
-
 
                               Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: 20 )),
 

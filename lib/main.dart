@@ -4,6 +4,7 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
+import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
 import 'SettingScreen.dart';
 import 'Sign_Up.dart';
@@ -22,13 +23,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
       ),
 
-      initialRoute: SignUpScreen.id,     // for test
+      initialRoute: SignUpScreen.id,     
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),

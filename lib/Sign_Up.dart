@@ -1,113 +1,305 @@
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen ({super.key});
   static String id = "SignUpScreen";
 
+  bool isChecked=false;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
-          child:Column(crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+
             children: [
-              Container(
-                margin: EdgeInsetsDirectional.only(start: 325,top: 10),
-                child: Icon(Icons.arrow_forward,),
-              ),
-              SizedBox(height: 70,),
-              Center(child: Text("Creat Your account.",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,),)),
-              SizedBox(height: 10,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+              margin: EdgeInsets.only(top: 64),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account? "),
-                  SizedBox(width:1,),
-                  Text("Sign in",style: TextStyle(color: Colors.black54),)
+                  Text(
+                    "SignUp",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(height: 35,),
+            ),
 
-              Container(child: Text("Full name"),
-                padding: EdgeInsetsDirectional.only( start: 20),
-              ),
-              SizedBox(height:4,),
-              Container(
-                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
-                decoration: BoxDecoration(
-                    color: Colors.white10,
-                    border: Border.all(width: 2,color: Colors.black12),
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                height: 55,
-                width: 500,
-              ),
-              SizedBox(height: 4,),
-              Container(child: Text("Email address"),
-                padding: EdgeInsetsDirectional.only(start: 20),
-              ),
-              SizedBox(height:4,),
-              Container(
-                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
-                decoration: BoxDecoration(
-                    color: Colors.white10,
-                    border: Border.all(width: 2,color: Colors.black12),
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                height: 55,
-                width: 500,
-                child: Row(
-                  children: [
 
-                    Icon(Icons.mail_outline),
-                    SizedBox(width: 2,),
-                    Text("Example@gmail.com"),
 
-                  ],),
-                padding: EdgeInsetsDirectional.only(start: 7),
-              ),
-              SizedBox(height:4,),
-              Container(child: Text("Password"),
-                padding: EdgeInsetsDirectional.only(start: 20),
-              ),
-              Container(
-                margin: EdgeInsetsDirectional.only(start: 15,end: 15),
-                decoration: BoxDecoration(
-                    color: Colors.white10,
-                    border: Border.all(width: 2,color: Colors.black12),
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                height: 55,
-                width: 500,
-                child:Row(children: [
-                  Icon(Icons.remove_red_eye_outlined),
-                  SizedBox(width: 6,),
-                  Text("...............",style: TextStyle(fontSize: 25),)
-                ],),
-                padding: EdgeInsetsDirectional.only(start: 7),
-              ),
-              Container(
-                margin: EdgeInsetsDirectional.only(start: 25,top: 70,end:25),
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    border: Border.all(width: 2,color: Colors.black12),
-                    borderRadius: BorderRadius.circular(20)
-                ),
-                height: 35,
-                width: 500,
-
-                child: Center(child: Text("Sign up",style: TextStyle(color: Colors.white,fontSize: 20),)),
-              ),
-              SizedBox(height: 70,),
-              Row(
+            Container(
+              margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+              child: Column(
                 children: [
-                  Container(margin: EdgeInsetsDirectional.only(start: 150),
-                    child: Icon(Icons.g_mobiledata),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 57,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(14)
+                        ),
+                        hintText: "Full Name",
+                        hintStyle: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        prefixIcon: Container(
+                          margin: EdgeInsets.only(top: 8),
+                          child: Icon(
+                            Icons.person,
+                            size: 20,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        fillColor: Color(0xFFe1e1e1),
+                        filled: true,
+                      ),
+                    ),
                   ),
-                  SizedBox(width: 10,),
-                  Icon(Icons.apple)
-                ],)
-            ],)
+                  Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 57,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(14)
+                          ),
+                          hintText: "Email",
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIcon: Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Icon(
+                              Icons.email_outlined,
+                              size: 20,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          fillColor: Color(0xFFe1e1e1),
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 57,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(14)
+                          ),
+                          hintText: "Password",
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIcon: Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Icon(
+                              Icons.lock_outline,
+                              size: 20,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          fillColor: Color(0xFFe1e1e1),
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 8),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 57,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(14)
+                          ),
+                          hintText: "Confirm Password",
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIcon: Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Icon(
+                              Icons.lock_outline,
+                              size: 20,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                          ),
+                          fillColor: Color(0xFFe1e1e1),
+                          filled: true,
+
+                        ),
+                      ),
+                    ),
+                  ),
 
 
+
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+                        Text(
+                          "I agree to the terms and condition",
+                          style: TextStyle(
+                            fontSize: 8,
+                            fontWeight: FontWeight.w200,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+
+            Container(
+              margin: EdgeInsets.only(top: 22, left: 20, right: 20),
+              child: SizedBox(
+                width: double.infinity,
+                height: 55,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "SignUp",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xFF0C356A),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                    )),
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(top: 18),
+              height: 20,
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Expanded(
+                      child: Divider(
+                        color: Colors.black,
+                        indent: 20,
+                      )),
+                  // Vertical line 1
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      'OR SignUp with',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  Expanded(
+                      child: Divider(
+                        color: Colors.black,
+                        endIndent: 20,
+                      )),
+                  // Vertical line 2
+                ],
+              ),
+            ),
+
+
+
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Image(
+                        image: AssetImage("assets/images/Google Logo.png"),
+                        width: 65,
+                        height: 65,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 7),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Image(
+                        image: AssetImage("assets/images/Frame 182.png"),
+                        width: 65,
+                        height: 65,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account?",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF0C356A),
+                        ),
+                      ))
+                ],
+              ),
+            ),
+
+          ],
+        ),
       ),
 
 

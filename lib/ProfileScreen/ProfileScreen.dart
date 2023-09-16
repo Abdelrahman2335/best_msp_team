@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
 
           Container(
             padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(top: 21,left: 23,right: 23),
+            margin: EdgeInsets.only(top: 21,left: 20,right: 23,bottom: 21,),
             height: 281,
             width: 385,
             decoration: BoxDecoration(
@@ -38,7 +38,15 @@ class ProfileScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Image.asset("assets/images/Rectangle 665.png",height: 239,width: 177,),
+                Column(
+                  children: [],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Image.asset("assets/images/Rectangle 665.png",height: 247,width: 170,),
+                  ],
+                ),
               ],
             ),
           ),

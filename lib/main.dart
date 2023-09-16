@@ -1,4 +1,5 @@
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
+import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
@@ -29,7 +30,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: ProfileScreen.id,     // for test
+
+
+      initialRoute: HomeScreen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),

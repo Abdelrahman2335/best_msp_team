@@ -8,6 +8,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(),
       body: Column(
         children: [
@@ -35,6 +36,10 @@ class LoginScreen extends StatelessWidget {
                   height: 57,
                   child: TextField(
                     decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(14)
+                      ),
                       hintText: "Email",
                       hintStyle: TextStyle(
                         fontSize: 12,
@@ -62,6 +67,10 @@ class LoginScreen extends StatelessWidget {
                     height: 57,
                     child: TextField(
                       decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(14)
+                        ),
                         hintText: "Password",
                         hintStyle: TextStyle(
                           fontSize: 12,
@@ -82,6 +91,9 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+
+
                 Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Row(
@@ -164,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                   child: InkWell(
                     onTap: () {},
                     child: Image(
-                      image: AssetImage("assets/Google Logo.png"),
+                      image: AssetImage("assets/images/Google Logo.png"),
                       width: 65,
                       height: 65,
                     ),
@@ -175,7 +187,7 @@ class LoginScreen extends StatelessWidget {
                   child: InkWell(
                     onTap: () {},
                     child: Image(
-                      image: AssetImage("assets/Frame 182.png"),
+                      image: AssetImage("assets/images/Frame 182.png"),
                       width: 65,
                       height: 65,
                     ),

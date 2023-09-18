@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229104362816",
+    "project_id": "msp-mobile-app-project",
+    "storage_bucket": "msp-mobile-app-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229104362816:android:dc58b79a3098132be906a5",
+        "android_client_info": {
+          "package_name": "com.example.best_msp_team"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEUF0bgy4iX1vz0v_SfqJHgPGrwGO46xY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

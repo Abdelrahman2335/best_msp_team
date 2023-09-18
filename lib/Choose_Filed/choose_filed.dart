@@ -1,147 +1,140 @@
+import 'package:best_msp_team/Home_Page/HomeScreen.dart';
+import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
-
+import 'AI.dart';
+import 'cyber_security.dart';
+import 'mobileApp.dart';
 class fildes extends StatelessWidget {
   const fildes({super.key});
-  static String id = "fildes";
-
-
+  static String id='fildes';
   @override
   Widget build(BuildContext context) {
-    Color myColor = Color(0xFF6CB1E8);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back)),
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.notifications_none), )
-        ],
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 100.0),
-                ),
-              ),
-              child: Text('Data Scince',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Data Scince',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 60.0),
-                ),
-              ),
-              child: Text('Software Engineering',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Software Engineering',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 50.0),
-                ),
-              ),
-              child: Text('Information Techonlogy',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Information Techonlogy',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 65.0),
-                ),
-              ),
-              child: Text('Information System',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Information System',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 65.0),
-                ),
-              ),
-              child: Text('Artificial Intelligence',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Artificial Intelligence',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return AI();
+                }));
+              },
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 80.0),
-                ),
-              ),
-              child: Text('Machine Learning',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Machine Learning',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 100.0),
-                ),
-              ),
-              child: Text('Cyber Security',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Cyber Security',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return cyberSecurity();
+                }));
+              },
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 90.0),
-                ),
-              ),
-              child: Text('Cloud Computing',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Cloud Computing',
             ),
-            OutlinedButton(
-              onPressed: (){} ,
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(myColor),
-                side: MaterialStateProperty.all<BorderSide>(
-                  BorderSide(color: Colors.black, width: 1.0),
-                ),
-                padding: MaterialStateProperty.all<EdgeInsets>(
-                  EdgeInsets.symmetric(horizontal: 115.0),
-                ),
-              ),
-              child: Text('Mobile App',style: TextStyle(color: Colors.black,fontSize: 20),),
+            buttons(
+              text: 'Mobile App',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return mobileApp();
+                }));
+              },
             ),
-            Container(
-              height: 30,
-
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0xffF5F5F5),
+        padding: EdgeInsets.only(right: 50,left: 50),
+
+        child:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(HomeScreen.id);
+                }, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
+                Text('Home',style: TextStyle(color: Color(0xff0C356A)),),
+              ],
+            ),
+            Container(
+              width: 75,
+              height: 75,
+              padding: EdgeInsets.only(bottom: 7),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Color(0xff0C356A),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(onPressed: (){
+                    Navigator.of(context).pushNamed(fildes.id);
+                  },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
+                  Text('Topics',style: TextStyle(color: Colors.white),)
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.id);
+                }, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
+                Text('Profile',style: TextStyle(color: Color(0xff0C356A)),),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class buttons extends StatelessWidget {
+  buttons({this.text,this.onTap});
+  String? text;
+  Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.maxFinite,
+        height: 50,
+        margin: EdgeInsets.only(left: 40,right: 40),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Color(0xFFE0E0E0),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(text!,style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w400,fontFamily: 'Poppins'),),
       ),
     );
   }

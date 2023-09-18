@@ -1,3 +1,5 @@
+import 'package:best_msp_team/Sign_Up.dart';
+import 'package:best_msp_team/info_person_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -119,7 +121,11 @@ class LoginScreen extends StatelessWidget {
               width: double.infinity,
               height: 60,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                      return info_person_screen();
+                    }));
+                  },
                   child: Text(
                     "Login",
                     textAlign: TextAlign.center,
@@ -209,7 +215,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(SignUpScreen.id);
+                    },
                     child: Text(
                       "create account",
                       style: TextStyle(

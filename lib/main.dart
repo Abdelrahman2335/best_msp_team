@@ -9,9 +9,18 @@ import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
 import 'SettingScreen.dart';
 import 'Sign_Up.dart';
+import 'forget_password.dart';
 import 'info_person_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+
+void main() async{
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -32,7 +41,7 @@ class MyApp extends StatelessWidget {
       ),
 
 
-      initialRoute: HomeScreen.id,
+      initialRoute: LoginScreen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
@@ -43,6 +52,7 @@ class MyApp extends StatelessWidget {
         SettingScreen.id: (BuildContext context) => SettingScreen(),
         StartScreen.id:(BuildContext context) => StartScreen(),
         ProfileScreen.id:(BuildContext context) => ProfileScreen(),
+        ForgetPassword.id:(BuildContext context) => ForgetPassword(),
       },
     );
   }

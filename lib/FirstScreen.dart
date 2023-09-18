@@ -49,7 +49,7 @@ class _First_Screen extends State<First_Screen>
                   alignment: _animation.value,
                   child: Container(
                     child: Image(
-                      image: AssetImage("assets/Untitled design.png"),
+                      image: AssetImage("assets/images/Untitled design.png"),
                     ),
                   ),
                 ),

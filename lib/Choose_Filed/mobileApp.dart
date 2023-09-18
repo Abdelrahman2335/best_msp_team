@@ -1,4 +1,6 @@
+import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
+import '../Home_Page/HomeScreen.dart';
 import 'choose_filed.dart';
 import 'viewAll_mobile.dart';
 
@@ -68,6 +70,46 @@ class mobileApp extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 250,
+                      width: 175,
+                      padding: EdgeInsets.only(left: 7,right: 7),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Image(image: AssetImage("assets/images/ionic.png"),height: 150,),
+                          Image(image: AssetImage("assets/images/udemy.png"),height: 50,width: 50,),
+                          Text('Ionic - Build iOS, Android & Web Apps with Ionic and Angular Build Native iOS & Android',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w700),),
+                        ],),
+                    ),
+                    Container(
+                      height: 250,
+                      width: 175,
+                      padding: EdgeInsets.only(left: 7,right: 7),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Image(image: AssetImage("assets/images/xamarin.png"),height: 150,),
+                          Image(image: AssetImage("assets/images/udemy.png"),height: 50,width: 50,),
+                          Text('Xamarin Android: Learn to Build Native Android Apps With C#',style: TextStyle(fontSize: 10,fontWeight: FontWeight.w700),),
+                        ],),
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
@@ -83,7 +125,9 @@ class mobileApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(HomeScreen.id);
+                }, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
                 Text('Home',style: TextStyle(color: Color(0xff0C356A)),),
               ],
             ),
@@ -99,9 +143,7 @@ class mobileApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                      return fildes();
-                    }));
+                      Navigator.of(context).pushNamed(fildes.id);
                   },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
                   Text('Topics',style: TextStyle(color: Colors.white),)
                 ],
@@ -111,7 +153,9 @@ class mobileApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.id);
+                }, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
                 Text('Profile',style: TextStyle(color: Color(0xff0C356A)),),
               ],
             ),

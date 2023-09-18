@@ -1,4 +1,5 @@
 import 'package:best_msp_team/Login_Screen.dart';
+import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
 
 class First_Screen extends StatefulWidget {
@@ -66,7 +67,10 @@ class _First_Screen extends State<First_Screen>
                               Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: 20 )),
 
                               // SizedBox(width: 5,)
-                          Icon(Icons.arrow_right_alt_rounded,size: 28,color: Color(0xFF0C356A),),
+                              IconButton(onPressed: (){
+                                Navigator.of(context).pushNamed(StartScreen.id);
+                              }, icon: Icon(Icons.arrow_right_alt_rounded,size: 28,color: Color(0xFF0C356A)))
+
 
                             ],
                                 ),

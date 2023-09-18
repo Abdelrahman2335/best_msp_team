@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       ),
 
 
-      initialRoute: LoginScreen.id,
+      initialRoute: First_Screen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),

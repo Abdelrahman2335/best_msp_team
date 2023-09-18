@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:flutter/material.dart';
 
@@ -11,20 +12,20 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"Image 1": "assets/images/Frame 230.png"},
-    {"Image 2": "assets/images/Frame 229.png"},
+    {"Image 1": "assets/images/Google Logo.png"},
+    {"Image 2": "assets/images/iti logo.png"},
   ];
 
   List platforms = [
-    {"PlatForm 1":"assets/platforms/Rectangle 640.png"},
-    {"PlatForm 2":"assets/platforms/Rectangle 665.png"},
-    {"PlatForm 3":"assets/platforms/Rectangle 664.png"},
-    {"PlatForm 4":"assets/platforms/udemy.png"},
+    {"PlatForm 1":"assets/images/coursera.png"},
+    {"PlatForm 2":"assets/images/udemy.png"},
+    {"PlatForm 3":"assets/images/xamarin.png"},
+    {"PlatForm 4":"assets/images/udemy.png"},
   ];
   List SA = [
-    {"SA 1":"assets/SA/Rectangle 640.png"},
-    {"SA 2":"assets/SA/Rectangle 665.png"},
-    {"SA 3":"assets/SA/Rectangle 664.png"},
+    {"SA 1":"assets/images/MSP.png"},
+    {"SA 2":"assets/images/Enactus.png"},
+    {"SA 3":"assets/images/ThreeDos.png"},
   ];
   int SelectedIcon = 0;
 
@@ -351,8 +352,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
                 label: "Home",
             ),
-            NavigationDestination(icon: Icon(Icons.change_circle_outlined,color: Colors.white,),
-                label: "Topic"
+            NavigationDestination(icon: IconButton(onPressed: (){
+              Navigator.of(context).pushNamed(fildes.id);
+            },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
+                label:'Topics',
             ),
             NavigationDestination(icon: Icon(Icons.person_outline,color: Colors.white,),
                 label: "Home",

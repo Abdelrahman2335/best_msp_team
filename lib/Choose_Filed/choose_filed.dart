@@ -1,3 +1,4 @@
+import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'AI.dart';
 import 'cyber_security.dart';
@@ -98,7 +99,9 @@ class fildes extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.id);
+                }, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
                 Text('Profile',style: TextStyle(color: Color(0xff0C356A)),),
               ],
             ),

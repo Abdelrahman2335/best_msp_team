@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import 'AI.dart';
@@ -75,7 +76,9 @@ class fildes extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
+                IconButton(onPressed: (){
+                  Navigator.of(context).pushNamed(HomeScreen.id);
+                }, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
                 Text('Home',style: TextStyle(color: Color(0xff0C356A)),),
               ],
             ),
@@ -90,7 +93,9 @@ class fildes extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(onPressed: (){},icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
+                  IconButton(onPressed: (){
+                    Navigator.of(context).pushNamed(fildes.id);
+                  },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
                   Text('Topics',style: TextStyle(color: Colors.white),)
                 ],
               ),

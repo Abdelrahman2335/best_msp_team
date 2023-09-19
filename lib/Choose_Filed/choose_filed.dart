@@ -13,7 +13,8 @@ class fildes extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(onPressed: (){
           Navigator.of(context).pop();
-        }, icon: Icon(Icons.arrow_back)),
+        },
+            icon: Icon(Icons.arrow_back)),
       ),
       body: Center(
         child: Column(

@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/Sign_Up.dart';
 import 'package:best_msp_team/info_person_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +12,18 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back,size: SizeConfig.screenWidth/30,),
+        ),
+      ),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 64),
+            margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -23,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                   "Login",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    fontSize: 30,
+                    fontSize: SizeConfig.screenWidth/20,
                   ),
                 ),
               ],
@@ -35,7 +43,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: 57,
+                  height: SizeConfig.screenHeight/15,
                   child: TextField(
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -44,14 +52,14 @@ class LoginScreen extends StatelessWidget {
                       ),
                       hintText: "Email",
                       hintStyle: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontSize: SizeConfig.screenWidth/30,
+                        fontWeight: FontWeight.w700,
                       ),
                       prefixIcon: Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: EdgeInsets.symmetric(vertical: double.minPositive),
                         child: Icon(
                           Icons.mail_outline,
-                          size: 20,
+                          size: SizeConfig.screenWidth/30,
                         ),
                       ),
                       border: OutlineInputBorder(
@@ -66,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                   margin: EdgeInsets.only(top: 12),
                   child: SizedBox(
                     width: double.infinity,
-                    height: 57,
+                    height: SizeConfig.screenHeight/15,
                     child: TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -75,14 +83,14 @@ class LoginScreen extends StatelessWidget {
                         ),
                         hintText: "Password",
                         hintStyle: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                          fontSize: SizeConfig.screenWidth/30,
+                          fontWeight: FontWeight.w700,
                         ),
                         prefixIcon: Container(
                           margin: EdgeInsets.only(top: 10),
                           child: Icon(
                             Icons.lock_outline,
-                            size: 20,
+                            size: SizeConfig.screenWidth/30,
                           ),
                         ),
                         border: OutlineInputBorder(
@@ -104,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                       Text(
                         "Forget Password?",
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: SizeConfig.screenWidth/40,
                           fontWeight: FontWeight.w200,
                           color: Color(0xFF0C356A),
                         ),
@@ -119,7 +127,7 @@ class LoginScreen extends StatelessWidget {
             margin: EdgeInsets.only(top: 39, left: 20, right: 20),
             child: SizedBox(
               width: double.infinity,
-              height: 60,
+              height: SizeConfig.screenHeight/20,
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
@@ -130,7 +138,7 @@ class LoginScreen extends StatelessWidget {
                     "Login",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: SizeConfig.screenHeight/30,
                       color: Colors.white,
                     ),
                   ),
@@ -143,7 +151,7 @@ class LoginScreen extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(top: 20),
-            height: 20,
+            height: SizeConfig.screenHeight/40,
             width: double.infinity,
             child: Row(
               children: [
@@ -159,8 +167,8 @@ class LoginScreen extends StatelessWidget {
                     'OR login with',
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600),
+                        fontSize: SizeConfig.screenHeight/50,
+                        fontWeight: FontWeight.w100),
                   ),
                 ),
                 Expanded(
@@ -173,7 +181,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -185,6 +193,7 @@ class LoginScreen extends StatelessWidget {
                       image: AssetImage("assets/images/Google Logo.png"),
                       width: 65,
                       height: 65,
+
                     ),
                   ),
                 ),
@@ -210,8 +219,8 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   "Don’t have account?",
                   style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
+                    fontSize: SizeConfig.screenHeight/50,
+                    fontWeight: FontWeight.w100,
                   ),
                 ),
                 TextButton(
@@ -221,8 +230,8 @@ class LoginScreen extends StatelessWidget {
                     child: Text(
                       "create account",
                       style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
+                        fontSize: SizeConfig.screenHeight/50,
+                        fontWeight: FontWeight.w100,
                         color: Color(0xFF0C356A),
                       ),
                     ))

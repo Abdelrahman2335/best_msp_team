@@ -1,4 +1,9 @@
+import 'package:best_msp_team/Home_Page/HomeScreen.dart';
+import 'package:best_msp_team/Login_Screen.dart';
+import 'package:best_msp_team/info_person_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'Home_Page/Size_Config.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String id = "SignUpScreen";
@@ -14,7 +19,7 @@ class SignUpScreen extends StatelessWidget {
 
             children: [
             Container(
-              margin: EdgeInsets.only(top: 64),
+              margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -22,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                     "SignUp",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: 30,
+                      fontSize: SizeConfig.screenWidth/20,
                     ),
                   ),
                 ],
@@ -37,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    height: 57,
+                    height: SizeConfig.screenHeight/15,
                     child: TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -46,14 +51,14 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         hintText: "Full Name",
                         hintStyle: TextStyle(
-                          fontSize: 12,
+                          fontSize: SizeConfig.screenWidth/30,
                           fontWeight: FontWeight.w400,
                         ),
                         prefixIcon: Container(
                           margin: EdgeInsets.only(top: 8),
                           child: Icon(
                             Icons.person,
-                            size: 20,
+                            size: SizeConfig.screenWidth/30,
                           ),
                         ),
                         border: OutlineInputBorder(
@@ -68,7 +73,7 @@ class SignUpScreen extends StatelessWidget {
                     margin: EdgeInsets.only(top: 8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: 57,
+                      height: SizeConfig.screenHeight/15,
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -77,14 +82,14 @@ class SignUpScreen extends StatelessWidget {
                           ),
                           hintText: "Email",
                           hintStyle: TextStyle(
-                            fontSize: 12,
+                            fontSize: SizeConfig.screenWidth/30,
                             fontWeight: FontWeight.w400,
                           ),
                           prefixIcon: Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Icon(
                               Icons.email_outlined,
-                              size: 20,
+                              size: SizeConfig.screenWidth/30,
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -99,7 +104,7 @@ class SignUpScreen extends StatelessWidget {
                     margin: EdgeInsets.only(top: 8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: 57,
+                      height: SizeConfig.screenHeight/15,
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -108,14 +113,14 @@ class SignUpScreen extends StatelessWidget {
                           ),
                           hintText: "Password",
                           hintStyle: TextStyle(
-                            fontSize: 12,
+                            fontSize: SizeConfig.screenWidth/30,
                             fontWeight: FontWeight.w400,
                           ),
                           prefixIcon: Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Icon(
                               Icons.lock_outline,
-                              size: 20,
+                              size: SizeConfig.screenWidth/30,
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -130,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
                     margin: EdgeInsets.only(top: 8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: 57,
+                      height: SizeConfig.screenHeight/15,
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
@@ -139,14 +144,14 @@ class SignUpScreen extends StatelessWidget {
                           ),
                           hintText: "Confirm Password",
                           hintStyle: TextStyle(
-                            fontSize: 12,
+                            fontSize: SizeConfig.screenWidth/30,
                             fontWeight: FontWeight.w400,
                           ),
                           prefixIcon: Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Icon(
                               Icons.lock_outline,
-                              size: 20,
+                              size: SizeConfig.screenWidth/30,
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -171,7 +176,7 @@ class SignUpScreen extends StatelessWidget {
                         Text(
                           "I agree to the terms and condition",
                           style: TextStyle(
-                            fontSize: 8,
+                            fontSize: SizeConfig.screenWidth/45,
                             fontWeight: FontWeight.w200,
                             color: Colors.black,
                           ),
@@ -188,14 +193,16 @@ class SignUpScreen extends StatelessWidget {
               margin: EdgeInsets.only(top: 22, left: 20, right: 20),
               child: SizedBox(
                 width: double.infinity,
-                height: 55,
+                height: SizeConfig.screenHeight/20,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(info_person_screen.id);
+                    },
                     child: Text(
                       "SignUp",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: SizeConfig.screenHeight/40,
                         color: Colors.white,
                       ),
                     ),
@@ -209,7 +216,7 @@ class SignUpScreen extends StatelessWidget {
 
             Container(
               margin: EdgeInsets.only(top: 18),
-              height: 20,
+              height: SizeConfig.screenHeight/40,
               width: double.infinity,
               child: Row(
                 children: [
@@ -225,7 +232,7 @@ class SignUpScreen extends StatelessWidget {
                       'OR SignUp with',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 12,
+                          fontSize: SizeConfig.screenHeight/50,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -280,16 +287,18 @@ class SignUpScreen extends StatelessWidget {
                   Text(
                     "Already have an account?",
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: SizeConfig.screenHeight/50,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(LoginScreen.id);
+                      },
                       child: Text(
                         "Sign in",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: SizeConfig.screenHeight/50,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF0C356A),
                         ),

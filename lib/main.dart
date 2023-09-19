@@ -10,9 +10,14 @@ import 'Login_Screen.dart';
 import 'SettingScreen.dart';
 import 'Sign_Up.dart';
 import 'info_person_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),);
 }
 
 
@@ -30,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-
+      builder: DevicePreview.appBuilder,
 
       initialRoute: First_Screen.id,
       routes: {

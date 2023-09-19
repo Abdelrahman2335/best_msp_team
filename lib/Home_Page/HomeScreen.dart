@@ -1,5 +1,6 @@
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
+import 'package:best_msp_team/SettingScreen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,20 +13,20 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"Image 1": "assets/images/Google Logo.png"},
-    {"Image 2": "assets/images/iti logo.png"},
+    {"Image 1": "assets/images/Frame 230.png"},
+    {"Image 2": "assets/images/Frame 229.png"},
   ];
 
   List platforms = [
-    {"PlatForm 1":"assets/images/coursera.png"},
-    {"PlatForm 2":"assets/images/udemy.png"},
-    {"PlatForm 3":"assets/images/xamarin.png"},
-    {"PlatForm 4":"assets/images/udemy.png"},
+    {"PlatForm 1":"assets/platforms/Rectangle 640.png"},
+    {"PlatForm 2":"assets/platforms/Rectangle 665.png"},
+    {"PlatForm 3":"assets/platforms/Rectangle 664.png"},
+    {"PlatForm 4":"assets/platforms/udemy.png"},
   ];
   List SA = [
-    {"SA 1":"assets/images/MSP.png"},
-    {"SA 2":"assets/images/Enactus.png"},
-    {"SA 3":"assets/images/ThreeDos.png"},
+    {"SA 1":"assets/SA/Rectangle 640.png"},
+    {"SA 2":"assets/SA/Rectangle 665.png"},
+    {"SA 3":"assets/SA/Rectangle 664.png"},
   ];
   int SelectedIcon = 0;
 
@@ -34,14 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 100.0,
+          toolbarHeight: SizeConfig.screenHeight/10,
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.arrow_back,size: SizeConfig.screenWidth/20,)),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text("Explore",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: SizeConfig.screenWidth/20,
                       fontFamily: "Poppins")),
             ],
           ),
@@ -50,11 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 style:
                     TextStyle(
                         color: Color(0xFF0C356A),
-                        fontFamily: "Poppins")
+                        fontFamily: "Poppins",
+                        fontSize: SizeConfig.screenWidth/40,
+                    ),
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings_outlined),
+              onPressed: () {
+                Navigator.of(context).pushNamed(SettingScreen.id);
+              },
+              icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/40,),
               color: Color(0xFF0C356A),
             ),
           ],
@@ -64,23 +72,23 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  padding: const EdgeInsets.only(left: 0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.grey.withOpacity(0.2),
                   ),
                   child: TextFormField(
+                    style: TextStyle(fontSize: SizeConfig.screenWidth/40,),
                     onTap: () {},
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search",
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: Icon(Icons.search,size: SizeConfig.screenWidth/40,),
                       // focusedBorder: OutlineInputBorder(
                       //     borderSide: BorderSide(color: Colors.blue))),
                     ),
                   ),
                 ),
-
               Padding(
                 padding: const EdgeInsets.only(
                   top: 10.0,

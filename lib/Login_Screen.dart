@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Sign_Up.dart';
 import 'package:best_msp_team/info_person_screen.dart';
 import 'package:flutter/material.dart';
@@ -125,9 +126,7 @@ class LoginScreen extends StatelessWidget {
               height: 60,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                      return info_person_screen();
-                    }));
+                    Navigator.of(context).pushNamed(HomeScreen.id);
                   },
                   child: Text(
                     "Login",
@@ -138,7 +137,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF0C356A),
+                    backgroundColor: Color(0xFF0C356A),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                   )),

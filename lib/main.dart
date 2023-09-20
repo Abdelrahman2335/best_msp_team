@@ -1,4 +1,3 @@
-import 'package:best_msp_team/Auth.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/FirstScreen.dart';
@@ -6,24 +5,31 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
+import 'Auth.dart';
 import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
 import 'SettingScreen.dart';
 import 'Sign_Up.dart';
 import 'forget_password.dart';
 import 'info_person_screen.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async{
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp(),
+    ),);
 }
+
 
 
 
@@ -39,9 +45,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+      builder: DevicePreview.appBuilder,
 
-
-      initialRoute: Auth.id,
+      initialRoute: SignUpScreen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),

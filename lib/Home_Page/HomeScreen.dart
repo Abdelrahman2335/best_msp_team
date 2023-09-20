@@ -1,4 +1,5 @@
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
+import 'package:best_msp_team/SettingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 
@@ -34,14 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 100.0,
+          toolbarHeight: SizeConfig.screenHeight/10,
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.arrow_back,size: SizeConfig.screenWidth/20,)),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text("Explore",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                      fontSize: SizeConfig.screenWidth/20,
                       fontFamily: "Poppins")),
             ],
           ),
@@ -50,11 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 style:
                     TextStyle(
                         color: Color(0xFF0C356A),
-                        fontFamily: "Poppins")
+                        fontFamily: "Poppins",
+                        fontSize: SizeConfig.screenWidth/40,
+                    ),
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings_outlined),
+              onPressed: () {
+                Navigator.of(context).pushNamed(SettingScreen.id);
+              },
+              icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/40,),
               color: Color(0xFF0C356A),
             ),
           ],
@@ -64,23 +72,23 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  padding: const EdgeInsets.only(left: 0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: Colors.grey.withOpacity(0.2),
                   ),
                   child: TextFormField(
+                    style: TextStyle(fontSize: SizeConfig.screenWidth/40,),
                     onTap: () {},
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search",
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: Icon(Icons.search,size: SizeConfig.screenWidth/40,),
                       // focusedBorder: OutlineInputBorder(
                       //     borderSide: BorderSide(color: Colors.blue))),
                     ),
                   ),
                 ),
-
               Padding(
                 padding: const EdgeInsets.only(
                   top: 10.0,

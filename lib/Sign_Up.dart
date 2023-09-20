@@ -1,22 +1,45 @@
-import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Login_Screen.dart';
 import 'package:best_msp_team/info_person_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'Home_Page/Size_Config.dart';
 
-class SignUpScreen extends StatelessWidget {
+
+class SignUpScreen extends StatefulWidget {
   static String id = "SignUpScreen";
 
-  bool isChecked=false;
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final _emailController = TextEditingController();
+
+  final _passwordController = TextEditingController();
+
+  bool isChecked = false;
+
+  Future singin() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email:
+        _emailController.text.trim(), password: _passwordController.text.trim());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    // TODO: implement dispose
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        child: Column(
-
+    return SafeArea(
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          child: Column(
             children: [
             Container(
               margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
@@ -207,7 +230,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF0C356A),
+                      backgroundColor: Color(0xFF0C356A),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     )),
@@ -312,6 +335,7 @@ class SignUpScreen extends StatelessWidget {
       ),
 
 
+    )
     );
   }
 }

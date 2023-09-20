@@ -20,10 +20,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   bool isChecked = false;
 
-  Future singin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(email:
-        _emailController.text.trim(), password: _passwordController.text.trim());
-  }
 
   @override
   void dispose() {
@@ -44,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+               // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "SignUp",

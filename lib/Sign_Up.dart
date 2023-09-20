@@ -14,24 +14,6 @@ class SignUpScreen extends StatefulWidget {
 
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final _emailController = TextEditingController();
-
-  final _passwordController = TextEditingController();
-
-  bool isChecked = false;
-
-  Future singin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(email:
-        _emailController.text.trim(), password: _passwordController.text.trim());
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    // TODO: implement dispose
-    _emailController.dispose();
-    _passwordController.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,10 @@
+import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/Sign_Up.dart';
 import 'package:best_msp_team/info_person_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'forget_password.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,6 +15,88 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 64),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 30,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 47, left: 20, right: 20),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    height: 57,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(14)
+                        ),
+                        labelText: "Email",
+                        hintStyle: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        prefixIcon: Container(
+                          margin: EdgeInsets.only(top: 10),
+                          child: Icon(
+                            Icons.mail_outline,
+                            size: 20,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        fillColor: Color(0xFFe1e1e1),
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 12),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 57,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(14)
+                          ),
+                          labelText: "Password",
+                          hintStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          prefixIcon: Container(
+                            margin: EdgeInsets.only(top: 10),
+                            child: Icon(
+                              Icons.lock_outline,
+                              size: 20,
+                            ),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          fillColor: Color(0xFFe1e1e1),
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                  ),
       appBar: AppBar(
         leading: IconButton(
           onPressed: (){
@@ -130,9 +215,7 @@ class LoginScreen extends StatelessWidget {
               height: SizeConfig.screenHeight/20,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                      return info_person_screen();
-                    }));
+                    Navigator.of(context).pushNamed(HomeScreen.id);
                   },
                   child: Text(
                     "Login",
@@ -143,7 +226,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF0C356A),
+                    backgroundColor: Color(0xFF0C356A),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15)),
                   )),
@@ -240,6 +323,7 @@ class LoginScreen extends StatelessWidget {
           )
         ],
       ),
+    )
     );
   }
 }

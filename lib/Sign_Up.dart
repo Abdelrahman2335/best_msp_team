@@ -1,9 +1,31 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   static String id = "SignUpScreen";
 
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final _emailController = TextEditingController();
+
+  final _passwordController = TextEditingController();
+
   bool isChecked = false;
+
+  Future singin() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email:
+        _emailController.text.trim(), password: _passwordController.text.trim());
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +88,7 @@ class SignUpScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 57,
                         child: TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
@@ -96,6 +119,7 @@ class SignUpScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 57,
                         child: TextField(
+                          controller: _passwordController,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
@@ -266,7 +290,9 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          
+                        },
                         child: Text(
                           "Sign in",
                           style: TextStyle(

@@ -5,6 +5,7 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
+import 'Auth.dart';
 import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
 import 'SettingScreen.dart';
@@ -20,7 +21,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  )
+  );
 
   runApp(
     DevicePreview(
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: Auth.id,
+      initialRoute: SignUpScreen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),

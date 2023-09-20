@@ -1,18 +1,17 @@
-import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Login_Screen.dart';
 import 'package:best_msp_team/info_person_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-class SignUpScreen extends StatefulWidget {
 import 'Home_Page/Size_Config.dart';
 
-class SignUpScreen extends StatelessWidget {
+
+class SignUpScreen extends StatefulWidget {
   static String id = "SignUpScreen";
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
+
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final _emailController = TextEditingController();
@@ -28,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   void dispose() {
+    super.dispose();
     // TODO: implement dispose
     _emailController.dispose();
     _passwordController.dispose();
@@ -230,7 +230,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF0C356A),
+                      backgroundColor: Color(0xFF0C356A),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15)),
                     )),
@@ -335,6 +335,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
 
 
+    )
     );
   }
 }

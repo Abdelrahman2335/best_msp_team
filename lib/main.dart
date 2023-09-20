@@ -5,6 +5,7 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
+import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
 import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: SettingScreen1.id,
+      initialRoute: Auth.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         StartScreen.id:(BuildContext context) => StartScreen(),
         ProfileScreen.id:(BuildContext context) => ProfileScreen(),
         ForgetPassword.id:(BuildContext context) => ForgetPassword(),
+        AdvertisementsScreen.id:(BuildContext context) => AdvertisementsScreen(),
         Auth.id:(BuildContext context) => Auth(),
       },
     );

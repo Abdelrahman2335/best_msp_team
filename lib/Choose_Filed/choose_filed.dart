@@ -30,13 +30,13 @@ class _fildesState extends State<fildes> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             buttons(
-              text: 'Data Scince',
+              text: 'Data Science',
             ),
             buttons(
               text: 'Software Engineering',
             ),
             buttons(
-              text: 'Information Techonlogy',
+              text: 'Information Technology',
             ),
             buttons(
               text: 'Information System',

@@ -1,5 +1,7 @@
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
+import 'package:best_msp_team/CourseContent/CourceContent.dart';
+
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
@@ -49,6 +51,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
       initialRoute: Auth.id,
+
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
@@ -63,6 +66,7 @@ class MyApp extends StatelessWidget {
         ForgetPassword.id:(BuildContext context) => ForgetPassword(),
         AdvertisementsScreen.id:(BuildContext context) => AdvertisementsScreen(),
         Auth.id:(BuildContext context) => Auth(),
+
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
+import 'package:best_msp_team/CourseContent/CourceContent.dart';
 
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
         StartScreen.id:(BuildContext context) => StartScreen(),
         ProfileScreen.id:(BuildContext context) => ProfileScreen(),
         ForgetPassword.id:(BuildContext context) => ForgetPassword(),
-        //CourseContent.id:(BuildContext context) => CourseContent(),
+
       },
     );
   }

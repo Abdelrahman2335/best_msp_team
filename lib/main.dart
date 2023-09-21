@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: Auth.id,
+      initialRoute: HomeScreen.id,
 
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),

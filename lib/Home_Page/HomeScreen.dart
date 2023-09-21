@@ -1,4 +1,5 @@
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
+import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/SettingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
@@ -28,6 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
     {"SA 2":"assets/SA/Rectangle 665.png"},
     {"SA 3":"assets/SA/Rectangle 664.png"},
   ];
+
+
   int SelectedIcon = 0;
 
   @override
@@ -363,11 +366,16 @@ class _HomeScreenState extends State<HomeScreen> {
             NavigationDestination(icon: IconButton(
                 onPressed: (){
               Navigator.of(context).pushNamed(fildes.id);
-            },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
+
+            },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
                 label:'Topics',
             ),
-            NavigationDestination(icon: Icon(Icons.person_outline,color: Colors.white,),
-                label: "Home",
+            NavigationDestination(icon: IconButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed(ProfileScreen.id);
+
+              }, icon: Icon(Icons.person_outline,color: Color(0xFF0C356A),)),
+                label: "Profile",
             ),
           ],
         ),

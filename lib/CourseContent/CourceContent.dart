@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CourseContent extends StatelessWidget {
+
   String imagePath;
   bool flexibleDeadlines;
   String Textunderimage;

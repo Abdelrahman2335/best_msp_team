@@ -15,19 +15,11 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: Icon(Icons.arrow_back, size: SizeConfig.screenWidth / 30,),
-            ),
-          ),
           body: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: SizeConfig.screenHeight / 40),
+                  margin: EdgeInsets.only(top: SizeConfig.verticalBlock*157),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -35,36 +27,38 @@ class LoginScreen extends StatelessWidget {
                         "Login",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: SizeConfig.screenWidth / 20,
+                          fontSize: SizeConfig.textRatio*32,
+                          fontFamily: "Poppins",
                         ),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 47, left: 20, right: 20),
+                  margin: EdgeInsets.only(top: SizeConfig.verticalBlock*12, left: SizeConfig.verticalBlock*35, right: SizeConfig.verticalBlock*35),
                   child: Column(
                     children: [
                       SizedBox(
                         width: double.infinity,
-                        height: SizeConfig.screenHeight / 15,
+                        height: SizeConfig.verticalBlock*57,
                         child: TextField(
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
-                                borderRadius: BorderRadius.circular(14)
+                                borderRadius: BorderRadius.circular(12)
                             ),
                             hintText: "Email",
                             hintStyle: TextStyle(
-                              fontSize: SizeConfig.screenWidth / 30,
-                              fontWeight: FontWeight.w700,
+                              fontSize: SizeConfig.textRatio*12,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Poppins",
                             ),
                             prefixIcon: Container(
-                              margin: EdgeInsets.symmetric(vertical: double
-                                  .minPositive),
+                              margin: EdgeInsets.symmetric(vertical: double.minPositive),
                               child: Icon(
                                 Icons.mail_outline,
-                                size: SizeConfig.screenWidth / 30,
+                                size: SizeConfig.textRatio*12,
+                                color: Color(0xff5A5A5A),
                               ),
                             ),
                             border: OutlineInputBorder(
@@ -76,26 +70,28 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 12),
+                        margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                         child: SizedBox(
                           width: double.infinity,
-                          height: SizeConfig.screenHeight / 15,
+                          height: SizeConfig.verticalBlock*57,
                           child: TextField(
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
-                                  borderRadius: BorderRadius.circular(14)
+                                  borderRadius: BorderRadius.circular(12)
                               ),
                               hintText: "Password",
                               hintStyle: TextStyle(
-                                fontSize: SizeConfig.screenWidth / 30,
-                                fontWeight: FontWeight.w700,
+                                fontSize: SizeConfig.textRatio*12,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: "Poppins",
                               ),
                               prefixIcon: Container(
-                                margin: EdgeInsets.only(top: 10),
+                                margin: EdgeInsets.only(top: double.minPositive),
                                 child: Icon(
                                   Icons.lock_outline,
-                                  size: SizeConfig.screenWidth / 30,
+                                  size: SizeConfig.textRatio*12,
+                                  color: Color(0xff5A5A5A),
                                 ),
                               ),
                               border: OutlineInputBorder(
@@ -109,15 +105,16 @@ class LoginScreen extends StatelessWidget {
 
 
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
                               "Forget Password?",
                               style: TextStyle(
-                                fontSize: SizeConfig.screenWidth / 40,
-                                fontWeight: FontWeight.w200,
+                                fontSize: SizeConfig.textRatio*10,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: "Poppins",
                                 color: Color(0xFF0C356A),
                               ),
                             ),
@@ -128,10 +125,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 39, left: 20, right: 20),
+                  margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8.13, left: SizeConfig.horizontalBlock*35, right: SizeConfig.horizontalBlock*35),
                   child: SizedBox(
                     width: double.infinity,
-                    height: SizeConfig.screenHeight / 20,
+                    height: SizeConfig.verticalBlock*57,
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).pushNamed(HomeScreen.id);
@@ -140,27 +137,28 @@ class LoginScreen extends StatelessWidget {
                           "Login",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: SizeConfig.screenHeight / 30,
+                            fontSize: SizeConfig.textRatio*14.64,
                             color: Colors.white,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xFF0C356A),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(12)),
                         )),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 20),
-                  height: SizeConfig.screenHeight / 40,
-                  width: double.infinity,
+                  margin: EdgeInsets.only(top: SizeConfig.verticalBlock*22),
+                  height: SizeConfig.verticalBlock*18,
+                  width: SizeConfig.horizontalBlock*379.5,
                   child: Row(
                     children: [
                       Expanded(
                           child: Divider(
                             color: Colors.black,
-                            indent: 20,
                           )),
                       // Vertical line 1
                       Padding(
@@ -169,26 +167,25 @@ class LoginScreen extends StatelessWidget {
                           'OR login with',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: SizeConfig.screenHeight / 50,
-                              fontWeight: FontWeight.w100),
+                              fontSize: SizeConfig.textRatio*11.87,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                       Expanded(
                           child: Divider(
                             color: Colors.black,
-                            endIndent: 20,
                           )),
                       // Vertical line 2
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: SizeConfig.screenHeight / 40),
+                  margin: EdgeInsets.only(top: SizeConfig.verticalBlock*18),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 15),
+                        padding:  EdgeInsets.only(right: SizeConfig.horizontalBlock*10),
                         child: InkWell(
                           onTap: () {},
                           child: Image(
@@ -200,7 +197,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 7),
+                        padding:  EdgeInsets.only(left: SizeConfig.horizontalBlock*10),
                         child: InkWell(
                           onTap: () {},
                           child: Image(
@@ -221,8 +218,9 @@ class LoginScreen extends StatelessWidget {
                       Text(
                         "Don’t have account?",
                         style: TextStyle(
-                          fontSize: SizeConfig.screenHeight / 50,
-                          fontWeight: FontWeight.w100,
+                          fontSize: SizeConfig.textRatio*12,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: "Poppins",
                         ),
                       ),
                       TextButton(
@@ -232,8 +230,9 @@ class LoginScreen extends StatelessWidget {
                           child: Text(
                             "create account",
                             style: TextStyle(
-                              fontSize: SizeConfig.screenHeight / 50,
-                              fontWeight: FontWeight.w100,
+                              fontSize: SizeConfig.textRatio*12,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Poppins",
                               color: Color(0xFF0C356A),
                             ),
                           ))

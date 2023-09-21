@@ -51,7 +51,7 @@ class _First_Screen extends State<First_Screen>
                   alignment: _animation.value,
                   child: Container(
                     child: Image(
-                      image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.screenHeight/2,
+                      image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.verticalBlock*173,width: SizeConfig.horizontalBlock*459,
                     ),
                   ),
                 ),
@@ -64,10 +64,10 @@ class _First_Screen extends State<First_Screen>
                         child:  Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
+                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.textRatio*24 ,fontFamily: "Outfit",fontWeight: FontWeight.w400)),
                               IconButton(onPressed: (){
                                 Navigator.of(context).pushNamed(StartScreen.id);
-                              }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: Color(0xFF0C356A)))
+                              }, icon: Icon(Icons.arrow_forward,size: SizeConfig.textRatio*24  ,color: Color(0xFF0C356A)))
                             ],
                                 ),
                       ),

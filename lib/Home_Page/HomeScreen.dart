@@ -1,5 +1,6 @@
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/SettingScreen.dart';
+import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 
@@ -13,8 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"Image 1": "assets/images/Frame 230.png"},
-    {"Image 2": "assets/images/Frame 229.png"},
+    {"Image 1": "assets/images/Google Logo.png"},
+    {"Image 2": "assets/images/main.png"},
   ];
 
   List platforms = [
@@ -44,8 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Text("Explore",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: SizeConfig.screenWidth/20,
+                      fontWeight: FontWeight.w700,
+                      fontSize: SizeConfig.textRatio*32,
                       fontFamily: "Poppins")),
             ],
           ),
@@ -55,14 +56,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextStyle(
                         color: Color(0xFF0C356A),
                         fontFamily: "Poppins",
-                        fontSize: SizeConfig.screenWidth/40,
+                        fontSize: SizeConfig.textRatio*16,
+                      fontWeight: FontWeight.w400,
                     ),
             ),
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(SettingScreen.id);
               },
-              icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/40,),
+              icon: Icon(Icons.settings_outlined,size: SizeConfig.textRatio*16,),
               color: Color(0xFF0C356A),
             ),
           ],
@@ -74,16 +76,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   padding: const EdgeInsets.only(left: 0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                    color: Color(0xffE1E1E1),
                   ),
                   child: TextFormField(
-                    style: TextStyle(fontSize: SizeConfig.screenWidth/40,),
+                    style: TextStyle(fontSize: SizeConfig.textRatio*16,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Poppins",),
                     onTap: () {},
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search",
-                      prefixIcon: Icon(Icons.search,size: SizeConfig.screenWidth/40,),
+                      prefixIcon: Icon(Icons.search,size: SizeConfig.textRatio*16,color: Color(0xff5A5A5A),),
                       // focusedBorder: OutlineInputBorder(
                       //     borderSide: BorderSide(color: Colors.blue))),
                     ),
@@ -102,7 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text("Most popular courses",
                                   style: TextStyle(
                                       color: Colors.black.withOpacity(0.8),
-                                      fontSize: 12,
+                                      fontSize: SizeConfig.textRatio*12,
+                                      fontWeight: FontWeight.w400,
                                       fontFamily: "Poppins")),
 
                             Spacer(),
@@ -112,9 +117,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Text(
                                       "View all",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: SizeConfig.textRatio*12,
                                           fontFamily: "Poppins",
-                                          color: Color(0xFF0C356A)),
+                                          color: Colors.black),
                                     )),
                               ),
                           ],
@@ -124,19 +129,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 200,
+                                  height: SizeConfig.verticalBlock*239,
                                   child: ListView.builder(
                                     itemCount: courses.length,
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (context, index) => InkWell(
                                       onTap: () {},
                                       child: Container(
-                                          // height: SizeConfig.verticalBlock * 239,
-                                          // width: SizeConfig.horizontalBlock * 200,
+                                          height: SizeConfig.verticalBlock * 239,
+                                          width:  200,
                                           decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius:
-                                                  BorderRadius.circular(15),
+                                                  BorderRadius.circular(8),
                                               boxShadow: [
                                                 BoxShadow(
                                                   color: Colors.grey.shade500,
@@ -147,10 +152,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 BoxShadow(
                                                     color: Colors.white,
                                                     offset: Offset(-4.0, -4.0),
-                                                    blurRadius: 15,
+                                                    blurRadius: 8,
                                                     spreadRadius: 1.0)
                                               ]),
-                                          margin: EdgeInsets.all(7),
+                                          margin: EdgeInsets.only(left: SizeConfig.horizontalBlock*7),
                                           child: Image(
                                               image: AssetImage(
                                             courses[index].values.first,
@@ -186,8 +191,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text("Top learning  websites",
                                   style: TextStyle(
                                       color: Colors.black.withOpacity(0.8),
-                                      fontSize: 12,
-                                      fontFamily: "Poppins")),
+                                      fontSize: SizeConfig.textRatio*12,
+                                      fontFamily: "Poppins",
+                                  fontWeight: FontWeight.w400)),
 
                             Spacer(),
                             Align(
@@ -196,9 +202,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Text(
                                       "View all",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: SizeConfig.textRatio*12,
                                           fontFamily: "Poppins",
-                                          color: Color(0xFF0C356A)),
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
                                     )),
                               ),
                           ],
@@ -209,14 +216,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 100,
+                                  height: SizeConfig.verticalBlock*93,
                                   child: ListView.builder(
                                     itemCount: platforms.length,
                                     scrollDirection: Axis.horizontal,
                                     itemBuilder: (context, index) => InkWell(
                                       onTap: () {},
                                       child: Container(
-                                          width: SizeConfig.horizontalBlock * 107,
+                                           width: SizeConfig.horizontalBlock * 107,
                                           height: SizeConfig.verticalBlock * 93,
                                           // decoration: BoxDecoration(
                                           //     color: Colors.white,
@@ -235,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           //           blurRadius: 15,
                                           //           spreadRadius: 1.0)
                                           //     ]),
-                                          margin: EdgeInsets.all(10), // make some space around the image
+                                          margin: EdgeInsets.all(SizeConfig.horizontalBlock*12), // make some space around the image
                                           child: Image(
                                               image: AssetImage(
                                             platforms[index].values.first,
@@ -271,19 +278,23 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text("Top Student Activities",
                                   style: TextStyle(
                                       color: Colors.black.withOpacity(0.8),
-                                      fontSize: 12,
+                                      fontSize: SizeConfig.textRatio*12,
+                                      fontWeight: FontWeight.w400,
                                       fontFamily: "Poppins")),
 
                             Spacer(),
                             Align(
                                 child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed(studentActivites.id);
+                                    },
                                     child: Text(
                                       "View all",
                                       style: TextStyle(
-                                          fontSize: 12,
+                                          fontSize: SizeConfig.textRatio*12,
                                           fontFamily: "Poppins",
-                                          color: Color(0xFF0C356A)),
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black),
                                     )),
                               ),
                           ],
@@ -294,7 +305,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Column(
                               children: [
                                 SizedBox(
-                                  height: 100,
+                                  height: SizeConfig.verticalBlock*123,
                                   child: ListView.builder(
                                     itemCount: SA.length,
                                     scrollDirection: Axis.horizontal,
@@ -350,7 +361,7 @@ class _HomeScreenState extends State<HomeScreen> {
           animationDuration: Duration(seconds: 1),
           indicatorColor: Color(0xFF0C356A),
           onDestinationSelected: (index) => setState(() => SelectedIcon = index),
-          height: 60,
+          height: 82,
           destinations: [
             NavigationDestination(
                 icon:

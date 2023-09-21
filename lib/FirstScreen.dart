@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/Login_Screen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class _First_Screen extends State<First_Screen>
                   alignment: _animation.value,
                   child: Container(
                     child: Image(
-                      image: AssetImage("assets/images/Untitled design.png"),
+                      image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.screenHeight/2,
                     ),
                   ),
                 ),
@@ -58,27 +59,19 @@ class _First_Screen extends State<First_Screen>
                     alignment: Alignment.bottomRight,
                     child: InkWell(
                       onTap: (){
-                        Navigator.of(context).pushNamed(LoginScreen.id);
+                        Navigator.of(context).pushNamed(StartScreen.id);
                       },
-                      child: Card(
                         child:  Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-
-                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: 20 )),
-
-                              // SizedBox(width: 5,)
+                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
                               IconButton(onPressed: (){
                                 Navigator.of(context).pushNamed(StartScreen.id);
-                              }, icon: Icon(Icons.arrow_right_alt_rounded,size: 28,color: Color(0xFF0C356A)))
-
-
+                              }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: Color(0xFF0C356A)))
                             ],
                                 ),
-                        ),
                       ),
-
-                        )
-
+                        ),
               ],
             );
           },

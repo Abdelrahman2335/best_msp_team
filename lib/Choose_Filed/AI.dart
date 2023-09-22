@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 
 import '../Home_Page/HomeScreen.dart';
@@ -27,8 +28,8 @@ class _AIState extends State<AI> {
             Column(
               children:[
                 Container(
-                  width: double.infinity,
-                  height: 200,
+                  width: SizeConfig.horizontalBlock * 263,
+                  height: SizeConfig.verticalBlock * 200,
                   child: Image(image: AssetImage("assets/images/AIMain.png"),),
                 ),
                 ListTile(
@@ -45,8 +46,8 @@ class _AIState extends State<AI> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      height: 250,
-                      width: 175,
+                      height: SizeConfig.verticalBlock * 200,
+                      width: SizeConfig.horizontalBlock * 263,
                       padding: EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -62,8 +63,8 @@ class _AIState extends State<AI> {
                         ],),
                     ),
                     Container(
-                      height: 250,
-                      width: 175,
+                      width: SizeConfig.horizontalBlock * 263,
+                      height: SizeConfig.verticalBlock * 200,
                       padding: EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -85,8 +86,8 @@ class _AIState extends State<AI> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
-                      height: 250,
-                      width: 175,
+                      width: SizeConfig.horizontalBlock * 263,
+                      height: SizeConfig.verticalBlock * 200,
                       padding: EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -102,8 +103,8 @@ class _AIState extends State<AI> {
                         ],),
                     ),
                     Container(
-                      height: 250,
-                      width: 175,
+                      width: SizeConfig.horizontalBlock * 263,
+                      height: SizeConfig.verticalBlock * 200,
                       padding: EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
@@ -180,8 +181,8 @@ class courses extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 250,
-        width: 175,
+        width: SizeConfig.horizontalBlock * 263,
+        height: SizeConfig.verticalBlock * 200,
         padding: EdgeInsets.only(left: 7,right: 7),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),

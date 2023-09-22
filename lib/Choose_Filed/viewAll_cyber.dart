@@ -5,6 +5,7 @@ import 'choose_filed.dart';
 
 class viewAll_cyber extends StatefulWidget {
   const viewAll_cyber({super.key});
+  static String id = "viewAll_cyber";
 
   @override
   State<viewAll_cyber> createState() => _viewAll_cyberState();

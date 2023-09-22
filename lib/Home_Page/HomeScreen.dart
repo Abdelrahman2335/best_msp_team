@@ -4,6 +4,8 @@ import 'package:best_msp_team/SettingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 
+import 'All_Courses.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   static String id = "HomeScreen";
@@ -14,20 +16,29 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"Image 1": "assets/images/Frame 230.png"},
-    {"Image 2": "assets/images/Frame 229.png"},
+    {"courses 1":"assets/images/PYTHON.jpg"},
+    {"courses 2":"assets/images/C.jpg"},
+    {"courses 3":"assets/images/C++.png"},
+    {"courses 4":"assets/images/Js.jpg"},
+    {"courses 5":"assets/images/HTML.jpg"},
+    {"courses 6":"assets/images/cs502.png"},
   ];
 
   List platforms = [
-    {"PlatForm 1":"assets/platforms/Rectangle 640.png"},
-    {"PlatForm 2":"assets/platforms/Rectangle 665.png"},
-    {"PlatForm 3":"assets/platforms/Rectangle 664.png"},
-    {"PlatForm 4":"assets/platforms/udemy.png"},
+    {"PlatForm 1":"assets/platforms/Google.jpg"},
+    {"PlatForm 2":"assets/platforms/Edx.png"},
+    {"PlatForm 3":"assets/platforms/Udacity.png"},
+    {"PlatForm 4":"assets/platforms/SCCI.png"},
+    {"PlatForm 5":"assets/platforms/udemy.png"},
+    {"PlatForm 6":"assets/platforms/coursera.jpg"},
+    {"PlatForm 7":"assets/platforms/udemy.png"},
   ];
   List SA = [
     {"SA 1":"assets/SA/Rectangle 640.png"},
     {"SA 2":"assets/SA/Rectangle 665.png"},
     {"SA 3":"assets/SA/Rectangle 664.png"},
+    {"SA 4":"assets/SA/images (1).jpeg"},
+    {"SA 5":"assets/SA/380693087_256047330757734_4639446806930547013_n.jpg"},
   ];
 
 
@@ -112,7 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               Spacer(),
                               Align(
                                   child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.of(context).pushNamed(ALL_Courses.id);
+                                      },
                                       child: Text(
                                         "View all",
                                         style: TextStyle(
@@ -135,8 +148,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {},
                                         child: Container(
-                                            // height: SizeConfig.verticalBlock * 239,
-                                            // width: SizeConfig.horizontalBlock * 200,
+                                            height: SizeConfig.verticalBlock * 239,
+                                            width: SizeConfig.horizontalBlock * 200,
                                             decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius:

@@ -166,7 +166,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: SizeConfig.screenHeight / 20,
                     child: ElevatedButton(
-                        onPressed: login,
+                        onPressed: ()
+                        {
+                          Navigator.of(context).pushNamed(HomeScreen.id);
+                        },
+
 
                         child: Text(
                           "Login",

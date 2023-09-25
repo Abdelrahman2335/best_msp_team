@@ -2,14 +2,45 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/Sign_Up.dart';
 import 'package:best_msp_team/info_person_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'forget_password.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+   LoginScreen({super.key});
+   static String id = "LoginScreen";
 
-  static String id = "LoginScreen";
+
+   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+
+
+
+
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  final _emailController = TextEditingController();
+
+  final _passwordController = TextEditingController();
+
+  Future login() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim()
+    );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +73,7 @@ class LoginScreen extends StatelessWidget {
                         width: double.infinity,
                         height: SizeConfig.verticalBlock*57,
                         child: TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
@@ -75,6 +107,7 @@ class LoginScreen extends StatelessWidget {
                           width: double.infinity,
                           height: SizeConfig.verticalBlock*57,
                           child: TextField(
+                            controller: _passwordController,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
@@ -130,9 +163,12 @@ class LoginScreen extends StatelessWidget {
                     width: double.infinity,
                     height: SizeConfig.verticalBlock*57,
                     child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: ()
+                        {
                           Navigator.of(context).pushNamed(HomeScreen.id);
                         },
+
+
                         child: Text(
                           "Login",
                           textAlign: TextAlign.center,

@@ -14,24 +14,28 @@ class SignUpScreen extends StatefulWidget {
 
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final _emailController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
-  final _passwordController = TextEditingController();
+  String _email = "";
+  String _password = "";
 
-  bool isChecked = false;
 
-  Future singin() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(email:
-        _emailController.text.trim(), password: _passwordController.text.trim());
+  Future<void> _handleSignUp() async{
+    try {
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+              email: _email,
+              password: _password,);
+      print("User Registered: ${userCredential.user!.email})");
+    }
+    catch (x){
+      print("Error During Registration: $x");
+    }
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    // TODO: implement dispose
-    _emailController.dispose();
-    _passwordController.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,8 +103,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                     child: SizedBox(
                       width: double.infinity,
+
                       height: SizeConfig.verticalBlock*57,
-                      child: TextField(
+                      child: TextFormField(
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
@@ -125,6 +133,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fillColor: Color(0xFFe1e1e1),
                           filled: true,
                         ),
+                        validator: (value){
+                          if(value == null || value.isEmpty){
+                            return "Please Enter your Email";
+                          }
+                          return null;
+                        },
+                        onChanged: (value){
+                          setState(() {
+                            _email = value;
+                          });
+                        },
                       ),
                     ),
                   ),
@@ -133,7 +152,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: SizedBox(
                       width: double.infinity,
                       height: SizeConfig.verticalBlock*57,
-                      child: TextField(
+                      child: TextFormField(
+                        controller: _passwordController,
+                        obscureText: true,
+
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
@@ -158,6 +180,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fillColor: Color(0xFFe1e1e1),
                           filled: true,
                         ),
+                        validator: (value){
+                          if(value == null || value.isEmpty){
+                            return "Please Enter your Password";
+                          }
+                          return null;
+                        },
+                        onChanged: (value){
+                          setState(() {
+                            _password = value;
+                          });
+                        },
                       ),
                     ),
                   ),
@@ -232,6 +265,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: SizeConfig.verticalBlock*57,
                 child: ElevatedButton(
                     onPressed: () {
+                      if(_formKey.currentState!.validate()){
+                        _handleSignUp();
+                      }
                       Navigator.of(context).pushNamed(info_person_screen.id);
                     },
                     child: Text(

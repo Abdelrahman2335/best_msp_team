@@ -8,9 +8,19 @@ import 'cyber_security.dart';
 import 'mobileApp.dart';
 import 'constants.dart';
 import 'viewCourses.dart';
-class fildes extends StatelessWidget {
-  fildes({super.key});
+
+class fildes extends StatefulWidget {
+  const fildes({super.key});
   static String id='fildes';
+
+  @override
+  State<fildes> createState() => _fildesState();
+}
+
+class _fildesState extends State<fildes> {
+
+  int SelectedIcon = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,62 +31,106 @@ class fildes extends StatelessWidget {
             icon: Icon(Icons.arrow_back)),
       ),
       body: Center(
-        child: ListView.builder(itemBuilder: (context,index){
-          return buttons(
-            text: coursesData[index].title,
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>viewCourses(coursee: coursesData[index])));
-            },
-          );},itemCount: coursesData.length,
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Color(0xffF5F5F5),
-        padding: EdgeInsets.only(right: 50,left: 50),
-
-        child:  Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//         child: ListView.builder(itemBuilder: (context,index){
+//           return buttons(
+//             text: coursesData[index].title,
+//             onTap: (){
+//               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>viewCourses(coursee: coursesData[index])));
+//             },
+//           );},itemCount: coursesData.length, // what is the reson of this pease of code ?
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(onPressed: (){
-                  Navigator.of(context).pushNamed(HomeScreen.id);
-                }, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
-                Text('Home',style: TextStyle(color: Color(0xff0C356A)),),
-              ],
+            buttons(
+              text: 'Data Science',
             ),
-            Container(
-              width: 75,
-              height: 75,
-              padding: EdgeInsets.only(bottom: 7),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xff0C356A),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: (){
-                    Navigator.of(context).pushNamed(fildes.id);
-                  },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
-                  Text('Topics',style: TextStyle(color: Colors.white),)
-                ],
-              ),
+            buttons(
+              text: 'Software Engineering',
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(onPressed: (){
-                  Navigator.of(context).pushNamed(ProfileScreen.id);
-                }, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
-                Text('Profile',style: TextStyle(color: Color(0xff0C356A)),),
-              ],
+            buttons(
+              text: 'Information Technology',
+            ),
+            buttons(
+              text: 'Information System',
+            ),
+            buttons(
+              text: 'Artificial Intelligence',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return AI();
+                }));
+              },
+            ),
+            buttons(
+              text: 'Machine Learning',
+            ),
+            buttons(
+              text: 'Cyber Security',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return cyberSecurity();
+                }));
+              },
+            ),
+            buttons(
+              text: 'Cloud Computing',
+            ),
+            buttons(
+              text: 'Mobile App',
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  return mobileApp();
+                }));
+              },
+            ),
+            const SizedBox(
+              height: 20,
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Color(0xFFF5F5F5),
+        selectedIndex: SelectedIcon,
+        animationDuration: Duration(seconds: 1),
+        indicatorColor: Color(0xFF0C356A),
+        onDestinationSelected: (index) => setState(() => SelectedIcon = index),
+        height: 60,
+        destinations: [
+          NavigationDestination(icon: IconButton(
+            onPressed: (){
+              Navigator.of(context).pushNamed(HomeScreen.id);
+
+            },
+            icon:
+            Icon(
+              Icons.home_outlined,
+              color: Color(0xFF0C356A),
+            )),
+            label: "Home",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.topic_outlined,
+              color:
+              Colors.white,
+              size: 30,
+            ),
+            label:'Topics',
+
+          ),
+          NavigationDestination(icon: IconButton(
+            onPressed: (){
+              Navigator.of(context).pushNamed(ProfileScreen.id);
+
+            },
+
+            icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
+            )
+          ),
+            label: "Profile",
+          ),
+        ],
       ),
     );
   }

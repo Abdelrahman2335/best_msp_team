@@ -1,4 +1,5 @@
 // import 'package:conference_project/aboutScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -35,20 +36,26 @@ class SettingScreen extends StatelessWidget {
           ),
         SizedBox(height: 30,),
 
-        Container(margin: EdgeInsetsDirectional.only(start: 35 ,end:35 ),
-          width:350 ,
-          height:57 ,
-          padding: EdgeInsetsDirectional.only(start: 100,top: 14,),
-          child: Text("Logout", style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontFamily: 'Poppins',
-            fontWeight: FontWeight.w600,
+        InkWell(
+          onTap: (){
+            FirebaseAuth.instance.signOut();
+          },
+          child: Container(
+            margin: EdgeInsetsDirectional.only(start: 35 ,end:35 ),
+            width:350 ,
+            height:57 ,
+            padding: EdgeInsetsDirectional.only(start: 100,top: 14,),
+            child: Text("Logout", style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
 
-          ),),
-          decoration: BoxDecoration(
-            color: Color(0xFF0C356A),
-            borderRadius: BorderRadius.circular(12),
+            ),),
+            decoration: BoxDecoration(
+              color: Color(0xFF0C356A),
+              borderRadius: BorderRadius.circular(12),
+            ),
           ),
         ),
           SizedBox(height:40 ,),

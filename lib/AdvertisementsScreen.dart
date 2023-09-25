@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AdvertisementsScreen extends StatelessWidget {
   const AdvertisementsScreen({super.key});
+  static String id = "AdvertisementsScreen";
 
   @override
   Widget build(BuildContext context) {

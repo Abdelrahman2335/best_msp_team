@@ -4,9 +4,18 @@ import '../Home_Page/HomeScreen.dart';
 import 'choose_filed.dart';
 import 'viewAll_mobile.dart';
 
-class mobileApp extends StatelessWidget {
+class mobileApp extends StatefulWidget {
   const mobileApp({super.key});
   static String id='mobileApp';
+
+  @override
+  State<mobileApp> createState() => _mobileAppState();
+}
+
+class _mobileAppState extends State<mobileApp> {
+
+  int SelectedIcon = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,52 +124,48 @@ class mobileApp extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Color(0xffF5F5F5),
-        padding: EdgeInsets.only(right: 50,left: 50),
-        child:  Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(onPressed: (){
-                  Navigator.of(context).pushNamed(HomeScreen.id);
-                }, icon: Icon(Icons.home_outlined,color: Color(0xff0C356A),size: 30,)),
-                Text('Home',style: TextStyle(color: Color(0xff0C356A)),),
-              ],
+      bottomNavigationBar: NavigationBar(
+        backgroundColor: Color(0xFFF5F5F5),
+        selectedIndex: SelectedIcon,
+        animationDuration: Duration(seconds: 1),
+        indicatorColor: Color(0xFF0C356A),
+        onDestinationSelected: (index) => setState(() => SelectedIcon = index),
+        height: 60,
+        destinations: [
+          NavigationDestination(icon: IconButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed(HomeScreen.id);
+
+              },
+              icon:
+              Icon(
+                Icons.home_outlined,
+                color: Color(0xFF0C356A),
+              )),
+            label: "Home",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.topic_outlined,
+              color:
+              Colors.white,
+              size: 30,
             ),
-            Container(
-              width: 75,
-              height: 75,
-              padding: EdgeInsets.only(bottom: 7),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xff0C356A),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: (){
-                      Navigator.of(context).pushNamed(fildes.id);
-                  },icon: Icon(Icons.topic_outlined,color: Colors.white,size: 30,)),
-                  Text('Topics',style: TextStyle(color: Colors.white),)
-                ],
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(onPressed: (){
-                  Navigator.of(context).pushNamed(ProfileScreen.id);
-                }, icon: Icon(Icons.person_2_outlined,color: Color(0xff0C356A),size: 30,),),
-                Text('Profile',style: TextStyle(color: Color(0xff0C356A)),),
-              ],
-            ),
-          ],
-        ),
+            label:'Topics',
+
+          ),
+          NavigationDestination(icon: IconButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed(ProfileScreen.id);
+
+              },
+
+              icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
+              )
+          ),
+            label: "Profile",
+          ),
+        ],
       ),
     );
   }

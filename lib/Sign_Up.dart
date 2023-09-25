@@ -46,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             children: [
             Container(
-              margin: EdgeInsets.only(top: SizeConfig.screenHeight/40),
+              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*165),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -54,7 +54,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     "SignUp",
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      fontSize: SizeConfig.screenWidth/20,
+                      fontSize: SizeConfig.textRatio*32,
+                      fontFamily: "Poppins",
                     ),
                   ),
                 ],
@@ -64,28 +65,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
             Container(
-              margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*12, left: SizeConfig.horizontalBlock*33, right: SizeConfig.horizontalBlock*33),
               child: Column(
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    height: SizeConfig.screenHeight/15,
+                    height: SizeConfig.verticalBlock*57,
                     child: TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(14)
+                            borderRadius: BorderRadius.circular(12)
                         ),
                         hintText: "Full Name",
                         hintStyle: TextStyle(
-                          fontSize: SizeConfig.screenWidth/30,
+                          fontSize: SizeConfig.textRatio*12,
                           fontWeight: FontWeight.w400,
+                          fontFamily: "Poppins",
                         ),
                         prefixIcon: Container(
                           margin: EdgeInsets.only(top: 8),
                           child: Icon(
-                            Icons.person,
-                            size: SizeConfig.screenWidth/30,
+                            Icons.person_2_outlined,
+                            size: SizeConfig.textRatio*12,
+                            color: Color(0xff5A5A5A),
                           ),
                         ),
                         border: OutlineInputBorder(
@@ -97,13 +100,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 8),
+                    margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: SizeConfig.screenHeight/15,
+
+                      height: SizeConfig.verticalBlock*57,
                       child: TextFormField(
                         controller: _emailController,
                         keyboardType: TextInputType.emailAddress,
+
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
@@ -111,14 +116,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           hintText: "Email",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.screenWidth/30,
+                            fontSize: SizeConfig.textRatio*12,
                             fontWeight: FontWeight.w400,
+                            fontFamily: "Poppins",
                           ),
                           prefixIcon: Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8),
                             child: Icon(
                               Icons.email_outlined,
-                              size: SizeConfig.screenWidth/30,
+                              size: SizeConfig.textRatio*12,
+                              color: Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -141,28 +148,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 8),
+                    margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: SizeConfig.screenHeight/15,
+                      height: SizeConfig.verticalBlock*57,
                       child: TextFormField(
                         controller: _passwordController,
                         obscureText: true,
+
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
-                              borderRadius: BorderRadius.circular(14)
+                              borderRadius: BorderRadius.circular(12)
                           ),
                           hintText: "Password",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.screenWidth/30,
+                            fontSize: SizeConfig.textRatio*12,
+                            fontFamily: "Poppins",
                             fontWeight: FontWeight.w400,
                           ),
                           prefixIcon: Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(top: 8),
                             child: Icon(
                               Icons.lock_outline,
-                              size: SizeConfig.screenWidth/30,
+                              size: SizeConfig.textRatio*12,
+                              color: Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -185,26 +195,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 8),
+                    margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                     child: SizedBox(
                       width: double.infinity,
-                      height: SizeConfig.screenHeight/15,
+                      height: SizeConfig.verticalBlock*57,
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(14)
+                            borderRadius: BorderRadius.circular(12)
                           ),
                           hintText: "Confirm Password",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.screenWidth/30,
+                            fontSize: SizeConfig.textRatio*12,
                             fontWeight: FontWeight.w400,
+                            fontFamily: "Poppins"
                           ),
                           prefixIcon: Container(
                             margin: EdgeInsets.only(top: 10),
                             child: Icon(
                               Icons.lock_outline,
-                              size: SizeConfig.screenWidth/30,
+                              size: SizeConfig.textRatio*12,
+                              color: Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
@@ -225,13 +237,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-
+                        Icon(Icons.check_box_outline_blank,size: SizeConfig.textRatio*8,color: Colors.black,),
+                        SizedBox(
+                          width: SizeConfig.horizontalBlock*6,
+                        ),
                         Text(
                           "I agree to the terms and condition",
                           style: TextStyle(
-                            fontSize: SizeConfig.screenWidth/45,
-                            fontWeight: FontWeight.w200,
+                            fontSize: SizeConfig.textRatio*8,
+                            fontWeight: FontWeight.w400,
                             color: Colors.black,
+                            fontFamily: "Poppins",
                           ),
                         ),
                       ],
@@ -243,10 +259,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
             Container(
-              margin: EdgeInsets.only(top: 22, left: 20, right: 20),
+              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8.13, left: SizeConfig.horizontalBlock*33, right: SizeConfig.horizontalBlock*33),
               child: SizedBox(
                 width: double.infinity,
-                height: SizeConfig.screenHeight/20,
+                height: SizeConfig.verticalBlock*57,
                 child: ElevatedButton(
                     onPressed: () {
                       if(_formKey.currentState!.validate()){
@@ -258,28 +274,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       "SignUp",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: SizeConfig.screenHeight/40,
+                        fontSize: SizeConfig.textRatio*14.64,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "Poppins",
                         color: Colors.white,
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF0C356A),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                          borderRadius: BorderRadius.circular(12)),
                     )),
               ),
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 18),
-              height: SizeConfig.screenHeight/40,
+              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*18,left: SizeConfig.horizontalBlock*18,right: SizeConfig.horizontalBlock*18),
+              height: SizeConfig.verticalBlock*18,
               width: double.infinity,
               child: Row(
                 children: [
                   Expanded(
                       child: Divider(
                         color: Colors.black,
-                        indent: 20,
                       )),
                   // Vertical line 1
                   Padding(
@@ -288,14 +305,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       'OR SignUp with',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: SizeConfig.screenHeight/50,
-                          fontWeight: FontWeight.w600),
+                          fontSize: SizeConfig.textRatio*11.87,
+                          fontWeight: FontWeight.w600,
+                        fontFamily: "Poppins",
+                      ),
                     ),
                   ),
                   Expanded(
                       child: Divider(
                         color: Colors.black,
-                        endIndent: 20,
                       )),
                   // Vertical line 2
                 ],
@@ -305,7 +323,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*18),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -343,8 +361,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Text(
                     "Already have an account?",
                     style: TextStyle(
-                      fontSize: SizeConfig.screenHeight/50,
-                      fontWeight: FontWeight.w600,
+                      fontSize: SizeConfig.textRatio*12,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "Poppins",
                     ),
                   ),
                   TextButton(
@@ -354,9 +373,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: Text(
                         "Sign in",
                         style: TextStyle(
-                          fontSize: SizeConfig.screenHeight/50,
-                          fontWeight: FontWeight.w600,
+                          fontSize: SizeConfig.textRatio*12,
+                          fontWeight: FontWeight.w400,
                           color: Color(0xFF0C356A),
+                          fontFamily: "Poppins",
                         ),
                       ))
                 ],

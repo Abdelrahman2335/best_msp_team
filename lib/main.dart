@@ -7,6 +7,7 @@ import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
+import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
@@ -25,6 +26,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -54,9 +56,9 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
       initialRoute: ALL_Courses.id,
-
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
+        studentActivites.id:(BuildContext context)=> studentActivites(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
         fildes.id: (BuildContext context) => fildes(),
         cyberSecurity.id: (BuildContext context) => cyberSecurity(),

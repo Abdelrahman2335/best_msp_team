@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 
 class studentActivites extends StatelessWidget {
-  const studentActivites({super.key});
+
+   studentActivites({super.key});
+  static String id="studentActivites";
 
   @override
   Widget build(BuildContext context) {

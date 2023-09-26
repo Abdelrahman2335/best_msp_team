@@ -30,7 +30,7 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+// runApp(MyApp());
   runApp(
     DevicePreview(
       enabled: true,
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: ALL_Courses.id,
+      initialRoute: First_Screen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         studentActivites.id:(BuildContext context)=> studentActivites(),

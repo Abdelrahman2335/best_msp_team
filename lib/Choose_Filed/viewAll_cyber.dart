@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:flutter/material.dart';
 import '../Home_Page/HomeScreen.dart';
 import '../ProfileScreen/ProfileScreen.dart';
@@ -19,7 +20,7 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('courses on cyber security',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        title: Text('courses on cyber security',style: TextStyle(fontSize: SizeConfig.textRatio*20,fontWeight: FontWeight.w400,fontFamily: "Inter"),),
       ),
       body:  ListView(
         controller: ScrollController(),
@@ -30,9 +31,9 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -41,15 +42,15 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/cwap.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                        Text('OWASP top10(Web) 2021',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/cwap.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/iti logo.png"),height: SizeConfig.verticalBlock*16,),
+                        Text('OWASP top10(Web) 2021',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
                       ],),
                   ),
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -58,49 +59,9 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/ethical hacking.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                        Text('Ethical Hacking',style: TextStyle(fontSize: 15),),
-                      ],),
-                  ),
-                ],
-              ),
-              SizedBox(height: 20,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children:[
-                        Image(image: AssetImage("assets/images/computer network.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/coursera.png"),height: 50,width: 50,),
-                        Text('Computer Network Fundamentals',style: TextStyle(fontSize: 15),),
-                      ],),
-                  ),
-                  Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children:[
-                        Image(image: AssetImage("assets/images/malware analysis.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/coursera.png"),height: 50,width: 50,),
-                        Text('Malware Analysis Fundamentals',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/ethical hacking.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/iti logo.png"),height: SizeConfig.verticalBlock*16),
+                        Text('Ethical Hacking',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
                       ],),
                   ),
                 ],
@@ -110,9 +71,9 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -121,15 +82,15 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/networkSecurity.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                        Text('Introduction to network security',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/computer network.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/coursera.png"),height: SizeConfig.verticalBlock*16,),
+                        Text('Computer Network Fundamentals',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
                       ],),
                   ),
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -138,9 +99,49 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/secureSoftware.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/iti logo.png"),height: 50,width: 50,),
-                        Text('Secure Software Development Lifecycle',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/malware analysis.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/coursera.png"),height: SizeConfig.verticalBlock*16,),
+                        Text('Malware Analysis Fundamentals',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
+                      ],),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:[
+                        Center(child: Image(image: AssetImage("assets/images/networkSecurity.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/iti logo.png"),height: SizeConfig.verticalBlock*16,),
+                        Text('Introduction to network security',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
+                      ],),
+                  ),
+                  Container(
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: SizeConfig.horizontalBlock*7,top: SizeConfig.verticalBlock*7),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:[
+                        Center(child: Image(image: AssetImage("assets/images/secureSoftware.png"),height: SizeConfig.verticalBlock*139,)),
+                        Image(image: AssetImage("assets/images/iti logo.png"),height: SizeConfig.verticalBlock*16,),
+                        Text('Secure Software Development Lifecycle',style: TextStyle(fontSize: SizeConfig.textRatio*15,fontWeight: FontWeight.w400,fontFamily: "Poppins"),),
                       ],),
                   ),
                 ],
@@ -170,11 +171,16 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
             label: "Home",
           ),
           NavigationDestination(
-            icon: Icon(
-              Icons.topic_outlined,
-              color:
-              Colors.white,
-              size: 30,
+            icon: IconButton(
+              onPressed: (){
+                Navigator.of(context).pushNamed(fildes.id);
+              },
+                icon: Icon(
+                  Icons.topic_outlined,
+                  color:
+                  Colors.white,
+                  size: 30,
+                ),
             ),
             label:'Topics',
 

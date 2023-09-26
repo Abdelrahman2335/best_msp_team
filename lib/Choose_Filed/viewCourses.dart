@@ -18,13 +18,16 @@ class viewCourses extends StatelessWidget {
             width: double.infinity,
             child: Stack(
               children: [
-                Image(image: AssetImage(coursee.image!)),
-                Positioned(
-                    child: IconButton(
-                      onPressed: (){
-                        Navigator.of(context).pop();
-                      },icon: Icon(Icons.arrow_back,color: Colors.white,size: SizeConfig.textRatio*24,),
-                    ),)
+                Image(image: AssetImage(coursee.image!),width: double.infinity,),
+                InkWell(
+                  child: Positioned(
+                    left: SizeConfig.horizontalBlock*24.02,
+                      child: Icon(Icons.arrow_back,color: Colors.white,size: SizeConfig.textRatio*24,),
+                  ),
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                )
               ],
             ),
           ),
@@ -38,13 +41,14 @@ class viewCourses extends StatelessWidget {
             },
           ),
           SizedBox(height: SizeConfig.verticalBlock*7,),
-          ListView.builder(itemBuilder: (context,index){
-            return viewcourse(
-                          image1: coursee.subjects[index].image1!,
-                          image2: coursee.subjects[index].image2!,
-                          text: coursee.subjects[index].text!);
-                    },itemCount: coursee.subjects.length,
-          ),
+          // ListView.builder(itemBuilder: (context,index){
+          //   return viewcourse(
+          //                 image1: coursee.subjects[index].image1!,
+          //                 image2: coursee.subjects[index].image2!,
+          //                 text: coursee.subjects[index].text!);
+          //    print(coursee.subjects[index].text);
+          //           },itemCount: coursee.subjects.length,
+          // ),
           // Row(
           //   children: [
           //     ListView.builder(itemBuilder: (context,index){

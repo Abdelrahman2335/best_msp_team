@@ -51,7 +51,7 @@ class _First_Screen extends State<First_Screen>
                   alignment: _animation.value,
                   child: Container(
                     child: Image(
-                      image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.verticalBlock*173,width: SizeConfig.horizontalBlock*459,
+                      image: AssetImage("assets/images/skillUp.png"),height: SizeConfig.verticalBlock*173,width: SizeConfig.horizontalBlock*459,
                     ),
                   ),
                 ),

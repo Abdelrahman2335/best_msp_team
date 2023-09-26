@@ -31,9 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     {"PlatForm 2":"assets/platforms/Edx.png"},
     {"PlatForm 3":"assets/platforms/Udacity.png"},
     {"PlatForm 4":"assets/platforms/SCCI.png"},
-    {"PlatForm 5":"assets/platforms/udemy.png"},
+    {"PlatForm 5":"assets/platforms/Udemy.jpg"},
     {"PlatForm 6":"assets/platforms/coursera.jpg"},
-    {"PlatForm 7":"assets/platforms/udemy.png"},
   ];
   List SA = [
     {"SA 1":"assets/SA/Rectangle 640.png"},
@@ -67,13 +66,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actions: [
             Text("Settings",
-                style:
-                    TextStyle(
-                        color: Color(0xFF0C356A),
-                        fontFamily: "Poppins",
-                        fontSize: SizeConfig.textRatio*16,
-                      fontWeight: FontWeight.w400,
-                    ),
+              style:
+              TextStyle(
+                color: Color(0xFF0C356A),
+                fontFamily: "Poppins",
+                fontSize: SizeConfig.textRatio*16,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             IconButton(
               onPressed: () {
@@ -86,109 +85,111 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          
+
           child: SingleChildScrollView(
             child: Column(
               children: [
-                  Container(
-                    padding: const EdgeInsets.only(left: 0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(18),
-                      color: Colors.grey.withOpacity(0.2),
-                    ),
-                    child: TextFormField(
-                      style: TextStyle(fontSize: SizeConfig.screenWidth/40,),
-                      onTap: () {},
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Search",
-                        prefixIcon: Icon(Icons.search,size: SizeConfig.screenWidth/40,),
-                        // focusedBorder: OutlineInputBorder(
-                        //     borderSide: BorderSide(color: Colors.blue))),
-                      ),
+                Container(
+                  padding: const EdgeInsets.only(left: 0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.grey.withOpacity(0.2),
+                  ),
+                  child: TextFormField(
+                    style: TextStyle(fontSize: SizeConfig.textRatio*16,fontFamily: 'Poppins',fontWeight: FontWeight.w400),
+                    onTap: () {},
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Search",
+                      prefixIcon: Icon(Icons.search,size: SizeConfig.textRatio*18,),
+                      // focusedBorder: OutlineInputBorder(
+                      //     borderSide: BorderSide(color: Colors.blue))),
                     ),
                   ),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(
                     top: 10.0,
                   ),
                   child:
-                    Align(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text("Most popular courses",
+                  Align(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("Most popular courses",
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.8),
+                                    fontSize: SizeConfig.textRatio*12,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Poppins")),
+
+                            Spacer(),
+                            Align(
+                              child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed(ALL_Courses.id);
+                                  },
+                                  child: Text(
+                                    "View all",
                                     style: TextStyle(
-                                        color: Colors.black.withOpacity(0.8),
-                                        fontSize: 12,
-                                        fontFamily: "Poppins")),
-
-                              Spacer(),
-                              Align(
-                                  child: TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pushNamed(ALL_Courses.id);
-                                      },
-                                      child: Text(
-                                        "View all",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "Poppins",
-                                            color: Color(0xFF0C356A)),
-                                      )),
-                                ),
-                            ],
-                          ),
-                          Container(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 200,
-                                    child: ListView.builder(
-                                      itemCount: courses.length,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                            height: SizeConfig.verticalBlock * 239,
-                                            width: SizeConfig.horizontalBlock * 200,
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.grey.shade500,
-                                                    offset: Offset(4.0, 4.0),
-                                                    blurRadius: 3,
-                                                    spreadRadius: 1.0,
-                                                  ),
-                                                  BoxShadow(
-                                                      color: Colors.white,
-                                                      offset: Offset(-4.0, -4.0),
-                                                      blurRadius: 15,
-                                                      spreadRadius: 1.0)
-                                                ]),
-                                            margin: EdgeInsets.all(7),
-                                            child: Image(
-                                                image: AssetImage(
-                                              courses[index].values.first,
-                                            )
-                                            )
-                                        ),
-
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                        fontSize: SizeConfig.textRatio*12,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "Poppins",
+                                        color: Colors.black),
+                                  )),
                             ),
-                          )
-                        ],
-                      ),
+                          ],
+                        ),
+                        Container(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 200,
+                                  child: ListView.builder(
+                                    itemCount: courses.length,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) => InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                          height: SizeConfig.verticalBlock * 239,
+                                          width: SizeConfig.horizontalBlock * 200,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                              BorderRadius.circular(15),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey.shade500,
+                                                  offset: Offset(4.0, 4.0),
+                                                  blurRadius: 3,
+                                                  spreadRadius: 1.0,
+                                                ),
+                                                BoxShadow(
+                                                    color: Colors.white,
+                                                    offset: Offset(-4.0, -4.0),
+                                                    blurRadius: 15,
+                                                    spreadRadius: 1.0)
+                                              ]),
+                                          margin: EdgeInsets.all(7),
+                                          child: Image(
+                                              image: AssetImage(
+                                                courses[index].values.first,
+                                              )
+                                          )
+                                      ),
+
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
                     ),
+                  ),
 
                 ), // Courses
 
@@ -200,80 +201,82 @@ class _HomeScreenState extends State<HomeScreen> {
                     top: 10.0,
                   ),
                   child:
-                    Align(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text("Top learning  websites",
+                  Align(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("Top learning  websites",
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.8),
+                                    fontSize: SizeConfig.textRatio*12,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Poppins")),
+
+                            Spacer(),
+                            Align(
+                              child: TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    "View all",
                                     style: TextStyle(
-                                        color: Colors.black.withOpacity(0.8),
-                                        fontSize: 12,
-                                        fontFamily: "Poppins")),
+                                        fontSize: SizeConfig.textRatio*12,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "Poppins",
+                                        color: Colors.black),
+                                  )),
+                            ),
+                          ],
+                        ),
 
-                              Spacer(),
-                              Align(
-                                  child: TextButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "View all",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "Poppins",
-                                            color: Color(0xFF0C356A)),
-                                      )),
-                                ),
-                            ],
-                          ),
-
-                          Container(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 100,
-                                    child: ListView.builder(
-                                      itemCount: platforms.length,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                            width: SizeConfig.horizontalBlock * 107,
-                                            height: SizeConfig.verticalBlock * 93,
-                                            // decoration: BoxDecoration(
-                                            //     color: Colors.white,
-                                            //     borderRadius:
-                                            //         BorderRadius.circular(10),
-                                            //     boxShadow: [
-                                            //       BoxShadow(
-                                            //         color: Colors.grey.shade500,
-                                            //         offset: Offset(4.0, 4.0),
-                                            //         blurRadius: 3,
-                                            //         spreadRadius: 1.0,
-                                            //       ),
-                                            //       BoxShadow(
-                                            //           color: Colors.white,
-                                            //           offset: Offset(-4.0, -4.0),
-                                            //           blurRadius: 15,
-                                            //           spreadRadius: 1.0)
-                                            //     ]),
-                                            margin: EdgeInsets.all(10), // make some space around the image
-                                            child: Image(
-                                                image: AssetImage(
-                                              platforms[index].values.first,
-                                            )
-                                            )
-                                        ),
+                        Container(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 100,
+                                  child: ListView.builder(
+                                    itemCount: platforms.length,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) => InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                          width: SizeConfig.horizontalBlock * 107,
+                                          height: SizeConfig.verticalBlock * 93,
+                                          // decoration: BoxDecoration(
+                                          //     color: Colors.white,
+                                          //     borderRadius:
+                                          //         BorderRadius.circular(10),
+                                          //     boxShadow: [
+                                          //       BoxShadow(
+                                          //         color: Colors.grey.shade500,
+                                          //         offset: Offset(4.0, 4.0),
+                                          //         blurRadius: 3,
+                                          //         spreadRadius: 1.0,
+                                          //       ),
+                                          //       BoxShadow(
+                                          //           color: Colors.white,
+                                          //           offset: Offset(-4.0, -4.0),
+                                          //           blurRadius: 15,
+                                          //           spreadRadius: 1.0)
+                                          //     ]),
+                                          margin: EdgeInsets.all(10), // make some space around the image
+                                          child: Image(
+                                              image: AssetImage(
+                                                platforms[index].values.first,
+                                              )
+                                          )
                                       ),
                                     ),
-                                  )
-                                ],
-                              ),
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
+                  ),
 
                 ), //platForms
 
@@ -284,80 +287,84 @@ class _HomeScreenState extends State<HomeScreen> {
                     top: 10.0,
                   ),
                   child:
-                    Align(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text("Top Student Activities",
+                  Align(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text("Top Student Activities",
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.8),
+                                    fontSize: SizeConfig.textRatio*12,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Poppins")),
+
+                            Spacer(),
+                            Align(
+                              child: TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushNamed(studentActivites.id);
+                                  },
+                                  child: Text(
+                                    "View all",
                                     style: TextStyle(
-                                        color: Colors.black.withOpacity(0.8),
-                                        fontSize: 12,
-                                        fontFamily: "Poppins")),
+                                        fontSize: SizeConfig.textRatio*12,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "Poppins",
+                                        color: Colors.black),
+                                  )),
+                            ),
+                          ],
+                        ),
 
-                              Spacer(),
-                              Align(
-                                  child: TextButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "View all",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: "Poppins",
-                                            color: Color(0xFF0C356A)),
-                                      )),
-                                ),
-                            ],
-                          ),
-
-                          Container(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: 100,
-                                    child: ListView.builder(
-                                      itemCount: SA.length,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                            width: SizeConfig.horizontalBlock * 107,
-                                            height: SizeConfig.verticalBlock * 93,
-                                            // decoration: BoxDecoration(
-                                            //     color: Colors.white,
-                                            //     borderRadius:
-                                            //         BorderRadius.circular(10),
-                                            //     boxShadow: [
-                                            //       BoxShadow(
-                                            //         color: Colors.grey.shade500,
-                                            //         offset: Offset(4.0, 4.0),
-                                            //         blurRadius: 3,
-                                            //         spreadRadius: 1.0,
-                                            //       ),
-                                            //       BoxShadow(
-                                            //           color: Colors.white,
-                                            //           offset: Offset(-4.0, -4.0),
-                                            //           blurRadius: 15,
-                                            //           spreadRadius: 1.0)
-                                            //     ]),
-                                            margin: EdgeInsets.all(10), // make some space around the image
-                                            child: Image(
-                                                image: AssetImage(
-                                              SA[index].values.first,
-                                            )
-                                            )
-                                        ),
+                        Container(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 100,
+                                  child: ListView.builder(
+                                    itemCount: SA.length,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) => InkWell(
+                                      onTap: () {},
+                                      child: Container(
+                                          width: SizeConfig.horizontalBlock * 107,
+                                          height: SizeConfig.verticalBlock * 93,
+                                          // decoration: BoxDecoration(
+                                          //     color: Colors.white,
+                                          //     borderRadius:
+                                          //         BorderRadius.circular(10),
+                                          //     boxShadow: [
+                                          //       BoxShadow(
+                                          //         color: Colors.grey.shade500,
+                                          //         offset: Offset(4.0, 4.0),
+                                          //         blurRadius: 3,
+                                          //         spreadRadius: 1.0,
+                                          //       ),
+                                          //       BoxShadow(
+                                          //           color: Colors.white,
+                                          //           offset: Offset(-4.0, -4.0),
+                                          //           blurRadius: 15,
+                                          //           spreadRadius: 1.0)
+                                          //     ]),
+                                          margin: EdgeInsets.all(10), // make some space around the image
+                                          child: Image(
+                                              image: AssetImage(
+                                                SA[index].values.first,
+                                              )
+                                          )
                                       ),
                                     ),
-                                  )
-                                ],
-                              ),
+                                  ),
+                                )
+                              ],
                             ),
-                          )
-                        ],
-                      ),
+                          ),
+                        )
+                      ],
                     ),
+                  ),
 
                 ), //platForms
 
@@ -375,26 +382,26 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 82,
           destinations: [
             NavigationDestination(
-                icon:
-            Icon(
-                  Icons.home_outlined,
-              color: Colors.white,
-            ),
-                label: "Home",
+              icon:
+              Icon(
+                Icons.home_outlined,
+                color: Colors.white,
+              ),
+              label: "Home",
             ),
             NavigationDestination(icon: IconButton(
                 onPressed: (){
-              Navigator.of(context).pushNamed(fildes.id);
+                  Navigator.of(context).pushNamed(fildes.id);
 
-            },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
-                label:'Topics',
+                },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),)),
+              label:'Topics',
             ),
             NavigationDestination(icon: IconButton(
-              onPressed: (){
-                Navigator.of(context).pushNamed(ProfileScreen.id);
+                onPressed: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.id);
 
-              }, icon: Icon(Icons.person_outline,color: Color(0xFF0C356A),)),
-                label: "Profile",
+                }, icon: Icon(Icons.person_outline,color: Color(0xFF0C356A),)),
+              label: "Profile",
             ),
           ],
         ),

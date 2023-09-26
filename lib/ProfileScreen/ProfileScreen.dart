@@ -51,12 +51,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Column(
                   children: [],
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Image.asset("assets/images/Rectangle 665.png",height: 247,width: 170,),
-                  ],
-                ),
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     Image.asset("assets/images/Rectangle 665.png",height: 247,width: 170,),
+                //   ],
+                // ),
               ],
             ),
           ),

@@ -1,7 +1,6 @@
 
-import 'package:flutter/material.dart';
-
 import 'SettingScreen.dart';
+import 'package:flutter/material.dart';
 
 class About extends StatefulWidget {
   const About({super.key});
@@ -23,12 +22,13 @@ class _AboutState extends State<About> {
         Container(margin: EdgeInsetsDirectional.all(10),
             child: InkWell(child: Icon(Icons.arrow_back),
               onTap: (){
-                Navigator.of(context).pushNamed(SettingScreen.id);
+                Navigator.of(context).pop();
               },
             )
         ),
 
-        Container(margin: EdgeInsetsDirectional.only(start: 36,end: 35,top:95 ),
+        Container(
+          margin: EdgeInsetsDirectional.only(start: 36,end: 35,top:95 ),
            child:Form(
              key: formState ,
              child: Column(children: [
@@ -87,7 +87,7 @@ class _AboutState extends State<About> {
 
                    ),
                    autovalidateMode:AutovalidateMode.onUserInteraction,
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.name,
                    onEditingComplete: (){},
                    onFieldSubmitted: (value){
                      print(value);
@@ -103,7 +103,7 @@ class _AboutState extends State<About> {
                    },
 
                  ),
-                 SizedBox(width: 3,height: 20,),
+                 SizedBox(height: 20,),
                  TextFormField(
                    decoration: InputDecoration(
                        labelText: "confirm password",
@@ -116,7 +116,7 @@ class _AboutState extends State<About> {
 
                    ),
                    autovalidateMode:AutovalidateMode.onUserInteraction,
-                   keyboardType: TextInputType.number,
+                   keyboardType: TextInputType.name,
 
                    onEditingComplete: (){},
                    onFieldSubmitted: (value){
@@ -175,7 +175,7 @@ class _AboutState extends State<About> {
                      }
 
                    },
-                   child: Container(padding: EdgeInsetsDirectional.only(start: 120,top: 10),
+                   child: Container(padding: EdgeInsetsDirectional.only(start: 110,top: 10),
                      width: 300,height: 50,
                      decoration: BoxDecoration( color: Color(0xFF0C356A),
                      borderRadius: BorderRadius.circular(12),

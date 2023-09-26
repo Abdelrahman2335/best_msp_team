@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ALL_Courses extends StatefulWidget {
   ALL_Courses({super.key});
-   static String id = "ALL_Courses";
+  static String id = "ALL_Courses";
 
   @override
   State<ALL_Courses> createState() => _ALL_SAState();
@@ -41,7 +41,7 @@ class _ALL_SAState extends State<ALL_Courses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(),
       body:  ListView(
         controller: ScrollController(),
         children: [
@@ -51,9 +51,9 @@ class _ALL_SAState extends State<ALL_Courses> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: 7,right: 7,top:7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -62,15 +62,15 @@ class _ALL_SAState extends State<ALL_Courses> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/PYTHON.jpg"),height: 150,),
-                        Image(image: AssetImage("assets/images/C.jpg"),height: 50,width: 50,),
+                        Image(image: AssetImage("assets/images/PYTHON.jpg"),height: SizeConfig.verticalBlock*150,),
+                        Image(image: AssetImage("assets/images/C.jpg"),height: SizeConfig.verticalBlock*20,width: SizeConfig.horizontalBlock*48,),
                       ],),
                   ),
                   SizedBox(height: 50,),
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: 7,right: 7,top:7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -79,9 +79,9 @@ class _ALL_SAState extends State<ALL_Courses> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/C++.png"),height: 150,),
-                        Image(image: AssetImage("assets/images/Js.jpg"),height: 50,width: 50,),
-                        Text('Ethical Hacking',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/C++.png"),height: SizeConfig.verticalBlock*150,)),
+                        Image(image: AssetImage("assets/images/Js.jpg"),height: SizeConfig.verticalBlock*20,width: SizeConfig.horizontalBlock*48,),
+                        Text('Ethical Hacking',style: TextStyle(fontSize: SizeConfig.textRatio*20),),
                       ],),
                   ),
                 ],
@@ -91,9 +91,9 @@ class _ALL_SAState extends State<ALL_Courses> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    height: 250,
-                    width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    height: SizeConfig.verticalBlock*255,
+                    width: SizeConfig.horizontalBlock*200,
+                    padding: EdgeInsets.only(left: 7,right: 7,top:7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Color(0xffA6A6A6),width: 1)
@@ -102,9 +102,9 @@ class _ALL_SAState extends State<ALL_Courses> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
-                        Image(image: AssetImage("assets/images/HTML.jpg"),height: 150,),
-                        Image(image: AssetImage("assets/images/cs502.png"),height: 50,width: 50,),
-                        Text('Computer Network Fundamentals',style: TextStyle(fontSize: 15),),
+                        Center(child: Image(image: AssetImage("assets/images/HTML.jpg"),height: SizeConfig.verticalBlock*150,)),
+                        Image(image: AssetImage("assets/images/cs502.png"),height: SizeConfig.verticalBlock*20,width: SizeConfig.horizontalBlock*48,),
+                        Text('Computer Network Fundamentals',style: TextStyle(fontSize: SizeConfig.textRatio*15),),
                       ],),
                   ),
                 ],

@@ -1,6 +1,8 @@
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/SettingScreen.dart';
+import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 
@@ -22,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     {"courses 4":"assets/images/Js.jpg"},
     {"courses 5":"assets/images/HTML.jpg"},
     {"courses 6":"assets/images/cs502.png"},
+
   ];
 
   List platforms = [
@@ -55,8 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
               Text("Explore",
                   style: TextStyle(
+// <<<<<<< Login
                       fontWeight: FontWeight.bold,
                       fontSize: SizeConfig.screenHeight/30,
+// =======
+//                       fontWeight: FontWeight.w700,
+//                       fontSize: SizeConfig.textRatio*32,
+// >>>>>>> master
                       fontFamily: "Poppins")),
             ],
           ),
@@ -67,14 +75,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextStyle(
                         color: Color(0xFF0C356A),
                         fontFamily: "Poppins",
+// <<<<<<< Login
                         fontSize: SizeConfig.screenWidth/22,
+// =======
+//                         fontSize: SizeConfig.textRatio*16,
+//                       fontWeight: FontWeight.w400,
+// >>>>>>> master
                     ),
             ),
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(SettingScreen.id);
               },
+// <<<<<<< Login
               icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/20,),
+// =======
+//               icon: Icon(Icons.settings_outlined,size: SizeConfig.textRatio*16,),
+// >>>>>>> master
               color: Color(0xFF0C356A),
             ),
           ],
@@ -82,6 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -146,7 +164,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       itemCount: courses.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.of(context).pushNamed(Enactus.id);
+                                        },
                                         child: Container(
                                             height: SizeConfig.verticalBlock * 239,
                                             width: SizeConfig.horizontalBlock * 200,
@@ -174,6 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             )
                                             )
                                         ),
+
                                       ),
                                     ),
                                   )
@@ -274,7 +295,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 /******************************************************************************/
 /******************************************************************************/
-
                 Padding(
                   padding: const EdgeInsets.only(
                     top: 10.0,
@@ -368,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
           animationDuration: Duration(seconds: 1),
           indicatorColor: Color(0xFF0C356A),
           onDestinationSelected: (index) => setState(() => SelectedIcon = index),
-          height: 60,
+          height: 82,
           destinations: [
             NavigationDestination(
                 icon:

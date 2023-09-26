@@ -2,10 +2,12 @@ import 'package:best_msp_team/Choose_Filed/AI.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CourceContent.dart';
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
+import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
@@ -21,6 +23,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 
 
 void main() {
@@ -49,10 +52,13 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
+
       initialRoute: HomeScreen.id,
+
 
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
+        studentActivites.id:(BuildContext context)=> studentActivites(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
         fildes.id: (BuildContext context) => fildes(),
         cyberSecurity.id: (BuildContext context) => cyberSecurity(),
@@ -67,6 +73,11 @@ class MyApp extends StatelessWidget {
         ALL_Courses.id:(BuildContext context) => ALL_Courses(),
         viewAll_cyber.id:(BuildContext context) => viewAll_cyber(),
         Auth.id:(BuildContext context) => Auth(),
+        Google.id:(BuildContext context) => Google(),
+        Udemy.id:(BuildContext context) => Udemy(),
+        Udacity.id:(BuildContext context) => Udacity(),
+        UI_UX.id:(BuildContext context) => UI_UX(),
+        Enactus.id:(BuildContext context) => Enactus(),
 
       },
     );

@@ -3,7 +3,6 @@ import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CourceContent.dart';
 import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
-
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
@@ -26,11 +25,8 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+void main() {
 
   runApp(
     DevicePreview(
@@ -56,7 +52,10 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: ProfileScreen.id,
+
+      initialRoute: HomeScreen.id,
+
+
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         studentActivites.id:(BuildContext context)=> studentActivites(),

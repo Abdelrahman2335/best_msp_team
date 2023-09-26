@@ -2,6 +2,7 @@ import 'package:best_msp_team/Choose_Filed/AI.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CourceContent.dart';
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: ALL_Courses.id,
+      initialRoute: ProfileScreen.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         studentActivites.id:(BuildContext context)=> studentActivites(),
@@ -73,6 +74,11 @@ class MyApp extends StatelessWidget {
         ALL_Courses.id:(BuildContext context) => ALL_Courses(),
         viewAll_cyber.id:(BuildContext context) => viewAll_cyber(),
         Auth.id:(BuildContext context) => Auth(),
+        Google.id:(BuildContext context) => Google(),
+        Udemy.id:(BuildContext context) => Udemy(),
+        Udacity.id:(BuildContext context) => Udacity(),
+        UI_UX.id:(BuildContext context) => UI_UX(),
+        Enactus.id:(BuildContext context) => Enactus(),
 
       },
     );

@@ -1,3 +1,4 @@
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/SettingScreen.dart';
@@ -150,7 +151,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       itemCount: courses.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.of(context).pushNamed(Enactus.id);
+                                        },
                                         child: Container(
                                             height: SizeConfig.verticalBlock * 239,
                                             width: SizeConfig.horizontalBlock * 200,

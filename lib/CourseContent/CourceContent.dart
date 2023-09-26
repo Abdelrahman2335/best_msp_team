@@ -11,6 +11,8 @@ class CourseContent extends StatelessWidget {
   bool translated;
   bool level;
   bool timer;
+  bool follow;
+  bool figma;
 
   CourseContent({
     required this.imagePath,
@@ -22,12 +24,13 @@ class CourseContent extends StatelessWidget {
     required this.translated,
     required this.level,
     required this.timer,
+    required this.follow,
+    required this.figma,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
 
       body: Column(
         children: [
@@ -57,19 +60,23 @@ class CourseContent extends StatelessWidget {
                     Container(
 
                       margin: EdgeInsets.all(10),
-                      child: Image.asset("assets/images/coursera.png",width: 87,height: 29,),
+                      child: Visibility(
+                          visible: imagePath.contains("Google")||imagePath.contains("Udacity"),
+                          child: Image.asset("assets/images/coursera.png",width: 87,height: 29,)),
                     ),
                   ],
                 ),
 
-                Container(
+                Expanded(
+                  child: Container(
 
-                  margin: EdgeInsets.only(top: 8,left: 10),
-                  child: Text(Textunderimage,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
+                    margin: EdgeInsets.only(top: 8,left: 10),
+                    child: Text(Textunderimage,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 14,
 
+                      ),
                     ),
                   ),
                 ),
@@ -122,6 +129,38 @@ class CourseContent extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Visibility(
+                  visible: offline,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/Frame4.png"),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "50 % offline",
+                                style: TextStyle(
+                                    fontSize: 12
+                                ),
+                              ),
+                              Text(
+                                "Learn with us",
+                                style: TextStyle(
+                                    fontSize: 8
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Visibility(
@@ -248,6 +287,73 @@ class CourseContent extends StatelessWidget {
                     ),
                   ),
                 ),
+                Visibility(
+                  visible: follow,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/Frame6.png"),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "We follow you",
+                                style: TextStyle(
+                                    fontSize: 12
+                                ),
+                              ),
+                              Text(
+                                "Learn with your own schedule",
+                                style: TextStyle(
+                                    fontSize: 8
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Visibility(
+                  visible: figma,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/Frame7.png"),
+                        Container(
+                          margin: EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "by using figma app",
+                                style: TextStyle(
+                                    fontSize: 12
+                                ),
+                              ),
+                              Text(
+                                "Learn with your own schedule",
+                                style: TextStyle(
+                                    fontSize: 8
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+
+
 
               ],
             ),
@@ -258,7 +364,7 @@ class CourseContent extends StatelessWidget {
 
           Spacer(),
           Container(
-            margin: EdgeInsets.only(top: 22, left: 20, right: 20),
+            margin: EdgeInsets.only(top: 22, left: 20, right: 20,bottom: 30),
             child: SizedBox(
               width: double.infinity,
               height: 55,

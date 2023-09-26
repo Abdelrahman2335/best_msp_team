@@ -27,13 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _passwordController = TextEditingController();
 
-  Future login() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim()
-    );
-  }
-
   @override
   void dispose() {
     // TODO: implement dispose
@@ -46,14 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: Icon(Icons.arrow_back, size: SizeConfig.screenWidth / 30,),
-            ),
-          ),
+          appBar: AppBar(), //Don't remove this
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -66,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Login",
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          fontSize: SizeConfig.screenWidth / 20,
+                          fontSize: SizeConfig.screenHeight / 24,
                         ),
                       ),
                     ],
@@ -79,26 +65,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         width: double.infinity,
                         height: SizeConfig.screenHeight / 15,
-                        child: TextField(
+                        child: TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
                                 borderRadius: BorderRadius.circular(14)
                             ),
-                            hintText: "Email",
+                            labelText: "Email",
                             hintStyle: TextStyle(
-                              fontSize: SizeConfig.screenWidth / 30,
+                              fontSize: SizeConfig.screenWidth / 20,
                               fontWeight: FontWeight.w700,
                             ),
-                            prefixIcon: Container(
-                              margin: EdgeInsets.symmetric(vertical: double
-                                  .minPositive),
-                              child: Icon(
-                                Icons.mail_outline,
-                                size: SizeConfig.screenWidth / 30,
-                              ),
-                            ),
+                            prefixIcon: Icon(Icons.mail_outline_outlined,color: Color(0xFF0C356A),size: 20,),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -112,25 +91,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: SizedBox(
                           width: double.infinity,
                           height: SizeConfig.screenHeight / 15,
-                          child: TextField(
+                          child: TextFormField(
                             controller: _passwordController,
+                            obscureText: true,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(14)
                               ),
-                              hintText: "Password",
+                              labelText: "Password",
                               hintStyle: TextStyle(
-                                fontSize: SizeConfig.screenWidth / 30,
+                                fontSize: SizeConfig.screenWidth / 20,
                                 fontWeight: FontWeight.w700,
                               ),
-                              prefixIcon: Container(
-                                margin: EdgeInsets.only(top: 10),
-                                child: Icon(
-                                  Icons.lock_outline,
-                                  size: SizeConfig.screenWidth / 30,
-                                ),
-                              ),
+                              prefixIcon: Icon(Icons.lock_outline,color: Color(0xFF0C356A),size: 20,),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12)),
                               fillColor: Color(0xFFe1e1e1),
@@ -149,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text(
                               "Forget Password?",
                               style: TextStyle(
-                                fontSize: SizeConfig.screenWidth / 40,
+                                fontSize: SizeConfig.screenHeight / 50,
                                 fontWeight: FontWeight.w200,
                                 color: Color(0xFF0C356A),
                               ),
@@ -168,7 +142,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton(
                         onPressed: ()
                         {
-                          Navigator.of(context).pushNamed(HomeScreen.id);
+                          Navigator.of(context).pushReplacementNamed(HomeScreen.id);
                         },
 
 
@@ -257,7 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         "Don’t have account?",
                         style: TextStyle(
-                          fontSize: SizeConfig.screenHeight / 50,
+                          fontSize: SizeConfig.screenHeight / 40,
                           fontWeight: FontWeight.w100,
                         ),
                       ),

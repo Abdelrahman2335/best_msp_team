@@ -29,9 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
     {"PlatForm 2":"assets/platforms/Edx.png"},
     {"PlatForm 3":"assets/platforms/Udacity.png"},
     {"PlatForm 4":"assets/platforms/SCCI.png"},
-    {"PlatForm 5":"assets/platforms/udemy.png"},
+    {"PlatForm 5":"assets/platforms/Udemy.jpg"},
     {"PlatForm 6":"assets/platforms/coursera.jpg"},
-    {"PlatForm 7":"assets/platforms/udemy.png"},
   ];
   List SA = [
     {"SA 1":"assets/SA/Rectangle 640.png"},
@@ -46,40 +45,40 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
+
         appBar: AppBar(
-          toolbarHeight: SizeConfig.screenHeight/10,
-          leading: IconButton(onPressed: (){
-            Navigator.of(context).pop();
-          }, icon: Icon(Icons.arrow_back,size: SizeConfig.screenWidth/20,)),
           title: Row(
+
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+
               Text("Explore",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: SizeConfig.screenWidth/20,
+                      fontSize: SizeConfig.screenHeight/30,
                       fontFamily: "Poppins")),
             ],
           ),
+
           actions: [
             Text("Settings",
                 style:
                     TextStyle(
                         color: Color(0xFF0C356A),
                         fontFamily: "Poppins",
-                        fontSize: SizeConfig.screenWidth/40,
+                        fontSize: SizeConfig.screenWidth/22,
                     ),
             ),
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(SettingScreen.id);
               },
-              icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/40,),
+              icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/20,),
               color: Color(0xFF0C356A),
             ),
           ],
+
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -93,12 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.grey.withOpacity(0.2),
                     ),
                     child: TextFormField(
-                      style: TextStyle(fontSize: SizeConfig.screenWidth/40,),
+                      style: TextStyle(fontSize: SizeConfig.screenWidth/21,),
                       onTap: () {},
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Search",
-                        prefixIcon: Icon(Icons.search,size: SizeConfig.screenWidth/40,),
+                        prefixIcon:
+                        Icon(Icons.search,size: SizeConfig.screenWidth/20,),
                         // focusedBorder: OutlineInputBorder(
                         //     borderSide: BorderSide(color: Colors.blue))),
                       ),
@@ -394,7 +394,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

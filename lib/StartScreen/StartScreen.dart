@@ -56,7 +56,7 @@ Never chase opportunities.Let it come to you by
               height: SizeConfig.screenHeight/20,
               child: ElevatedButton(
                   onPressed: (){
-                    Navigator.pushNamed(context,'LoginScreen');
+                    Navigator.pushReplacementNamed(context,'LoginScreen');
                   },
                   child: Text(
                     "Start",

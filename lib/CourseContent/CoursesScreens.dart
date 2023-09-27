@@ -46,8 +46,8 @@ class Udemy extends StatelessWidget {
 }
 
 
-class Udacity extends StatelessWidget {
-  static const String id="udacity";
+class edx extends StatelessWidget {
+  static const String id="edx";
 
   @override
   Widget build(BuildContext context) {

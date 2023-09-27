@@ -35,7 +35,7 @@ class _ALL_SAState extends State<ALL_Courses> {
     {"SA 2":"assets/SA/Rectangle 665.png"},
     {"SA 3":"assets/SA/Rectangle 664.png"},
     {"SA 4":"assets/SA/images (1).jpeg"},
-    {"SA 5":"assets/SA/380693087_256047330757734_4639446806930547013_n.jpg"},
+    {"SA 5":"assets/SA/LifeOnMarsFEHU.jpg"},
   ];
 
   @override

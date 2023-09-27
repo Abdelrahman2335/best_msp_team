@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
 
-      initialRoute: LoginScreen.id,
+      initialRoute: HomeScreen.id,
 
 
       routes: {
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
         Auth.id:(BuildContext context) => Auth(),
         Google.id:(BuildContext context) => Google(),
         Udemy.id:(BuildContext context) => Udemy(),
-        Udacity.id:(BuildContext context) => Udacity(),
+        edx.id:(BuildContext context) => edx(),
         UI_UX.id:(BuildContext context) => UI_UX(),
         Enactus.id:(BuildContext context) => Enactus(),
 

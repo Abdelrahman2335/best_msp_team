@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
 
-      initialRoute: HomeScreen.id,
+      initialRoute: AdvertisementsScreen.id,
 
 
       routes: {
@@ -72,6 +72,7 @@ class MyApp extends StatelessWidget {
         AdvertisementsScreen.id:(BuildContext context) => AdvertisementsScreen(),
         ALL_Courses.id:(BuildContext context) => ALL_Courses(),
         viewAll_cyber.id:(BuildContext context) => viewAll_cyber(),
+        AI.id:(BuildContext context) => AI(),
         Auth.id:(BuildContext context) => Auth(),
         Google.id:(BuildContext context) => Google(),
         Udemy.id:(BuildContext context) => Udemy(),

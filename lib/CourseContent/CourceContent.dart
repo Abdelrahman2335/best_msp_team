@@ -370,9 +370,11 @@ class CourseContent extends StatelessWidget {
               width: double.infinity,
               height: 55,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text(
-                    "Go to Course",
+                    "Go to website",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 15,

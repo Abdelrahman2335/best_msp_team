@@ -16,7 +16,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
 
-  int SelectedIcon = 2;
+  int SelectedIcon = 3;
   int numberOfProjects=5;
   int rate=90;
 
@@ -351,6 +351,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
             label:'Topics',
+          ),
+          NavigationDestination(
+            icon: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(fildes.id);
+
+                },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+            label:'Training',
           ),
           NavigationDestination(icon: Icon(Icons.person_outline,color: Colors.white,),
             label: "Profile",

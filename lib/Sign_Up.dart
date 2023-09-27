@@ -25,8 +25,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(),
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
@@ -372,7 +371,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
 
 
-    )
     );
   }
 }

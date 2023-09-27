@@ -1,3 +1,4 @@
+import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
@@ -5,7 +6,7 @@ import 'package:best_msp_team/SettingScreen.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'All_Courses.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,29 +19,28 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"courses 1":"assets/images/PYTHON.jpg"},
-    {"courses 2":"assets/images/C.jpg"},
-    {"courses 3":"assets/images/C++.png"},
-    {"courses 4":"assets/images/Js.jpg"},
-    {"courses 5":"assets/images/HTML.jpg"},
-    {"courses 6":"assets/images/cs502.png"},
+    {"courses 1":"assets/test/Google Course.png", "url":"https://www.coursera.org/professional-certificates/google-data-analytics"},
+    {"courses 2":"assets/test/IBM.png", "url":"https://www.coursera.org/professional-certificates/ibm-data-analyst"},
+  ];
 
+  List<String> description = [
+    "Google Data Analytics Professional Certificate",
+    "IBM Data Analyst Professional Certificate",
   ];
 
   List platforms = [
-    {"PlatForm 1":"assets/platforms/Google.jpg"},
-    {"PlatForm 2":"assets/platforms/Edx.png"},
-    {"PlatForm 3":"assets/platforms/Udacity.png"},
-    {"PlatForm 4":"assets/platforms/SCCI.png"},
-    {"PlatForm 5":"assets/platforms/Udemy.jpg"},
-    {"PlatForm 6":"assets/platforms/coursera.jpg"},
+    {"PlatForm 1":"assets/platforms/coursera.jpg","url":"https://www.coursera.org/"},
+    {"PlatForm 2":"assets/platforms/365datascience.png","url":"https://365datascience.com/"},
+    {"PlatForm 3":"assets/platforms/Courssat.png","url":"https://courssat.com/#/"},
+    {"PlatForm 4":"assets/platforms/Edx.png","url":"https://www.edx.org/"},
+    {"PlatForm 5":"assets/platforms/Udemy.jpg","url":"https://www.udemy.com/"},
   ];
-  List SA = [
-    {"SA 1":"assets/SA/Rectangle 640.png"},
-    {"SA 2":"assets/SA/Rectangle 665.png"},
-    {"SA 3":"assets/SA/Rectangle 664.png"},
-    {"SA 4":"assets/SA/images (1).jpeg"},
-    {"SA 5":"assets/SA/380693087_256047330757734_4639446806930547013_n.jpg"},
+  List StudentActivities = [
+    {"SA 1":"assets/SA/Rectangle 640.png","url":"https://www.facebook.com/MSPCU"},
+    {"SA 2":"assets/SA/Rectangle 665.png","url":"https://www.facebook.com/enactus.Egypt"},
+    {"SA 3":"assets/SA/LifeOnMarsFEHU.jpg","url":"https://www.facebook.com/profile.php?id=100090574053947"},
+    {"SA 4":"assets/SA/Rectangle 664.png","url":"https://www.facebook.com/ThreeDOS.BIS"},
+    {"SA 5":"assets/SA/images (1).jpeg","url":"https://www.facebook.com/p/3ABussinees-TrainingCareer-Consulting-100063789410444/"},
   ];
 
 
@@ -51,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
 
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
 
             mainAxisAlignment: MainAxisAlignment.start,
@@ -58,13 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
               Text("Explore",
                   style: TextStyle(
-// <<<<<<< Login
                       fontWeight: FontWeight.bold,
                       fontSize: SizeConfig.screenHeight/30,
-// =======
-//                       fontWeight: FontWeight.w700,
-//                       fontSize: SizeConfig.textRatio*32,
-// >>>>>>> master
+
                       fontFamily: "Poppins")),
             ],
           ),
@@ -75,23 +72,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     TextStyle(
                         color: Color(0xFF0C356A),
                         fontFamily: "Poppins",
-// <<<<<<< Login
+
                         fontSize: SizeConfig.screenWidth/22,
-// =======
-//                         fontSize: SizeConfig.textRatio*16,
-//                       fontWeight: FontWeight.w400,
-// >>>>>>> master
+
                     ),
             ),
             IconButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(SettingScreen.id);
               },
-// <<<<<<< Login
+
               icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/20,),
-// =======
-//               icon: Icon(Icons.settings_outlined,size: SizeConfig.textRatio*16,),
-// >>>>>>> master
+
               color: Color(0xFF0C356A),
             ),
           ],
@@ -99,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          
+
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -159,40 +151,75 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: 200,
+                                    height: 220,
                                     child: ListView.builder(
                                       itemCount: courses.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          Navigator.of(context).pushNamed(Enactus.id);
+                                          if (courses[index]["url"] != null){
+                                            _launchURL(courses[index]["url"]);
+                                          }
+                                          else if(courses[index]["url"] == null){
+                                            return null;
+                                          }
                                         },
-                                        child: Container(
-                                            height: SizeConfig.verticalBlock * 239,
-                                            width: SizeConfig.horizontalBlock * 200,
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    color: Colors.grey.shade500,
-                                                    offset: Offset(4.0, 4.0),
-                                                    blurRadius: 3,
-                                                    spreadRadius: 1.0,
-                                                  ),
-                                                  BoxShadow(
-                                                      color: Colors.white,
-                                                      offset: Offset(-4.0, -4.0),
-                                                      blurRadius: 15,
-                                                      spreadRadius: 1.0)
-                                                ]),
-                                            margin: EdgeInsets.all(7),
-                                            child: Image(
-                                                image: AssetImage(
-                                              courses[index].values.first,
-                                            )
-                                            )
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            children: [
+                                              // Container(
+                                              //     height: SizeConfig.verticalBlock * 217,
+                                              //     width: SizeConfig.horizontalBlock * 215,
+                                              //     decoration: BoxDecoration(
+                                              //         color: Color(0xffA6A6A6),
+                                              //         borderRadius:
+                                              //             BorderRadius.circular(15),
+                                              //         boxShadow: [
+                                              //           BoxShadow(
+                                              //             color: Colors.grey.shade500,
+                                              //             offset: Offset(4.0, 4.0),
+                                              //             blurRadius: 3,
+                                              //             spreadRadius: 1.0,
+                                              //           ),
+                                              //           BoxShadow(
+                                              //               color: Colors.white,
+                                              //               offset: Offset(-4.0, -4.0),
+                                              //               blurRadius: 15,
+                                              //               spreadRadius: 1.0)
+                                              //         ]),
+                                              //     margin: EdgeInsets.all(7),
+                                              //     child: Padding(
+                                              //       padding: const EdgeInsets.only(bottom: 40,left: 10,right: 10),
+                                              //       child: Image(
+                                              //           image: AssetImage(
+                                              //         courses[index].values.first,
+                                              //       )
+                                              //
+                                              //       ),
+                                              //     )
+                                              // ),
+
+                                              Container(
+                                                height: 220,
+                                                width: 175,
+                                                padding: EdgeInsets.only(left: 7,right: 7,top: 10),
+                                                decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(8),
+                                                    border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                                                ),
+                                                margin: EdgeInsets.symmetric(horizontal: 5),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children:[
+                                                    Image(image: AssetImage(courses[index].values.first),height: 120,),
+
+                                                    Image(image: AssetImage("assets/images/coursera.png"),height: 40,width: 45,),
+                                                    Text(description[index],style: TextStyle(fontSize: 12),),
+                                                  ],),
+                                              ),
+                                            ],
+                                          ),
                                         ),
 
                                       ),
@@ -252,7 +279,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       itemCount: platforms.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          if(platforms[index]["url"]!= null){
+                                            _launchURL(platforms[index]["url"]);
+                                          }
+                                        },
                                         child: Container(
                                             width: SizeConfig.horizontalBlock * 107,
                                             height: SizeConfig.verticalBlock * 93,
@@ -333,10 +364,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                   SizedBox(
                                     height: 100,
                                     child: ListView.builder(
-                                      itemCount: SA.length,
+                                      itemCount: StudentActivities.length,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          if(StudentActivities[index]["url"] != null){
+                                            _launchURL(StudentActivities[index]["url"]);
+                                          }
+                                        },
                                         child: Container(
                                             width: SizeConfig.horizontalBlock * 107,
                                             height: SizeConfig.verticalBlock * 93,
@@ -360,7 +395,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             margin: EdgeInsets.all(10), // make some space around the image
                                             child: Image(
                                                 image: AssetImage(
-                                              SA[index].values.first,
+                                                  StudentActivities[index].values.first,
                                             )
                                             )
                                         ),
@@ -398,14 +433,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
                 label: "Home",
             ),
-            NavigationDestination(icon: IconButton(
+            NavigationDestination(
+              icon: IconButton(
                 onPressed: (){
               Navigator.of(context).pushNamed(fildes.id);
 
             },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
                 label:'Topics',
             ),
-            NavigationDestination(icon: IconButton(
+            NavigationDestination(
+              icon: IconButton(
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(fildes.id);
+
+                  },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+              label:'Training',
+            ),
+            NavigationDestination(
+              icon: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed(ProfileScreen.id);
 
@@ -415,5 +460,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       );
+  }
+}
+Future<void> _launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }

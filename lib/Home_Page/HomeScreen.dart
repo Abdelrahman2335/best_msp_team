@@ -7,6 +7,7 @@ import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Search/Search.dart';
 import 'All_Courses.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -103,7 +104,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: TextFormField(
                       style: TextStyle(fontSize: SizeConfig.screenWidth/21,),
-                      onTap: () {},
+                      onTap: () {
+                        showSearch(
+                        context: context,
+                        delegate: CustomSearchDelegate(context),
+                      );},
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Search",

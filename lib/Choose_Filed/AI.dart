@@ -264,6 +264,14 @@ class _AIState extends State<AI> {
             label:'Topics',
 
           ),
+          NavigationDestination(
+            icon: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(fildes.id);
+
+                },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+            label:'Training',
+          ),
           NavigationDestination(icon: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed(ProfileScreen.id);

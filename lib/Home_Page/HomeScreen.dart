@@ -1,3 +1,4 @@
+import 'package:best_msp_team/AdvertisementsScreen.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
@@ -29,11 +30,12 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List platforms = [
+    
     {"PlatForm 1":"assets/platforms/coursera.jpg"},
-    {"PlatForm 2":"assets/platforms/365datascience.png"},
-    {"PlatForm 3":"assets/platforms/Courssat.png"},
-    {"PlatForm 4":"assets/platforms/Edx.png"},
-    {"PlatForm 5":"assets/platforms/Udemy.jpg"},
+    {"PlatForm 2":"assets/platforms/Udemy.jpg"},
+    {"PlatForm 3":"assets/platforms/365datascience.png"},
+    {"PlatForm 4":"assets/platforms/Courssat.png"},
+    {"PlatForm 5":"assets/platforms/Edx.png"},
   ];
   List StudentActivities = [
     {"SA 1":"assets/SA/Rectangle 640.png"},
@@ -277,8 +279,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          if(platforms[index]["url"]!= null){
-                                            _launchURL(platforms[index]["url"]);
+                                          if(platforms[index]["PlatForm 2"] != null){
+                                            Navigator.of(context).pushNamed(Udemy.id);
                                           }
                                         },
                                         child: Container(
@@ -342,7 +344,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               Spacer(),
                               Align(
                                   child: TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.of(context).pushNamed(studentActivites.id);
+                                      },
                                       child: Text(
                                         "View all",
                                         style: TextStyle(
@@ -365,9 +369,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          if(StudentActivities[index]["url"] != null){
-                                            _launchURL(StudentActivities[index]["url"]);
+                                          if(StudentActivities[index]["SA 1"]){
+                                            Navigator.of(context).pushNamed(AdvertisementsScreen.id);
                                           }
+                                          // if(StudentActivities[index]["url"] != null){
+                                          //   _launchURL(StudentActivities[index]["url"]);
+                                          // }
                                         },
                                         child: Container(
                                             width: SizeConfig.horizontalBlock * 107,

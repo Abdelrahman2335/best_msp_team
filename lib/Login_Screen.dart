@@ -27,13 +27,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final _passwordController = TextEditingController();
 
-  Future login() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim()
-    );
-  }
-
   @override
   void dispose() {
     // TODO: implement dispose
@@ -46,6 +39,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
+          appBar: AppBar(), //Don't remove this
+
           body: SingleChildScrollView(
             child: Column(
               children: [
@@ -71,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       SizedBox(
                         width: double.infinity,
+
                         height: SizeConfig.verticalBlock*57,
                         child: TextField(
                           controller: _emailController,
@@ -79,20 +75,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderSide: BorderSide(color: Colors.white),
                                 borderRadius: BorderRadius.circular(12)
                             ),
-                            hintText: "Email",
+                            labelText: "Email",
                             hintStyle: TextStyle(
-                              fontSize: SizeConfig.textRatio*12,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: "Poppins",
+
+                              fontSize: SizeConfig.screenWidth / 20,
+                              fontWeight: FontWeight.w700,
                             ),
-                            prefixIcon: Container(
-                              margin: EdgeInsets.symmetric(vertical: double.minPositive),
-                              child: Icon(
-                                Icons.mail_outline,
-                                size: SizeConfig.textRatio*12,
-                                color: Color(0xff5A5A5A),
-                              ),
-                            ),
+                            prefixIcon: Icon(Icons.mail_outline_outlined,color: Color(0xFF0C356A),size: 20,),
+
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
@@ -105,28 +95,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                         child: SizedBox(
                           width: double.infinity,
-                          height: SizeConfig.verticalBlock*57,
-                          child: TextField(
+                          height: SizeConfig.screenHeight / 15,
+                          child: TextFormField(
+
                             controller: _passwordController,
+                            obscureText: true,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
                                   borderRadius: BorderRadius.circular(12)
                               ),
-                              hintText: "Password",
+                              labelText: "Password",
                               hintStyle: TextStyle(
-                                fontSize: SizeConfig.textRatio*12,
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Poppins",
+                                fontSize: SizeConfig.screenWidth / 20,
+                                fontWeight: FontWeight.w700,
                               ),
-                              prefixIcon: Container(
-                                margin: EdgeInsets.only(top: double.minPositive),
-                                child: Icon(
-                                  Icons.lock_outline,
-                                  size: SizeConfig.textRatio*12,
-                                  color: Color(0xff5A5A5A),
-                                ),
-                              ),
+                              prefixIcon: Icon(Icons.lock_outline,color: Color(0xFF0C356A),size: 20,),
+
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(12)),
                               fillColor: Color(0xFFe1e1e1),
@@ -136,7 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
 
-
                       Container(
                         margin: EdgeInsets.only(top: SizeConfig.verticalBlock*8),
                         child: Row(
@@ -145,12 +129,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             Text(
                               "Forget Password?",
                               style: TextStyle(
-                                fontSize: SizeConfig.textRatio*10,
+
+                                fontSize: SizeConfig.textRatio*13,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Poppins",
+
                                 color: Color(0xFF0C356A),
                               ),
                             ),
+                            SizedBox(height: 30,)
                           ],
                         ),
                       ),
@@ -165,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: ElevatedButton(
                         onPressed: ()
                         {
-                          Navigator.of(context).pushNamed(HomeScreen.id);
+                          Navigator.of(context).pushReplacementNamed(HomeScreen.id);
                         },
 
 
@@ -173,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           "Login",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: SizeConfig.textRatio*14.64,
+                            fontSize: SizeConfig.textRatio*18,
                             color: Colors.white,
                             fontFamily: "Poppins",
                             fontWeight: FontWeight.w600,
@@ -254,7 +241,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         "Don’t have account?",
                         style: TextStyle(
-                          fontSize: SizeConfig.textRatio*12,
+
+                          fontSize: SizeConfig.textRatio*16,
                           fontWeight: FontWeight.w500,
                           fontFamily: "Poppins",
                         ),

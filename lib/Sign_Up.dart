@@ -14,8 +14,6 @@ class SignUpScreen extends StatefulWidget {
 
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -23,24 +21,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   String _password = "";
 
 
-  Future<void> _handleSignUp() async{
-    try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-              email: _email,
-              password: _password,);
-      print("User Registered: ${userCredential.user!.email})");
-    }
-    catch (x){
-      print("Error During Registration: $x");
-    }
-  }
 
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
+        appBar: AppBar(),
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Column(
@@ -265,10 +251,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: SizeConfig.verticalBlock*57,
                 child: ElevatedButton(
                     onPressed: () {
-                      if(_formKey.currentState!.validate()){
-                        _handleSignUp();
-                      }
-                      Navigator.of(context).pushNamed(info_person_screen.id);
+                      Navigator.of(context).pushReplacementNamed(info_person_screen.id);
                     },
                     child: Text(
                       "SignUp",
@@ -333,8 +316,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onTap: () {},
                       child: Image(
                         image: AssetImage("assets/images/Google Logo.png"),
-                        width: 65,
-                        height: 65,
+                        width: 55,
+                        height: 55,
                       ),
                     ),
                   ),
@@ -344,8 +327,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onTap: () {},
                       child: Image(
                         image: AssetImage("assets/images/Frame 182.png"),
-                        width: 65,
-                        height: 65,
+                        width: 55,
+                        height: 55,
                       ),
                     ),
                   ),
@@ -388,7 +371,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
 
 
-    )
     );
   }
 }

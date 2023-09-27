@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
 
-      initialRoute: edx.id,
+      initialRoute: HomeScreen.id,
 
 
       routes: {

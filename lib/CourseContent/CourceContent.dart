@@ -34,9 +34,10 @@ class CourseContent extends StatelessWidget {
 
       body: Column(
         children: [
+          AppBar(),
           Container(
 
-            margin: EdgeInsets.only(top: 70,left: 14,right: 14),
+            margin: EdgeInsets.only(left: 14,right: 14,),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Colors.transparent,

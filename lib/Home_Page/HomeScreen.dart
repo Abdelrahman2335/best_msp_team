@@ -7,7 +7,6 @@ import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../Search/Search.dart';
 import 'All_Courses.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,8 +19,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List courses = [
-    {"courses 1":"assets/test/Google Course.png", "url":"https://www.coursera.org/professional-certificates/google-data-analytics"},
-    {"courses 2":"assets/test/IBM.png", "url":"https://www.coursera.org/professional-certificates/ibm-data-analyst"},
+    {"courses 1":"assets/test/Google Course.png"},
+    {"courses 2":"assets/test/IBM.png"},
   ];
 
   List<String> description = [
@@ -30,18 +29,18 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List platforms = [
-    {"PlatForm 1":"assets/platforms/coursera.jpg","url":"https://www.coursera.org/"},
-    {"PlatForm 2":"assets/platforms/365datascience.png","url":"https://365datascience.com/"},
-    {"PlatForm 3":"assets/platforms/Courssat.png","url":"https://courssat.com/#/"},
-    {"PlatForm 4":"assets/platforms/Edx.png","url":"https://www.edx.org/"},
-    {"PlatForm 5":"assets/platforms/Udemy.jpg","url":"https://www.udemy.com/"},
+    {"PlatForm 1":"assets/platforms/coursera.jpg"},
+    {"PlatForm 2":"assets/platforms/365datascience.png"},
+    {"PlatForm 3":"assets/platforms/Courssat.png"},
+    {"PlatForm 4":"assets/platforms/Edx.png"},
+    {"PlatForm 5":"assets/platforms/Udemy.jpg"},
   ];
   List StudentActivities = [
-    {"SA 1":"assets/SA/Rectangle 640.png","url":"https://www.facebook.com/MSPCU"},
-    {"SA 2":"assets/SA/Rectangle 665.png","url":"https://www.facebook.com/enactus.Egypt"},
-    {"SA 3":"assets/SA/LifeOnMarsFEHU.jpg","url":"https://www.facebook.com/profile.php?id=100090574053947"},
-    {"SA 4":"assets/SA/Rectangle 664.png","url":"https://www.facebook.com/ThreeDOS.BIS"},
-    {"SA 5":"assets/SA/images (1).jpeg","url":"https://www.facebook.com/p/3ABussinees-TrainingCareer-Consulting-100063789410444/"},
+    {"SA 1":"assets/SA/Rectangle 640.png"},
+    {"SA 2":"assets/SA/Rectangle 665.png"},
+    {"SA 3":"assets/SA/LifeOnMarsFEHU.jpg"},
+    {"SA 4":"assets/SA/Rectangle 664.png"},
+    {"SA 5":"assets/SA/images (1).jpeg"},
   ];
 
 
@@ -104,11 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: TextFormField(
                       style: TextStyle(fontSize: SizeConfig.screenWidth/21,),
-                      onTap: () {
-                        showSearch(
-                        context: context,
-                        delegate: CustomSearchDelegate(context),
-                      );},
+                      onTap: () {},
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Search",
@@ -162,11 +157,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          if (courses[index]["url"] != null){
-                                            _launchURL(courses[index]["url"]);
-                                          }
-                                          else if(courses[index]["url"] == null){
-                                            return null;
+                                          if(courses[index]["courses 1"]  != null){
+                                            Navigator.of(context).pushNamed(Google.id);
                                           }
                                         },
                                         child: SingleChildScrollView(

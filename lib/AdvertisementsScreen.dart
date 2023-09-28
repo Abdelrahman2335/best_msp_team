@@ -99,18 +99,17 @@ class AdvertisementsScreen extends StatelessWidget {
                     start: 40,
                   ),
                   height: 38,
-                  width: 140,
+                  width: 150,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Color(0xFF0C356A),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
+                  child: Center(
                     child: Text(
                       'mobile app',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 24,
+                        fontSize: 20,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),

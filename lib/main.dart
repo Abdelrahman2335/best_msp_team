@@ -8,6 +8,7 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
+import 'package:best_msp_team/testcode.dart';
 import 'package:flutter/material.dart';
 import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
 
 
-      initialRoute: AdvertisementsScreen.id,
+      initialRoute: HomeScreen.id,
 
 
       routes: {
@@ -79,6 +80,7 @@ class MyApp extends StatelessWidget {
         edx.id:(BuildContext context) => edx(),
         UI_UX.id:(BuildContext context) => UI_UX(),
         Enactus.id:(BuildContext context) => Enactus(),
+        testcode.id:(BuildContext context) => testcode(),
 
       },
     );

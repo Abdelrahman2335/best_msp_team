@@ -34,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               margin: EdgeInsets.only(top: SizeConfig.verticalBlock*165),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+               // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "SignUp",

@@ -1,5 +1,4 @@
 import 'package:best_msp_team/AdvertisementsScreen.dart';
-import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
 import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
@@ -8,6 +7,7 @@ import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../training.dart';
 import 'All_Courses.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,9 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
     
     {"PlatForm 1":"assets/platforms/coursera.jpg"},
     {"PlatForm 2":"assets/platforms/Udemy.jpg"},
-    {"PlatForm 3":"assets/platforms/365datascience.png"},
-    {"PlatForm 4":"assets/platforms/Courssat.png"},
-    {"PlatForm 5":"assets/platforms/Edx.png"},
+    {"PlatForm 3":"assets/platforms/Udacity.png"},
+    {"PlatForm 4":"assets/platforms/365datascience.png"},
+    {"PlatForm 5":"assets/platforms/Courssat.png"},
+    {"PlatForm 6":"assets/platforms/Edx.png"},
   ];
   List StudentActivities = [
     {"SA 1":"assets/SA/Rectangle 640.png"},
@@ -72,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Text("Settings",
                 style:
                     TextStyle(
-                        color: Color(0xFF0C356A),
+                        color: const Color(0xFF0C356A),
                         fontFamily: "Poppins",
 
                         fontSize: SizeConfig.screenWidth/22,
@@ -86,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               icon: Icon(Icons.settings_outlined,size: SizeConfig.screenWidth/20,),
 
-              color: Color(0xFF0C356A),
+              color: const Color(0xFF0C356A),
             ),
           ],
 
@@ -132,13 +133,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontSize: 12,
                                         fontFamily: "Poppins")),
 
-                              Spacer(),
+                              const Spacer(),
                               Align(
                                   child: TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pushNamed(ALL_Courses.id);
                                       },
-                                      child: Text(
+                                      child: const Text(
                                         "View all",
                                         style: TextStyle(
                                             fontSize: 12,
@@ -201,20 +202,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Container(
                                                 height: 220,
                                                 width: 175,
-                                                padding: EdgeInsets.only(left: 7,right: 7,top: 10),
+                                                padding: const EdgeInsets.only(left: 7,right: 7,top: 10),
                                                 decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.circular(8),
-                                                    border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                                                    border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                                                 ),
-                                                margin: EdgeInsets.symmetric(horizontal: 5),
+                                                margin: const EdgeInsets.symmetric(horizontal: 5),
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children:[
                                                     Image(image: AssetImage(courses[index].values.first),height: 120,),
 
-                                                    Image(image: AssetImage("assets/images/coursera.png"),height: 40,width: 45,),
-                                                    Text(description[index],style: TextStyle(fontSize: 12),),
+                                                    const Image(image: AssetImage("assets/images/coursera.png"),height: 40,width: 45,),
+                                                    Text(description[index],style: const TextStyle(fontSize: 12),),
                                                   ],),
                                               ),
                                             ],
@@ -253,11 +254,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontSize: 12,
                                         fontFamily: "Poppins")),
 
-                              Spacer(),
+                              const Spacer(),
                               Align(
                                   child: TextButton(
                                       onPressed: () {},
-                                      child: Text(
+                                      child: const Text(
                                         "View all",
                                         style: TextStyle(
                                             fontSize: 12,
@@ -282,6 +283,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           if(platforms[index]["PlatForm 2"] != null){
                                             Navigator.of(context).pushNamed(Udemy.id);
                                           }
+                                          else if(platforms[index]["PlatForm 3"] != null){
+                                            Navigator.of(context).pushNamed(Udacity.id);
+                                          }
                                         },
                                         child: Container(
                                             width: SizeConfig.horizontalBlock * 107,
@@ -303,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             //           blurRadius: 15,
                                             //           spreadRadius: 1.0)
                                             //     ]),
-                                            margin: EdgeInsets.all(10), // make some space around the image
+                                            margin: const EdgeInsets.all(10), // make some space around the image
                                             child: Image(
                                                 image: AssetImage(
                                               platforms[index].values.first,
@@ -341,13 +345,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fontSize: 12,
                                         fontFamily: "Poppins")),
 
-                              Spacer(),
+                              const Spacer(),
                               Align(
                                   child: TextButton(
                                       onPressed: () {
                                         Navigator.of(context).pushNamed(studentActivites.id);
                                       },
-                                      child: Text(
+                                      child: const Text(
                                         "View all",
                                         style: TextStyle(
                                             fontSize: 12,
@@ -369,8 +373,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) => InkWell(
                                         onTap: () {
-                                          if(StudentActivities[index]["SA 1"]){
+                                          if(StudentActivities[index]["SA 1"] != null){
                                             Navigator.of(context).pushNamed(AdvertisementsScreen.id);
+                                          }
+                                          else if (StudentActivities[index]["SA 2"] != null){
+                                            Navigator.of(context).pushNamed(Enactus.id);
                                           }
                                           // if(StudentActivities[index]["url"] != null){
                                           //   _launchURL(StudentActivities[index]["url"]);
@@ -396,7 +403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             //           blurRadius: 15,
                                             //           spreadRadius: 1.0)
                                             //     ]),
-                                            margin: EdgeInsets.all(10), // make some space around the image
+                                            margin: const EdgeInsets.all(10), // make some space around the image
                                             child: Image(
                                                 image: AssetImage(
                                                   StudentActivities[index].values.first,
@@ -422,18 +429,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         bottomNavigationBar: NavigationBar(
-          backgroundColor: Color(0xFFF5F5F5),
+          backgroundColor: const Color(0xFFF5F5F5),
           selectedIndex: SelectedIcon,
-          animationDuration: Duration(seconds: 1),
-          indicatorColor: Color(0xFF0C356A),
+          animationDuration: const Duration(seconds: 1),
+          indicatorColor: const Color(0xFF0C356A),
           onDestinationSelected: (index) => setState(() => SelectedIcon = index),
           height: 82,
           destinations: [
-            NavigationDestination(
+            const NavigationDestination(
                 icon:
             Icon(
                   Icons.home_outlined,
               color: Colors.white,
+              size: 30,
             ),
                 label: "Home",
             ),
@@ -442,15 +450,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: (){
               Navigator.of(context).pushNamed(fildes.id);
 
-            },icon: Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
+            },icon: const Icon(Icons.topic_outlined,color: Color(0xFF0C356A),size: 30,)),
                 label:'Topics',
             ),
             NavigationDestination(
               icon: IconButton(
                   onPressed: (){
-                    Navigator.of(context).pushNamed(fildes.id);
+                    Navigator.of(context).pushNamed(Training.id);
 
-                  },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+                  },icon: const Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
               label:'Training',
             ),
             NavigationDestination(
@@ -458,7 +466,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: (){
                 Navigator.of(context).pushNamed(ProfileScreen.id);
 
-              }, icon: Icon(Icons.person_outline,color: Color(0xFF0C356A),)),
+              }, icon: const Icon(Icons.person_outline,color: Color(0xFF0C356A),)),
                 label: "Profile",
             ),
           ],

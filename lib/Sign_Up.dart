@@ -34,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Container(
               margin: EdgeInsets.only(top: SizeConfig.verticalBlock*165),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+               // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     "SignUp",
@@ -60,7 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: const BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(12)
                         ),
                         hintText: "Full Name",
@@ -70,17 +70,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           fontFamily: "Poppins",
                         ),
                         prefixIcon: Container(
-                          margin: EdgeInsets.only(top: 8),
+                          margin: const EdgeInsets.only(top: 8),
                           child: Icon(
                             Icons.person_2_outlined,
                             size: SizeConfig.textRatio*12,
-                            color: Color(0xff5A5A5A),
+                            color: const Color(0xff5A5A5A),
                           ),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        fillColor: Color(0xFFe1e1e1),
+                        fillColor: const Color(0xFFe1e1e1),
                         filled: true,
                       ),
                     ),
@@ -97,7 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
+                              borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(14)
                           ),
                           hintText: "Email",
@@ -107,16 +107,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontFamily: "Poppins",
                           ),
                           prefixIcon: Container(
-                            margin: EdgeInsets.only(top: 8),
+                            margin: const EdgeInsets.only(top: 8),
                             child: Icon(
                               Icons.email_outlined,
                               size: SizeConfig.textRatio*12,
-                              color: Color(0xff5A5A5A),
+                              color: const Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12)),
-                          fillColor: Color(0xFFe1e1e1),
+                          fillColor: const Color(0xFFe1e1e1),
                           filled: true,
                         ),
                         validator: (value){
@@ -144,7 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
+                              borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(12)
                           ),
                           hintText: "Password",
@@ -154,16 +154,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontWeight: FontWeight.w400,
                           ),
                           prefixIcon: Container(
-                            margin: EdgeInsets.only(top: 8),
+                            margin: const EdgeInsets.only(top: 8),
                             child: Icon(
                               Icons.lock_outline,
                               size: SizeConfig.textRatio*12,
-                              color: Color(0xff5A5A5A),
+                              color: const Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12)),
-                          fillColor: Color(0xFFe1e1e1),
+                          fillColor: const Color(0xFFe1e1e1),
                           filled: true,
                         ),
                         validator: (value){
@@ -188,7 +188,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: const BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(12)
                           ),
                           hintText: "Confirm Password",
@@ -198,17 +198,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             fontFamily: "Poppins"
                           ),
                           prefixIcon: Container(
-                            margin: EdgeInsets.only(top: 10),
+                            margin: const EdgeInsets.only(top: 10),
                             child: Icon(
                               Icons.lock_outline,
                               size: SizeConfig.textRatio*12,
-                              color: Color(0xff5A5A5A),
+                              color: const Color(0xff5A5A5A),
                             ),
                           ),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
                           ),
-                          fillColor: Color(0xFFe1e1e1),
+                          fillColor: const Color(0xFFe1e1e1),
                           filled: true,
 
                         ),
@@ -219,7 +219,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
 
                   Container(
-                    margin: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(top: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -264,7 +264,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF0C356A),
+                      backgroundColor: const Color(0xFF0C356A),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),
                     )),
@@ -277,13 +277,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               width: double.infinity,
               child: Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                       child: Divider(
                         color: Colors.black,
                       )),
                   // Vertical line 1
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       'OR SignUp with',
                       style: TextStyle(
@@ -294,7 +294,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                  Expanded(
+                  const Expanded(
                       child: Divider(
                         color: Colors.black,
                       )),
@@ -314,7 +314,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     padding: const EdgeInsets.only(right: 15),
                     child: InkWell(
                       onTap: () {},
-                      child: Image(
+                      child: const Image(
                         image: AssetImage("assets/images/Google Logo.png"),
                         width: 55,
                         height: 55,
@@ -325,7 +325,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     padding: const EdgeInsets.only(left: 7),
                     child: InkWell(
                       onTap: () {},
-                      child: Image(
+                      child: const Image(
                         image: AssetImage("assets/images/Frame 182.png"),
                         width: 55,
                         height: 55,
@@ -337,7 +337,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -358,7 +358,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(
                           fontSize: SizeConfig.textRatio*12,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xFF0C356A),
+                          color: const Color(0xFF0C356A),
                           fontFamily: "Poppins",
                         ),
                       ))

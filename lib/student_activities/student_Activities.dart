@@ -21,13 +21,13 @@ class studentActivites extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 14, right: 14),
-                  padding: EdgeInsets.only(left: 7, right: 7, top: 7),
+                  margin: const EdgeInsets.only(left: 14, right: 14),
+                  padding: const EdgeInsets.only(left: 7, right: 7, top: 7),
                   height: 250,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(width: 1, color: Color(0xffA6A6A6))),
+                      border: Border.all(width: 1, color: const Color(0xffA6A6A6))),
                   child: const Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,18 +63,18 @@ class studentActivites extends StatelessWidget {
                           onTap: (){
                             Navigator.of(context).pushNamed(AdvertisementsScreen.id);
                           },
-                            child: Image(
+                            child: const Image(
                           image: AssetImage("assets/images/MSP.png"),
                           height: 125,
                         )),
-                        Center(
+                        const Center(
                             child: Text(
                           'MSP Tech Club',
                           style: TextStyle(fontSize: 15),
                         )),
                       ],
                     ),
-                    Column(
+                    const Column(
                       children: [
                         Image(
                           image: AssetImage("assets/images/ThreeDos.png"),
@@ -89,13 +89,13 @@ class studentActivites extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
+                    const Column(
                       children: [
                         Image(
                           image: AssetImage("assets/SA/images (1).jpeg"),
@@ -111,13 +111,15 @@ class studentActivites extends StatelessWidget {
                     Column(
                       children: [
                         InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).pushNamed(Enactus.id);
+                            },
                             child: Container(
-                                child: Image(
+                                child: const Image(
                               image: AssetImage("assets/SA/Enactus.png"),
                               height: 120,
                             ))),
-                        Center(
+                        const Center(
                             child: Text(
                           'Enacts',
                           style: TextStyle(fontSize: 15),
@@ -131,7 +133,7 @@ class studentActivites extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Column(
+                      const Column(
                         children: [
                           Image(
                             image: AssetImage("assets/SA/LifeOnMarsFEHU.jpg"),
@@ -149,11 +151,11 @@ class studentActivites extends StatelessWidget {
                           InkWell(
                               onTap: () {},
                               child: Container(
-                                  child: Image(
+                                  child: const Image(
                                 image: AssetImage("assets/SA/SCCI.png"),
                                 height: 120,
                               ))),
-                          Center(
+                          const Center(
                               child: Text(
                             'SCCI',
                             style: TextStyle(fontSize: 15),

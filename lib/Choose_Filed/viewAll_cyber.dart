@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Home_Page/HomeScreen.dart';
 import '../ProfileScreen/ProfileScreen.dart';
-import 'choose_filed.dart';
+import '../training.dart';
 
 class viewAll_cyber extends StatefulWidget {
   const viewAll_cyber({super.key});
@@ -19,7 +19,7 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('courses on cyber security',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        title: const Text('courses on cyber security',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
       ),
       body:  ListView(
         controller: ScrollController(),
@@ -32,12 +32,12 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -49,12 +49,12 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -65,19 +65,19 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -89,12 +89,12 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -105,19 +105,19 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -129,12 +129,12 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
                   Container(
                     height: 250,
                     width: 175,
-                    padding: EdgeInsets.only(left: 7,right: 7),
+                    padding: const EdgeInsets.only(left: 7,right: 7),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                        border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children:[
@@ -150,10 +150,10 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFFF5F5F5),
+        backgroundColor: const Color(0xFFF5F5F5),
         selectedIndex: SelectedIcon,
-        animationDuration: Duration(seconds: 1),
-        indicatorColor: Color(0xFF0C356A),
+        animationDuration: const Duration(seconds: 1),
+        indicatorColor: const Color(0xFF0C356A),
         onDestinationSelected: (index) => setState(() => SelectedIcon = index),
         height: 60,
         destinations: [
@@ -163,13 +163,14 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
 
               },
               icon:
-              Icon(
+              const Icon(
                 Icons.home_outlined,
                 color: Color(0xFF0C356A),
+                size: 30,
               )),
             label: "Home",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             icon: Icon(
               Icons.topic_outlined,
               color:
@@ -182,16 +183,16 @@ class _viewAll_cyberState extends State<viewAll_cyber> {
           NavigationDestination(
             icon: IconButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed(fildes.id);
+                  Navigator.of(context).pushNamed(Training.id);
 
-                },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+                },icon: const Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
             label:'Training',
           ),
           NavigationDestination(icon: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed(ProfileScreen.id);
               },
-              icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
+              icon: const Icon(Icons.person_outline,color: Color(0xFF0C356A)
               )
           ),
             label: "Profile",

@@ -1,3 +1,4 @@
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:flutter/material.dart';
 
 import 'Home_Page/Size_Config.dart';
@@ -15,10 +16,17 @@ class AdvertisementsScreen extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBar(
-              toolbarHeight: 25,
+              leading: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+
+                  icon: Icon(Icons.arrow_back,size: 25),
+                  ),
+
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 14),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
@@ -53,23 +61,23 @@ class AdvertisementsScreen extends StatelessWidget {
                   width: 20,
                   height: 20,
                 )),
-            Container(
-              margin: EdgeInsetsDirectional.only(start: 5),
-              padding: EdgeInsetsDirectional.only(start: 6),
-              child: Text(
-                'Advertisements',
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.5),
-                  fontSize: 24,
-                  fontFamily: 'Outfit',
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
+            SizedBox(height: 15,),
+            // Container(
+            //   child: Text(
+            //     'Advertisements',
+            //     style: TextStyle(
+            //       color: Colors.black.withOpacity(0.5),
+            //       fontSize: 20,
+            //       fontFamily: 'Outfit',
+            //       fontWeight: FontWeight.w400,
+            //     ),
+            //   ),
+            // ),
             Container(
                 child: Image(
               image: AssetImage("assets/images/Rectangle 673.png"),
             )),
+            SizedBox(height: 15,),
             Row(
               children: [
                 Container(
@@ -98,19 +106,18 @@ class AdvertisementsScreen extends StatelessWidget {
                   margin: EdgeInsetsDirectional.only(
                     start: 40,
                   ),
-                  height: 38,
+                  height: 40,
                   width: 140,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     color: Color(0xFF0C356A),
                   ),
-                  child: Align(
-                    alignment: Alignment.center,
+                  child: Center(
                     child: Text(
                       'mobile app',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 24,
+                        fontSize: 20,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       ),
@@ -136,34 +143,42 @@ class AdvertisementsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Color(0xFF0C356A),
                   ),
-                  child: Text(
-                    'project managment',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
+                  child: Center(
+                    child: Text(
+                      'HR',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsetsDirectional.only(
-                    start: 40,
-                  ),
-                  padding: EdgeInsetsDirectional.only(start: 43, top: 4),
-                  height: 38,
-                  width: 140,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xFF0C356A),
-                  ),
-                  child: Text(
-                    'UI/UX',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
+                InkWell(
+                  onTap: (){
+                    Navigator.of(context).pushNamed(UI_UX.id);
+                  },
+                  child: Container(
+                    margin: EdgeInsetsDirectional.only(
+                      start: 40,
+                    ),
+                    height: 38,
+                    width: 140,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color(0xFF0C356A),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'UI/UX',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -185,13 +200,15 @@ class AdvertisementsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Color(0xFF0C356A),
                   ),
-                  child: Text(
-                    'visual id',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
+                  child: Center(
+                    child: Text(
+                      'visual id',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),
@@ -206,13 +223,15 @@ class AdvertisementsScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Color(0xFF0C356A),
                   ),
-                  child: Text(
-                    'presentation',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w400,
+                  child: Center(
+                    child: Text(
+                      'presentation',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),

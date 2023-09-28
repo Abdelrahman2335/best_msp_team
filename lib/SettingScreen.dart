@@ -8,6 +8,12 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        toolbarHeight: 40,
+        leading: InkWell(
+            onTap: (){},
+            child: const Icon(Icons.arrow_back,size: 30,),),
+      ),
       body: SingleChildScrollView(
         child: Column(
             //crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,13 +31,13 @@ class SettingScreen extends StatelessWidget {
             //   width:320 ,
             //  child:
                 Padding(
-                  padding: const EdgeInsets.only(top: 50.0,right: 30,left: 30),
+                  padding: const EdgeInsets.only(right: 30,left: 30),
                   child: SizedBox(
                     
 
                     child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                           Icons.search_outlined),
                         hintText: ' Search',
                         hintStyle: TextStyle(
@@ -57,36 +63,39 @@ class SettingScreen extends StatelessWidget {
                 ),
 
             // ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
 
           InkWell(
             onTap: (){
 
             },
-            child: Container(margin: EdgeInsetsDirectional.only(start: 35 ,end:35 ),
-              width:350 ,
-              height:57 ,
-              padding: EdgeInsetsDirectional.only(start: 105,top: 14,),
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                width:350 ,
+                height:57 ,
+                child: const Center(
+                  child: Text("Logout", style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w600,
 
-              child: Text("Logout", style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-
-              ),),
-              decoration: BoxDecoration(
-                color:Color(0xFFFF0000),
-                borderRadius: BorderRadius.circular(12),
+                  ),),
+                ),
+                decoration: BoxDecoration(
+                  color:const Color(0xFFFF0000),
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
             ),
           ),
-            SizedBox(height:40 ,),
+            const SizedBox(height:40 ,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.info_outline,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 InkWell(
                   child: Text("Change info",style: TextStyle(
                     color: Colors.black.withOpacity(0.6000000238418579),
@@ -101,12 +110,12 @@ class SettingScreen extends StatelessWidget {
                 ),
               ],),
             ),
-            SizedBox(height: 27,),
+            const SizedBox(height: 27,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.info_outline,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 Text("Help",style: TextStyle(
                   color: Colors.black.withOpacity(0.6000000238418579),
                   fontSize: 32,
@@ -115,12 +124,12 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ],),
             ),
-            SizedBox(height: 27,),
+            const SizedBox(height: 27,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.account_circle_outlined,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 Text("Prof.inf",style: TextStyle(
                   color: Colors.black.withOpacity(0.6000000238418579),
                   fontSize: 32,
@@ -129,12 +138,12 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ],),
             ),
-            SizedBox(height: 27,),
+            const SizedBox(height: 27,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.lock_outline,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 Text("Privacy",style: TextStyle(
                   color: Colors.black.withOpacity(0.6000000238418579),
                   fontSize: 32,
@@ -143,12 +152,12 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ],),
             ),
-            SizedBox(height: 27,),
+            const SizedBox(height: 27,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.g_translate_outlined,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 Text("Language",style: TextStyle(
                   color: Colors.black.withOpacity(0.6000000238418579),
                   fontSize: 32,
@@ -157,12 +166,12 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ],),
             ),
-            SizedBox(height: 27,),
+            const SizedBox(height: 27,),
 
-            Container(margin: EdgeInsetsDirectional.only(start: 20),
+            Container(margin: const EdgeInsetsDirectional.only(start: 20),
               child: Row(children: [
                 Icon(Icons.access_time_outlined,color:Colors.black.withOpacity(0.6000000238418579) ,),
-                SizedBox(width:25 ,),
+                const SizedBox(width:25 ,),
                 Text("Time",style: TextStyle(
                   color: Colors.black.withOpacity(0.6000000238418579),
                   fontSize: 32,
@@ -171,10 +180,10 @@ class SettingScreen extends StatelessWidget {
                 ),),
               ],),
             ),
-            SizedBox(height: 55,),
+            const SizedBox(height: 55,),
 
 
-             Row(mainAxisAlignment: MainAxisAlignment.center,
+             const Row(mainAxisAlignment: MainAxisAlignment.center,
                  children: [
                   Text(
                     'More you see',

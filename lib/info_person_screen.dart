@@ -26,7 +26,7 @@ class info_person_screen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(117)
                   ),
                   child: Center(
-                      child: Icon(Icons.perm_identity,size: SizeConfig.textRatio*24,color: Color(0xff5A5A5A),)),
+                      child: Icon(Icons.perm_identity,size: SizeConfig.textRatio*24,color: const Color(0xff5A5A5A),)),
                 ),
               ),
              SizedBox(height: SizeConfig.verticalBlock*12,),
@@ -44,7 +44,7 @@ class info_person_screen extends StatelessWidget {
                   children: [
                  TextFormField(
                    style: TextStyle(
-                       color: Color(0xfF0C356A),
+                       color: const Color(0xfF0C356A),
                        fontSize: SizeConfig.textRatio*18,
                        fontFamily: 'Poppins',
                        fontWeight: FontWeight.w600,
@@ -73,7 +73,7 @@ class info_person_screen extends StatelessWidget {
 
                     TextFormField(
                       style: TextStyle(
-                          color: Color(0x7F0C356A),
+                          color: const Color(0x7F0C356A),
                           fontSize: SizeConfig.textRatio*18,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600 ),
@@ -99,7 +99,7 @@ class info_person_screen extends StatelessWidget {
 
                     TextFormField(
                       style: TextStyle(
-                          color: Color(0x7F0C356A),
+                          color: const Color(0x7F0C356A),
                           fontSize: SizeConfig.textRatio*18,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600 ),
@@ -125,7 +125,7 @@ class info_person_screen extends StatelessWidget {
 
                     TextFormField(
                       style: TextStyle(
-                          color: Color(0x7F0C356A),
+                          color: const Color(0x7F0C356A),
                           fontSize: SizeConfig.textRatio*18,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600 ),
@@ -151,7 +151,7 @@ class info_person_screen extends StatelessWidget {
 
                     TextFormField(
                       style: TextStyle(
-                          color: Color(0x7F0C356A),
+                          color: const Color(0x7F0C356A),
                           fontSize: SizeConfig.textRatio*18,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w600 ),
@@ -191,7 +191,7 @@ class info_person_screen extends StatelessWidget {
                    ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color:  Color(0xFF0C356A),
+                    color:  const Color(0xFF0C356A),
                   ),
                   width:359 ,
                   height: 57,

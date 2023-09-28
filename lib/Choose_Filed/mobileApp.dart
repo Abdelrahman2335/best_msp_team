@@ -1,7 +1,7 @@
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import '../Home_Page/HomeScreen.dart';
-import 'choose_filed.dart';
+import '../training.dart';
 import 'viewAll_mobile.dart';
 
 class mobileApp extends StatefulWidget {
@@ -19,8 +19,8 @@ class _mobileAppState extends State<mobileApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
+      appBar: AppBar(),
+      body: ListView(
           controller: ScrollController(),
           children: [
             Column(
@@ -28,30 +28,30 @@ class _mobileAppState extends State<mobileApp> {
                 Container(
                   width: double.infinity,
                   height: 200,
-                  child: Image(image: AssetImage("assets/images/mobileAppMain.png"),),
+                  child: const Image(image: AssetImage("assets/images/mobileAppMain.png"),),
                 ),
                 ListTile(
-                  title: Text('courses on mobile app',style: TextStyle(fontSize: 20),),
-                  trailing: Text('view all',style: TextStyle(fontSize: 13),),
+                  title: const Text('courses on mobile app',style: TextStyle(fontSize: 20),),
+                  trailing: const Text('view all',style: TextStyle(fontSize: 13),),
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                      return viewAll_mobile();
+                      return const viewAll_mobile();
                     }));
                   },
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       height: 250,
                       width: 175,
-                      padding: EdgeInsets.only(left: 7,right: 7),
+                      padding: const EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                          border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
@@ -63,12 +63,12 @@ class _mobileAppState extends State<mobileApp> {
                     Container(
                       height: 250,
                       width: 175,
-                      padding: EdgeInsets.only(left: 7,right: 7),
+                      padding: const EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                          border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
@@ -79,19 +79,19 @@ class _mobileAppState extends State<mobileApp> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       height: 250,
                       width: 175,
-                      padding: EdgeInsets.only(left: 7,right: 7),
+                      padding: const EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                          border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
@@ -103,12 +103,12 @@ class _mobileAppState extends State<mobileApp> {
                     Container(
                       height: 250,
                       width: 175,
-                      padding: EdgeInsets.only(left: 7,right: 7),
+                      padding: const EdgeInsets.only(left: 7,right: 7),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: Color(0xffA6A6A6),width: 1)
+                          border: Border.all(color: const Color(0xffA6A6A6),width: 1)
                       ),
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
@@ -123,12 +123,11 @@ class _mobileAppState extends State<mobileApp> {
             ),
           ],
         ),
-      ),
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFFF5F5F5),
+        backgroundColor: const Color(0xFFF5F5F5),
         selectedIndex: SelectedIcon,
-        animationDuration: Duration(seconds: 1),
-        indicatorColor: Color(0xFF0C356A),
+        animationDuration: const Duration(seconds: 1),
+        indicatorColor: const Color(0xFF0C356A),
         onDestinationSelected: (index) => setState(() => SelectedIcon = index),
         height: 60,
         destinations: [
@@ -138,13 +137,14 @@ class _mobileAppState extends State<mobileApp> {
 
               },
               icon:
-              Icon(
+              const Icon(
                 Icons.home_outlined,
                 color: Color(0xFF0C356A),
+                size: 30,
               )),
             label: "Home",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             icon: Icon(
               Icons.topic_outlined,
               color:
@@ -153,6 +153,13 @@ class _mobileAppState extends State<mobileApp> {
             ),
             label:'Topics',
 
+          ),NavigationDestination(
+            icon: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(Training.id);
+
+                },icon: const Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+            label:'Training',
           ),
           NavigationDestination(icon: IconButton(
               onPressed: (){
@@ -160,7 +167,7 @@ class _mobileAppState extends State<mobileApp> {
 
               },
 
-              icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
+              icon: const Icon(Icons.person_outline,color: Color(0xFF0C356A)
               )
           ),
             label: "Profile",
@@ -181,7 +188,7 @@ class courses extends StatelessWidget {
       body: Container(
         height: 250,
         width: 175,
-        padding: EdgeInsets.only(left: 7,right: 7),
+        padding: const EdgeInsets.only(left: 7,right: 7),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: Colors.black,width: 1)

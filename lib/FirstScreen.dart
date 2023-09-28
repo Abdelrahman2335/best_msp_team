@@ -22,7 +22,7 @@ class _First_Screen extends State<First_Screen>
 
     // Create an AnimationController with a duration
     _controller = AnimationController(
-      duration: Duration(seconds: 1), // Adjust the duration as needed
+      duration: const Duration(seconds: 1), // Adjust the duration as needed
       vsync: this,
     );
 
@@ -53,7 +53,7 @@ class _First_Screen extends State<First_Screen>
                     alignment: _animation.value,
                     child: Container(
                       child: Image(
-                        image: AssetImage("assets/images/SkillUp Yellow.png"),height: SizeConfig.screenHeight/2,
+                        image: const AssetImage("assets/images/SkillUp Yellow.png"),height: SizeConfig.screenHeight/2,
 // =======
 //     return Scaffold(
 //       body: Center(
@@ -103,11 +103,11 @@ class _First_Screen extends State<First_Screen>
                               mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
 
-                                  Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
+                                  Text("Continue",style: TextStyle(color: const Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
 
                                   IconButton(onPressed: (){
                                     Navigator.of(context).pushReplacementNamed(StartScreen.id);
-                                  }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: Color(0xFF0C356A)))
+                                  }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: const Color(0xFF0C356A)))
                                 ],
                                     ),
                           ),

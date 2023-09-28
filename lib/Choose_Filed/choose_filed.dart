@@ -3,6 +3,7 @@ import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
+import '../training.dart';
 import 'AI.dart';
 import 'cyber_security.dart';
 import 'mobileApp.dart';
@@ -106,6 +107,7 @@ class _fildesState extends State<fildes> {
             Icon(
               Icons.home_outlined,
               color: Color(0xFF0C356A),
+              size: 30,
             )),
             label: "Home",
           ),
@@ -122,7 +124,7 @@ class _fildesState extends State<fildes> {
           NavigationDestination(
             icon: IconButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed(fildes.id);
+                  Navigator.of(context).pushNamed(Training.id);
 
                 },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
             label:'Training',

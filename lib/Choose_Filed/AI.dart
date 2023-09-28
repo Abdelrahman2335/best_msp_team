@@ -3,6 +3,7 @@ import 'package:best_msp_team/Choose_Filed/course.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import '../Home_Page/HomeScreen.dart';
+import '../training.dart';
 import 'choose_filed.dart';
 import 'package:flutter/material.dart';
 import 'viewAll_AI.dart';
@@ -251,6 +252,7 @@ class _AIState extends State<AI> {
               Icon(
                 Icons.home_outlined,
                 color: Color(0xFF0C356A),
+                size: 30,
               )),
             label: "Home",
           ),
@@ -267,7 +269,7 @@ class _AIState extends State<AI> {
           NavigationDestination(
             icon: IconButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed(fildes.id);
+                  Navigator.of(context).pushNamed(Training.id);
 
                 },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
             label:'Training',

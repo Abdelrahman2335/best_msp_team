@@ -1,11 +1,18 @@
+import 'package:best_msp_team/Choose_Filed/AI.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import 'package:best_msp_team/Choose_Filed/cyber_security.dart';
+import 'package:best_msp_team/CourseContent/CourceContent.dart';
+import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
+import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
+import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
+import 'Choose_Filed/viewAll_cyber.dart';
+import 'Home_Page/All_Courses.dart';
 import 'Home_Page/Size_Config.dart';
 import 'Login_Screen.dart';
 import 'SettingScreen.dart';
@@ -18,10 +25,8 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-void main() async{
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+void main() {
 
   runApp(
     DevicePreview(
@@ -47,9 +52,13 @@ class MyApp extends StatelessWidget {
       ),
       builder: DevicePreview.appBuilder,
 
-      initialRoute: SettingScreen.id,
+
+      initialRoute: AdvertisementsScreen.id,
+
+
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
+        studentActivites.id:(BuildContext context)=> studentActivites(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
         fildes.id: (BuildContext context) => fildes(),
         cyberSecurity.id: (BuildContext context) => cyberSecurity(),
@@ -60,7 +69,17 @@ class MyApp extends StatelessWidget {
         StartScreen.id:(BuildContext context) => StartScreen(),
         ProfileScreen.id:(BuildContext context) => ProfileScreen(),
         ForgetPassword.id:(BuildContext context) => ForgetPassword(),
+        AdvertisementsScreen.id:(BuildContext context) => AdvertisementsScreen(),
+        ALL_Courses.id:(BuildContext context) => ALL_Courses(),
+        viewAll_cyber.id:(BuildContext context) => viewAll_cyber(),
+        AI.id:(BuildContext context) => AI(),
         Auth.id:(BuildContext context) => Auth(),
+        Google.id:(BuildContext context) => Google(),
+        Udemy.id:(BuildContext context) => Udemy(),
+        edx.id:(BuildContext context) => edx(),
+        UI_UX.id:(BuildContext context) => UI_UX(),
+        Enactus.id:(BuildContext context) => Enactus(),
+
       },
     );
   }

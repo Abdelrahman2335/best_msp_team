@@ -38,43 +38,85 @@ class _First_Screen extends State<First_Screen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Stack(
-              // Use a Stack to stack the two Align widgets
-              alignment: Alignment.center,
-              children: [
-                Align(
-                  alignment: _animation.value,
-                  child: Container(
-                    child: Image(
-                      image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.screenHeight/2,
+// <<<<<<< Login
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return Stack(
+                // Use a Stack to stack the two Align widgets
+                alignment: Alignment.center,
+                children: [
+                  Align(
+                    alignment: _animation.value,
+                    child: Container(
+                      child: Image(
+                        image: AssetImage("assets/images/SkillUp Yellow.png"),height: SizeConfig.screenHeight/2,
+// =======
+//     return Scaffold(
+//       body: Center(
+//         child: AnimatedBuilder(
+//           animation: _controller,
+//           builder: (context, child) {
+//             return Stack(
+//               // Use a Stack to stack the two Align widgets
+//               alignment: Alignment.center,
+//               children: [
+//                 Align(
+//                   alignment: _animation.value,
+//                   child: Container(
+//                     child: Image(
+//                       image: AssetImage("assets/images/Untitled design.png"),height: SizeConfig.verticalBlock*173,width: SizeConfig.horizontalBlock*459,
+//                     ),
+//                   ),
+//                 ),
+//                   Align(
+//                     alignment: Alignment.bottomRight,
+//                     child: InkWell(
+//                       onTap: (){
+//                         Navigator.of(context).pushNamed(StartScreen.id);
+//                       },
+//                         child:  Row(
+//                           mainAxisAlignment: MainAxisAlignment.end,
+//                             children: [
+//                               Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.textRatio*24 ,fontFamily: "Outfit",fontWeight: FontWeight.w400)),
+//                               IconButton(onPressed: (){
+//                                 Navigator.of(context).pushNamed(StartScreen.id);
+//                               }, icon: Icon(Icons.arrow_forward,size: SizeConfig.textRatio*24  ,color: Color(0xFF0C356A)))
+//                             ],
+//                                 ),
+// >>>>>>> master
+                      ),
                     ),
                   ),
-                ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.of(context).pushNamed(StartScreen.id);
-                      },
-                        child:  Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
-                              IconButton(onPressed: (){
-                                Navigator.of(context).pushNamed(StartScreen.id);
-                              }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: Color(0xFF0C356A)))
-                            ],
-                                ),
-                      ),
-                        ),
-              ],
-            );
-          },
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.of(context).pushReplacementNamed(StartScreen.id);
+                          },
+                            child:  Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+
+                                  Text("Continue",style: TextStyle(color: Color(0xFF0C356A), fontSize: SizeConfig.screenWidth/15 )),
+
+                                  IconButton(onPressed: (){
+                                    Navigator.of(context).pushReplacementNamed(StartScreen.id);
+                                  }, icon: Icon(Icons.arrow_forward,size: SizeConfig.screenWidth/15 ,color: Color(0xFF0C356A)))
+                                ],
+                                    ),
+                          ),
+                            ),
+                    ),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

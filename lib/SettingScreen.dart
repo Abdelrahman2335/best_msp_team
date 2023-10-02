@@ -11,7 +11,9 @@ class SettingScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 40,
         leading: InkWell(
-            onTap: (){},
+            onTap: (){
+              Navigator.of(context).pop();
+            },
             child: const Icon(Icons.arrow_back,size: 30,),),
       ),
       body: SingleChildScrollView(

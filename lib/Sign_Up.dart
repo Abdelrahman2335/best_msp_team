@@ -31,22 +31,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-            Container(
-              margin: EdgeInsets.only(top: SizeConfig.verticalBlock*165),
-              child: Row(
-               // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "SignUp",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: SizeConfig.textRatio*32,
-                      fontFamily: "Poppins",
+              Container(
+                margin: EdgeInsets.only(top: SizeConfig.verticalBlock*157),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: SizeConfig.textRatio*32,
+                        fontFamily: "Poppins",
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
 
 
@@ -60,27 +60,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: TextField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(12)
                         ),
-                        hintText: "Full Name",
+                        labelText: "Full name",
                         hintStyle: TextStyle(
-                          fontSize: SizeConfig.textRatio*12,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Poppins",
+
+                          fontSize: SizeConfig.screenWidth / 20,
+                          fontWeight: FontWeight.w700,
                         ),
-                        prefixIcon: Container(
-                          margin: const EdgeInsets.only(top: 8),
-                          child: Icon(
-                            Icons.person_2_outlined,
-                            size: SizeConfig.textRatio*12,
-                            color: const Color(0xff5A5A5A),
-                          ),
-                        ),
+                        prefixIcon: Icon(Icons.person_outline,color: Color(0xFF0C356A),size: 20,),
+
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        fillColor: const Color(0xFFe1e1e1),
+                        fillColor: Color(0xFFe1e1e1),
                         filled: true,
                       ),
                     ),
@@ -97,26 +91,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.white),
-                              borderRadius: BorderRadius.circular(14)
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(12)
                           ),
-                          hintText: "Email",
+                          labelText: "Email",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.textRatio*12,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Poppins",
+
+                            fontSize: SizeConfig.screenWidth / 20,
+                            fontWeight: FontWeight.w700,
                           ),
-                          prefixIcon: Container(
-                            margin: const EdgeInsets.only(top: 8),
-                            child: Icon(
-                              Icons.email_outlined,
-                              size: SizeConfig.textRatio*12,
-                              color: const Color(0xff5A5A5A),
-                            ),
-                          ),
+                          prefixIcon: Icon(Icons.mail_outline_outlined,color: Color(0xFF0C356A),size: 20,),
+
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12)),
-                          fillColor: const Color(0xFFe1e1e1),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          fillColor: Color(0xFFe1e1e1),
                           filled: true,
                         ),
                         validator: (value){
@@ -141,29 +130,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: TextFormField(
                         controller: _passwordController,
                         obscureText: true,
-
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.white),
+                              borderSide: BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(12)
                           ),
-                          hintText: "Password",
+                          labelText: "Password",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.textRatio*12,
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w400,
+                            fontSize: SizeConfig.screenWidth / 20,
+                            fontWeight: FontWeight.w700,
                           ),
-                          prefixIcon: Container(
-                            margin: const EdgeInsets.only(top: 8),
-                            child: Icon(
-                              Icons.lock_outline,
-                              size: SizeConfig.textRatio*12,
-                              color: const Color(0xff5A5A5A),
-                            ),
-                          ),
+                          prefixIcon: Icon(Icons.lock_outline,color: Color(0xFF0C356A),size: 20,),
+
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12)),
-                          fillColor: const Color(0xFFe1e1e1),
+                          fillColor: Color(0xFFe1e1e1),
                           filled: true,
                         ),
                         validator: (value){
@@ -188,29 +169,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: TextField(
                         decoration: InputDecoration(
                           enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.white),
-                            borderRadius: BorderRadius.circular(12)
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(12)
                           ),
-                          hintText: "Confirm Password",
+                          labelText: " Confirm password",
                           hintStyle: TextStyle(
-                            fontSize: SizeConfig.textRatio*12,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Poppins"
+                            fontSize: SizeConfig.screenWidth / 20,
+                            fontWeight: FontWeight.w700,
                           ),
-                          prefixIcon: Container(
-                            margin: const EdgeInsets.only(top: 10),
-                            child: Icon(
-                              Icons.lock_outline,
-                              size: SizeConfig.textRatio*12,
-                              color: const Color(0xff5A5A5A),
-                            ),
-                          ),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                          ),
-                          fillColor: const Color(0xFFe1e1e1),
-                          filled: true,
+                          prefixIcon: Icon(Icons.lock_outline,color: Color(0xFF0C356A),size: 20,),
 
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          fillColor: Color(0xFFe1e1e1),
+                          filled: true,
                         ),
                       ),
                     ),

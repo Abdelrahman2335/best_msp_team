@@ -1,6 +1,7 @@
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:flutter/material.dart';
 import '../Home_Page/HomeScreen.dart';
+import '../training.dart';
 import 'choose_filed.dart';
 
 class viewAll_mobile extends StatefulWidget {
@@ -149,10 +150,10 @@ class _viewAll_mobileState extends State<viewAll_mobile> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFFF5F5F5),
+        backgroundColor: const Color(0xFFF5F5F5),
         selectedIndex: SelectedIcon,
-        animationDuration: Duration(seconds: 1),
-        indicatorColor: Color(0xFF0C356A),
+        animationDuration: const Duration(seconds: 1),
+        indicatorColor: const Color(0xFF0C356A),
         onDestinationSelected: (index) => setState(() => SelectedIcon = index),
         height: 60,
         destinations: [
@@ -162,13 +163,14 @@ class _viewAll_mobileState extends State<viewAll_mobile> {
 
               },
               icon:
-              Icon(
+              const Icon(
                 Icons.home_outlined,
                 color: Color(0xFF0C356A),
+                size: 30,
               )),
             label: "Home",
           ),
-          NavigationDestination(
+          const NavigationDestination(
             icon: Icon(
               Icons.topic_outlined,
               color:
@@ -178,13 +180,19 @@ class _viewAll_mobileState extends State<viewAll_mobile> {
             label:'Topics',
 
           ),
+          NavigationDestination(
+            icon: IconButton(
+                onPressed: (){
+                  Navigator.of(context).pushNamed(Training.id);
+
+                },icon: const Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
+            label:'Training',
+          ),
           NavigationDestination(icon: IconButton(
               onPressed: (){
                 Navigator.of(context).pushNamed(ProfileScreen.id);
-
               },
-
-              icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
+              icon: const Icon(Icons.person_outline,color: Color(0xFF0C356A)
               )
           ),
             label: "Profile",

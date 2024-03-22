@@ -6,7 +6,7 @@ import 'package:best_msp_team/SettingScreen.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:flutter/material.dart';
 import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import '../training.dart';
 import 'All_Courses.dart';
 
@@ -474,10 +474,10 @@ class _HomeScreenState extends State<HomeScreen> {
       );
   }
 }
-Future<void> _launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
+//Future<void> _launchURL(String url) async {
+  //if (await canLaunch(url)) {
+    //await launch(url);
+  //} else {
+   // throw 'Could not launch $url';
+  //}
+//}

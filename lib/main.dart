@@ -22,26 +22,14 @@ import 'Sign_Up.dart';
 import 'aboutScreen.dart';
 import 'forget_password.dart';
 import 'info_person_screen.dart';
-import 'package:device_preview/device_preview.dart';
-
-
 
 void main() {
-
-  runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const MyApp(),
-    ),);
+  runApp(MyApp());
 }
 
-
-
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -50,15 +38,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      builder: DevicePreview.appBuilder,
-
-
       initialRoute: First_Screen.id,
-
-
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
-        studentActivites.id:(BuildContext context)=> studentActivites(),
+        studentActivites.id: (BuildContext context) => studentActivites(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
         fildes.id: (BuildContext context) => const fildes(),
         cyberSecurity.id: (BuildContext context) => const cyberSecurity(),
@@ -66,24 +49,23 @@ class MyApp extends StatelessWidget {
         SignUpScreen.id: (BuildContext context) => SignUpScreen(),
         info_person_screen.id: (BuildContext context) => const info_person_screen(),
         SettingScreen.id: (BuildContext context) => const SettingScreen(),
-        StartScreen.id:(BuildContext context) => const StartScreen(),
-        ProfileScreen.id:(BuildContext context) => const ProfileScreen(),
-        ForgetPassword.id:(BuildContext context) => const ForgetPassword(),
-        AdvertisementsScreen.id:(BuildContext context) => const AdvertisementsScreen(),
-        ALL_Courses.id:(BuildContext context) => ALL_Courses(),
-        viewAll_cyber.id:(BuildContext context) => const viewAll_cyber(),
-        AI.id:(BuildContext context) => const AI(),
-        Auth.id:(BuildContext context) => const Auth(),
-        Google.id:(BuildContext context) => Google(),
-        Udemy.id:(BuildContext context) => Udemy(),
-        Udacity.id:(BuildContext context) => Udacity(),
-        UI_UX.id:(BuildContext context) => UI_UX(),
-        Enactus.id:(BuildContext context) => Enactus(),
-        Training.id:(BuildContext context) => Training(),
-        mobileApp.id:(BuildContext context) => const mobileApp(),
-        testcode.id:(BuildContext context) => testcode(),
-        About.id:(BuildContext context) => About(),
-
+        StartScreen.id: (BuildContext context) => const StartScreen(),
+        ProfileScreen.id: (BuildContext context) => const ProfileScreen(),
+        ForgetPassword.id: (BuildContext context) => const ForgetPassword(),
+        AdvertisementsScreen.id: (BuildContext context) => const AdvertisementsScreen(),
+        ALL_Courses.id: (BuildContext context) => ALL_Courses(),
+        viewAll_cyber.id: (BuildContext context) => const viewAll_cyber(),
+        AI.id: (BuildContext context) => const AI(),
+        Auth.id: (BuildContext context) => const Auth(),
+        Google.id: (BuildContext context) => Google(),
+        Udemy.id: (BuildContext context) => Udemy(),
+        Udacity.id: (BuildContext context) => Udacity(),
+        UI_UX.id: (BuildContext context) => UI_UX(),
+        Enactus.id: (BuildContext context) => Enactus(),
+        Training.id: (BuildContext context) => Training(),
+        mobileApp.id: (BuildContext context) => const mobileApp(),
+        testcode.id: (BuildContext context) => testcode(),
+        About.id: (BuildContext context) => About(),
       },
     );
   }

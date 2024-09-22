@@ -6,6 +6,7 @@ import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
+import 'package:best_msp_team/login.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:best_msp_team/testcode.dart';
 import 'package:best_msp_team/training.dart';
@@ -38,11 +39,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: First_Screen.id,
+      initialRoute: Login.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         studentActivites.id: (BuildContext context) => studentActivites(),
         LoginScreen.id: (BuildContext context) => LoginScreen(),
+        Login.id: (BuildContext context) => Login(),
         fildes.id: (BuildContext context) => const fildes(),
         cyberSecurity.id: (BuildContext context) => const cyberSecurity(),
         HomeScreen.id: (BuildContext context) => const HomeScreen(),

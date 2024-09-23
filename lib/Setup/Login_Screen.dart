@@ -1,6 +1,6 @@
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
-import 'package:best_msp_team/Sign_Up.dart';
+import 'package:best_msp_team/setup/Sign_Up.dart';
 import 'package:flutter/material.dart';
 
 

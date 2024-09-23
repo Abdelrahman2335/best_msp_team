@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-import 'SettingScreen.dart';
 
 class About extends StatefulWidget {
    About({super.key});
@@ -125,7 +124,7 @@ class _AboutState extends State<About> {
                        return "Required";
                      }
                      if(value.length<6){
-                       return "it shold be 6 or more ";
+                       return "it should be 6 or more ";
                      }
                      return null;
                    },

@@ -6,7 +6,7 @@ import 'package:best_msp_team/FirstScreen.dart';
 import 'package:best_msp_team/Home_Page/HomeScreen.dart';
 import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/StartScreen/StartScreen.dart';
-import 'package:best_msp_team/login.dart';
+import 'package:best_msp_team/setup/login.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:best_msp_team/testcode.dart';
 import 'package:best_msp_team/training.dart';
@@ -17,12 +17,11 @@ import 'Choose_Filed/mobileApp.dart';
 import 'Choose_Filed/viewAll_cyber.dart';
 import 'Home_Page/All_Courses.dart';
 import 'Home_Page/Size_Config.dart';
-import 'Login_Screen.dart';
 import 'SettingScreen.dart';
-import 'Sign_Up.dart';
+import 'setup/Sign_Up.dart';
 import 'aboutScreen.dart';
-import 'forget_password.dart';
-import 'info_person_screen.dart';
+import 'setup/forget_password.dart';
+import 'setup/info_person_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,7 +42,6 @@ class MyApp extends StatelessWidget {
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
         studentActivites.id: (BuildContext context) => studentActivites(),
-        LoginScreen.id: (BuildContext context) => LoginScreen(),
         Login.id: (BuildContext context) => Login(),
         fildes.id: (BuildContext context) => const fildes(),
         cyberSecurity.id: (BuildContext context) => const cyberSecurity(),

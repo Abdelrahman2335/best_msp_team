@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../Home_Page/HomeScreen.dart';
 import '../Home_Page/Size_Config.dart';
+import '../Home_Page/layout.dart';
 import 'Sign_Up.dart';
 
 class Login extends StatefulWidget {
@@ -83,7 +84,7 @@ class _LoginState extends State<Login> {
                   backgroundColor: Color(0xFF0C356A),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(HomeScreen.id);
+                  Navigator.of(context).pushReplacementNamed(layOut.id);
                 },
                 child: Center(
                   child: Text(

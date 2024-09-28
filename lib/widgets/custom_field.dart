@@ -30,7 +30,7 @@ class _CustomFieldState extends State<CustomField> {
 
   @override
   Widget build(BuildContext context) {
-    Color color = Color(0xFF0C356A);
+    Color color =  Theme.of(context).colorScheme.primary;
 
     return TextFormField(
       controller: widget.controller,
@@ -41,7 +41,7 @@ class _CustomFieldState extends State<CustomField> {
         focusedBorder: OutlineInputBorder(
           gapPadding: 5,
             borderRadius: BorderRadius.circular(15),
-            borderSide: BorderSide(color: Color(0xFF0C356A),),),
+            borderSide: BorderSide(color: color),),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),

@@ -90,58 +90,6 @@ class _fildesState extends State<fildes> {
           ],
         ),
       ),
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: Color(0xFFF5F5F5),
-        selectedIndex: SelectedIcon,
-        animationDuration: Duration(seconds: 1),
-        indicatorColor: Color(0xFF0C356A),
-        onDestinationSelected: (index) => setState(() => SelectedIcon = index),
-        height: 60,
-        destinations: [
-          NavigationDestination(icon: IconButton(
-            onPressed: (){
-              Navigator.of(context).pushNamed(HomeScreen.id);
-
-            },
-            icon:
-            Icon(
-              Icons.home_outlined,
-              color: Color(0xFF0C356A),
-              size: 30,
-            )),
-            label: "Home",
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.topic_outlined,
-              color:
-              Colors.white,
-              size: 30,
-            ),
-            label:'Topics',
-
-          ),
-          NavigationDestination(
-            icon: IconButton(
-                onPressed: (){
-                  Navigator.of(context).pushNamed(Training.id);
-
-                },icon: Icon(Icons.card_travel_outlined,color: Color(0xFF0C356A),size: 30,)),
-            label:'Training',
-          ),
-          NavigationDestination(icon: IconButton(
-            onPressed: (){
-              Navigator.of(context).pushNamed(ProfileScreen.id);
-
-            },
-
-            icon: Icon(Icons.person_outline,color: Color(0xFF0C356A)
-            )
-          ),
-            label: "Profile",
-          ),
-        ],
-      ),
     );
   }
 }

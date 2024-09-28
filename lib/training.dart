@@ -300,71 +300,21 @@ class _TrainingState extends State<Training> {
           ),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        backgroundColor: const Color(0xFFF5F5F5),
-        selectedIndex: SelectedIcon,
-        animationDuration: const Duration(seconds: 1),
-        indicatorColor: const Color(0xFF0C356A),
-        onDestinationSelected: (index) => setState(() => SelectedIcon = index),
-        height: 60,
-        destinations: [
-          NavigationDestination(icon: IconButton(
-              onPressed: (){
-                Navigator.of(context).pushNamed(HomeScreen.id);
-
-              },
-              icon:
-              const Icon(
-                Icons.home_outlined,
-                color: Color(0xFF0C356A),
-                size: 30,
-              )),
-            label: "Home",
-          ),
-          NavigationDestination(icon: IconButton(
-            onPressed: (){
-            Navigator.of(context).pushNamed(HomeScreen.id);
-
-            },
-            icon:
-            const Icon(
-            Icons.topic_outlined,
-            color: Color(0xFF0C356A),
-            size: 30,
-            )),
-            label: "Topics",
-            ),
-          NavigationDestination(
-            icon: IconButton(
-                onPressed: (){
-                  Navigator.of(context).pushNamed(Training.id);
-
-                },icon: const Icon(Icons.card_travel_outlined,color: Colors.white,size: 30,)),
-            label:'Training',
-          ),
-          NavigationDestination(icon: IconButton(
-              onPressed: (){
-                Navigator.of(context).pushNamed(ProfileScreen.id);
-
-              },
-
-              icon: const Icon(Icons.person_outline,color: Color(0xFF0C356A)
-              )
-          ),
-            label: "Profile",
-          ),
-        ],
-      ),
     );
   }
 }
 
-class courses extends StatelessWidget {
-  courses({this.Image1, this.Image2});
+class courses extends StatefulWidget {
+   courses({this.Image1, this.Image2});
 
   ImageProvider? Image1;
   ImageProvider? Image2;
 
+  @override
+  State<courses> createState() => _coursesState();
+}
+
+class _coursesState extends State<courses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -380,8 +330,8 @@ class courses extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image(image: AssetImage(Image1 as String), height: 150,),
-            Image(image: AssetImage(Image2 as String), height: 50, width: 50,)
+            Image(image: AssetImage(widget.Image1 as String), height: 150,),
+            Image(image: AssetImage(widget.Image2 as String), height: 50, width: 50,)
           ],
         ),
       ),

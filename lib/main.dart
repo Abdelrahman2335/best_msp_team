@@ -17,6 +17,7 @@ import 'Choose_Filed/mobileApp.dart';
 import 'Choose_Filed/viewAll_cyber.dart';
 import 'Home_Page/All_Courses.dart';
 import 'Home_Page/Size_Config.dart';
+import 'Home_Page/layout.dart';
 import 'SettingScreen.dart';
 import 'setup/Sign_Up.dart';
 import 'aboutScreen.dart';
@@ -28,7 +29,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final ColorScheme _colorScheme = ColorScheme.fromSeed(
+    seedColor: Color(0xFF0C356A),
+    surface: Color.fromARGB(255, 221, 238, 243),
+    brightness: Brightness.light,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -36,23 +43,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        colorScheme: _colorScheme,
+        scaffoldBackgroundColor: _colorScheme.surface,
         useMaterial3: true,
       ),
       initialRoute: Login.id,
       routes: {
         First_Screen.id: (BuildContext context) => First_Screen(),
+        layOut.id: (BuildContext context) => layOut(),
         studentActivites.id: (BuildContext context) => studentActivites(),
         Login.id: (BuildContext context) => Login(),
         fildes.id: (BuildContext context) => const fildes(),
         cyberSecurity.id: (BuildContext context) => const cyberSecurity(),
         HomeScreen.id: (BuildContext context) => const HomeScreen(),
         SignUpScreen.id: (BuildContext context) => SignUpScreen(),
-        info_person_screen.id: (BuildContext context) => const info_person_screen(),
+        info_person_screen.id: (BuildContext context) =>
+            const info_person_screen(),
         SettingScreen.id: (BuildContext context) => const SettingScreen(),
         StartScreen.id: (BuildContext context) => const StartScreen(),
         ProfileScreen.id: (BuildContext context) => const ProfileScreen(),
         ForgetPassword.id: (BuildContext context) => const ForgetPassword(),
-        AdvertisementsScreen.id: (BuildContext context) => const AdvertisementsScreen(),
+        AdvertisementsScreen.id: (BuildContext context) =>
+            const AdvertisementsScreen(),
         ALL_Courses.id: (BuildContext context) => ALL_Courses(),
         viewAll_cyber.id: (BuildContext context) => const viewAll_cyber(),
         AI.id: (BuildContext context) => const AI(),

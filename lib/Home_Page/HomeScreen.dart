@@ -1,13 +1,11 @@
 import 'package:best_msp_team/AdvertisementsScreen.dart';
 import 'package:best_msp_team/CourseContent/CoursesScreens.dart';
 import 'package:best_msp_team/Home_Page/Size_Config.dart';
-import 'package:best_msp_team/ProfileScreen/ProfileScreen.dart';
 import 'package:best_msp_team/SettingScreen.dart';
 import 'package:best_msp_team/student_activities/student_Activities.dart';
+import 'package:best_msp_team/widgets/custom_field.dart';
 import 'package:flutter/material.dart';
-import 'package:best_msp_team/Choose_Filed/choose_filed.dart';
 import '../data_base/data_base.dart';
-import '../training.dart';
 import 'All_Courses.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   int SelectedIcon = 0;
+  TextEditingController searchCon = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("Explore",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: SizeConfig.screenHeight / 30,
-                    fontFamily: "Poppins")),
+            Text(
+              "Explore",
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
           ],
         ),
         actions: [
@@ -75,33 +73,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.all(15),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                padding: const EdgeInsets.only(left: 0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  color: Colors.grey.withOpacity(0.2),
-                ),
-                child: TextFormField(
-                  style: TextStyle(
-                    fontSize: SizeConfig.screenWidth / 21,
-                  ),
-                  onTap: () {},
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: "Search",
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: SizeConfig.screenWidth / 20,
-                    ),
-                    // focusedBorder: OutlineInputBorder(
-                    //     borderSide: BorderSide(color: Colors.blue))),
-                  ),
-                ),
-              ),
+              CustomField(
+                  hint: "Search", icon: Icons.search, controller: searchCon),
+
               Padding(
                 padding: const EdgeInsets.only(
                   top: 10.0,
@@ -112,10 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           Text("Most popular courses",
-                              style: TextStyle(
-                                  color: Colors.black.withOpacity(0.8),
-                                  fontSize: 12,
-                                  fontFamily: "Poppins")),
+                              style: Theme.of(context).textTheme.titleSmall),
                           const Spacer(),
                           Align(
                             child: TextButton(
@@ -123,13 +98,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Navigator.of(context)
                                       .pushNamed(ALL_Courses.id);
                                 },
-                                child: const Text(
-                                  "View all",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: "Poppins",
-                                      color: Color(0xFF0C356A)),
-                                )),
+                                child: Text("View all",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium)),
                           ),
                         ],
                       ),
@@ -143,55 +115,57 @@ class _HomeScreenState extends State<HomeScreen> {
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) => InkWell(
                                   onTap: () {
-                                    dataSource[index] == 1
+                                    dataSource[index] == 0
                                         ? Navigator.of(context)
                                             .pushNamed(Google.id)
                                         : null;
                                   },
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          height: 220,
-                                          width: 175,
-                                          padding: const EdgeInsets.only(
-                                              left: 7, right: 7, top: 10),
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              border: Border.all(
-                                                  color:
-                                                      const Color(0xffA6A6A6),
-                                                  width: 1)),
-                                          margin: const EdgeInsets.symmetric(
-                                              horizontal: 5),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Image(
-                                                image: AssetImage(
-                                                    dataSource[index].Image),
-                                                height: 120,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        height: 220,
+                                        width: 175,
+                                        padding: const EdgeInsets.only(
+                                            left: 7, right: 7, top: 10),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            border: Border.all(
+                                                color: const Color(0xffA6A6A6),
+                                                width: 1)),
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 5),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Image(
+                                              image: AssetImage(
+                                                  dataSource[index].Image),
+                                              height: 120,
+                                            ),
+                                            Image(
+                                              image: AssetImage(
+                                                  dataSource[index].platform),
+                                              height: 40,
+                                              width: 45,
+                                            ),
+                                            Text(
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+
+                                              /// if the description more than 2 lines will show as ...
+                                              dataSource[index].description,
+                                              style: const TextStyle(
+                                                fontSize: 12,
                                               ),
-                                              const Image(
-                                                image: AssetImage(
-                                                    "assets/images/coursera.png"),
-                                                height: 40,
-                                                width: 45,
-                                              ),
-                                              Text(
-                                                dataSource[index].description,
-                                                style: const TextStyle(
-                                                    fontSize: 12),
-                                              ),
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
@@ -207,110 +181,61 @@ class _HomeScreenState extends State<HomeScreen> {
 /******************************************************************************/
 /******************************************************************************/
 
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 10.0,
-                ),
-                child: Align(
-                  child: Column(
+              SizedBox(
+                height: 7,
+              ),
+
+                  Row(
                     children: [
-                      Row(
-                        children: [
-                          Text("Top learning  websites",
-                              style: TextStyle(
-                                  color: Colors.black.withOpacity(0.8),
-                                  fontSize: 12,
-                                  fontFamily: "Poppins")),
-                          const Spacer(),
-                          Align(
-                            child: TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  "View all",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: "Poppins",
-                                      color: Color(0xFF0C356A)),
-                                )),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 100,
-                                child: ListView.builder(
-                                  itemCount: platforms.length,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) => InkWell(
-                                    onTap: () {
-                                      if (platforms[index]["PlatForm 2"] !=
-                                          null) {
-                                        Navigator.of(context)
-                                            .pushNamed(Udemy.id);
-                                      } else if (platforms[index]
-                                              ["PlatForm 3"] !=
-                                          null) {
-                                        Navigator.of(context)
-                                            .pushNamed(Udacity.id);
-                                      }
-                                    },
-                                    child: Container(
-                                        width: SizeConfig.horizontalBlock * 107,
-                                        height: SizeConfig.verticalBlock * 93,
-                                        // decoration: BoxDecoration(
-                                        //     color: Colors.white,
-                                        //     borderRadius:
-                                        //         BorderRadius.circular(10),
-                                        //     boxShadow: [
-                                        //       BoxShadow(
-                                        //         color: Colors.grey.shade500,
-                                        //         offset: Offset(4.0, 4.0),
-                                        //         blurRadius: 3,
-                                        //         spreadRadius: 1.0,
-                                        //       ),
-                                        //       BoxShadow(
-                                        //           color: Colors.white,
-                                        //           offset: Offset(-4.0, -4.0),
-                                        //           blurRadius: 15,
-                                        //           spreadRadius: 1.0)
-                                        //     ]),
-                                        margin: const EdgeInsets.all(10),
-                                        // make some space around the image
-                                        child: Image(
-                                            image: AssetImage(
-                                          platforms[index].values.first,
-                                        ))),
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
+                      Text("Top learning  websites",
+                          style: Theme.of(context).textTheme.titleSmall),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "View all",
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
-                      )
+                      ),
                     ],
                   ),
-                ),
-              ), //platForms
+                      SizedBox(
+                        height: 100,
+                        child: ListView.builder(
+                          itemCount: platforms.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => InkWell(
+                            onTap: () {
+                              if (platforms[index]["PlatForm 2"] != null) {
+                                Navigator.of(context).pushNamed(Udemy.id);
+                              } else if (platforms[index]["PlatForm 3"] !=
+                                  null) {
+                                Navigator.of(context).pushNamed(Udacity.id);
+                              }
+                            },
+                            child: Container(
+                                width: SizeConfig.horizontalBlock * 107,
+                                height: SizeConfig.verticalBlock * 93,
+                                margin: const EdgeInsets.all(10),
+                                // make some space around the image
+                                child: Image(
+                                    image: AssetImage(
+                                  platforms[index].values.first,
+                                ))),
+                          ),
+                        ),
+                      ),
+
+
+              //platForms
 
 /******************************************************************************/
 /******************************************************************************/
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 10.0,
-                ),
-                child: Align(
-                  child: Column(
-                    children: [
+
                       Row(
                         children: [
                           Text("Top Student Activities",
-                              style: TextStyle(
-                                  color: Colors.black.withOpacity(0.8),
-                                  fontSize: 12,
-                                  fontFamily: "Poppins")),
+                              style: Theme.of(context).textTheme.titleSmall),
                           const Spacer(),
                           Align(
                             child: TextButton(
@@ -318,89 +243,53 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Navigator.of(context)
                                       .pushNamed(studentActivites.id);
                                 },
-                                child: const Text(
+                                child: Text(
                                   "View all",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: "Poppins",
-                                      color: Color(0xFF0C356A)),
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
                                 )),
                           ),
                         ],
                       ),
-                      Container(
-                        child: SingleChildScrollView(
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: 100,
-                                child: ListView.builder(
-                                  itemCount: StudentActivities.length,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) => InkWell(
-                                    onTap: () {
-                                      if (StudentActivities[index]["SA 1"] !=
-                                          null) {
-                                        Navigator.of(context)
-                                            .pushNamed(AdvertisementsScreen.id);
-                                      } else if (StudentActivities[index]
-                                              ["SA 2"] !=
-                                          null) {
-                                        Navigator.of(context)
-                                            .pushNamed(Enactus.id);
-                                      }
-                                      // if(StudentActivities[index]["url"] != null){
-                                      //   _launchURL(StudentActivities[index]["url"]);
-                                      // }
-                                    },
-                                    child: Container(
-                                        width: SizeConfig.horizontalBlock * 107,
-                                        height: SizeConfig.verticalBlock * 93,
-                                        // decoration: BoxDecoration(
-                                        //     color: Colors.white,
-                                        //     borderRadius:
-                                        //         BorderRadius.circular(10),
-                                        //     boxShadow: [
-                                        //       BoxShadow(
-                                        //         color: Colors.grey.shade500,
-                                        //         offset: Offset(4.0, 4.0),
-                                        //         blurRadius: 3,
-                                        //         spreadRadius: 1.0,
-                                        //       ),
-                                        //       BoxShadow(
-                                        //           color: Colors.white,
-                                        //           offset: Offset(-4.0, -4.0),
-                                        //           blurRadius: 15,
-                                        //           spreadRadius: 1.0)
-                                        //     ]),
-                                        margin: const EdgeInsets.all(10),
-                                        // make some space around the image
-                                        child: Image(
-                                            image: AssetImage(
-                                          StudentActivities[index].values.first,
-                                        ))),
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 100,
+                            child: ListView.builder(
+                              itemCount: StudentActivities.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) => InkWell(
+                                onTap: () {
+                                  if (StudentActivities[index]["SA 1"] !=
+                                      null) {
+                                    Navigator.of(context)
+                                        .pushNamed(AdvertisementsScreen.id);
+                                  } else if (StudentActivities[index]["SA 2"] !=
+                                      null) {
+                                    Navigator.of(context).pushNamed(Enactus.id);
+                                  }
+                                },
+                                child: Container(
+                                  width: SizeConfig.horizontalBlock * 107,
+                                  height: SizeConfig.verticalBlock * 93,
+                                  margin: const EdgeInsets.all(10),
+                                  // make some space around the image
+                                  child: Image(
+                                    image: AssetImage(
+                                      StudentActivities[index].values.first,
+                                    ),
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                      )
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ],
-                  ),
-                ),
-              ), //platForms
-            ],
+                  //platForms
           ),
         ),
       ),
     );
   }
 }
-//Future<void> _launchURL(String url) async {
-//if (await canLaunch(url)) {
-//await launch(url);
-//} else {
-// throw 'Could not launch $url';
-//}
-//}

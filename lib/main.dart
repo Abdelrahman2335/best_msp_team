@@ -11,6 +11,7 @@ import 'package:best_msp_team/student_activities/student_Activities.dart';
 import 'package:best_msp_team/testcode.dart';
 import 'package:best_msp_team/training.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'AdvertisementsScreen.dart';
 import 'Auth.dart';
 import 'Choose_Filed/mobileApp.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
 
   final ColorScheme _colorScheme = ColorScheme.fromSeed(
     seedColor: Color(0xFF0C356A),
-    surface: Color.fromARGB(255, 221, 238, 243),
+    surface: Colors.white,
     brightness: Brightness.light,
   );
 
@@ -46,6 +47,11 @@ class MyApp extends StatelessWidget {
         colorScheme: _colorScheme,
         scaffoldBackgroundColor: _colorScheme.surface,
         useMaterial3: true,
+        textTheme: GoogleFonts.robotoTextTheme().copyWith(
+          titleSmall: GoogleFonts.roboto(fontWeight: FontWeight.normal,),
+          titleMedium: GoogleFonts.roboto(fontWeight: FontWeight.w400,fontSize: 14,color: _colorScheme.primary),
+          titleLarge: GoogleFonts.roboto(fontWeight: FontWeight.normal,fontSize: 27),
+        ),
       ),
       initialRoute: Login.id,
       routes: {

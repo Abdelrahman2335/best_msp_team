@@ -49,7 +49,7 @@ bottomNavigationBar: NavigationBar(
     },
 
     destinations: [
-  NavigationDestination(icon: Icon(Icons.home_outlined,), label: "Home"),
+  NavigationDestination(icon: Icon(Icons.home_outlined,), label: "Home",),
   NavigationDestination(icon: Icon(Icons.topic_outlined,), label: "Topic"),
   NavigationDestination(icon: Icon(Icons.card_travel_outlined,), label: "Training"),
   NavigationDestination(icon: Icon(Icons.person_outline,), label: "Profile"),
